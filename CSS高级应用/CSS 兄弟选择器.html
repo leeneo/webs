@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* '+' 选择紧跟着的第一个元素，相当于next */
+        /* '~' 选择后面所有同级匹配元素，相当于nextAll */
+
+        .tw div:nth-child(1)+div {
+            background: #fab;
+        }
+
+        .tw+p {
+            background: cadetblue;
+        }
+
+        .ge+p {
+            background: yellow;
+        }
+
+        .par~p {
+            background: #fba;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>欢迎来到我到的主页</h1>
+
+    <div class="tw">
+        <div>我是唐老鸭。</div>
+        <div>我住在 Duckburg。</div>
+        <div class="ge">我最好的朋友是鼠456</div>
+        <p>我最好的朋友是米老鼠。</p>
+        <p>我最好的朋友是鼠124。</p>
+    </div>
+
+    <p>我最好的朋友是米老鼠。</p>
+
+    <div>
+        <p class="par">
+            我的样式不会改变。
+        </p>
+        <i class="">
+            <span>我的样式不会改变。</span>
+        </i>
+        <p>
+            <span>我的样式会改变。</span>
+        </p>
+        <p>
+            <span>我的样式会改变。</span>
+        </p>
+    </div>
+
+</body>
+
+</html>

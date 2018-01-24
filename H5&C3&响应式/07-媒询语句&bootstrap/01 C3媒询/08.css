@@ -1,0 +1,11 @@
+/* 在这套CSS中我们来书写750-1000px之间的 div样式 */
+/*@media all and (min-width:800px) and (max-width:1000px){
+	div{
+		background: lightcoral;
+	}
+}*/
+
+
+div{
+	background: lightcoral;
+}

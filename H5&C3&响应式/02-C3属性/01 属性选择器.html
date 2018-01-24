@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>属性选择器</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+				list-style:none;
+			}
+			ul{
+				width:200px;
+				margin:100px auto 0;
+			}
+			li{
+				text-align: center;
+				margin-bottom: 10px;
+				border:1px solid #ccc;
+				font:normal 20px/40px '微软雅黑';
+			}
+			
+			li[data-aihao]{
+				background: pink;
+			}
+			li[data-aihao *= 's']{
+				background: seagreen;
+			}
+			li[data-aihao ^= 'k']{
+				color: darkred;
+			}
+			li[data-aihao $= 'x']{
+				color: #fff;
+			}
+			li[data-aihao |= 'abc']{
+				background: lightblue;
+			}
+			
+			div[hello="world"]{
+				height:100px;
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--
+			属性：标签自带属性和用户自定义属性，不论是哪种属性都是直接写在标签身上的。
+			<a href="" ></a>
+			<img src="" title="">
+			<input type="" />
+			.....
+			
+			大家都遵循的一个规定我们在自定义属性的时候会以 data-打头
+		-->
+		
+		<ul>
+			<li data-aihao="cf">吃饭</li>
+			<li data-aihao="sj">睡觉</li>
+			<li data-aihao="hq">花钱</li>
+			<li data-aihao="ks">看书</li>
+			<li data-aihao="lx">旅行</li>
+			<li data-aihao="xx">学习</li>
+			<li data-aihao="dm">代码</li>
+			<li data-aihao="abc-lq">篮球</li>
+			<li data-aihao="abc">NBA</li>
+		</ul>
+		
+		
+		<div hello="world"></div>
+		
+		<style>
+			div.font{
+				background:blue;
+				font:20px/2 '黑体'
+			}
+			
+		</style>
+		<div class="font">
+			just div
+		</div>
+		
+		<style>
+			span+p{
+				color:green;
+			}
+			span~p{
+				color:red;
+			}
+			
+		</style>
+		<div>
+			<p>p1</p>
+			<p>p2</p>
+			<span>span</span>
+			<p>p3</p>
+			<p>p4</p>
+		</div>
+	</body>
+</html>

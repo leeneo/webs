@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>快速结构伪类</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			.box{
+				width: 300px;
+				margin:100px auto 0;
+				font:normal 20px/2em "微软雅黑";
+			}
+			p:nth-of-type(1){
+				color: seagreen;
+			}
+			h2:first-child{
+				color: orange;
+			}
+			li{
+				height: 40px;
+				margin-bottom: 10px;
+				background: pink;
+			}
+			li:empty{
+				background: darkred;
+			}
+			li:not( :empty ){
+				background: grey;
+			}
+			span:only-child{
+				color: lightcoral;
+			}
+			h3:only-of-type{
+				background: burlywood;
+			}
+			h2:last-child{
+				background: peru;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<h2>我是标题2</h2>
+			<p>段落1</p>
+			<p>段落2</p>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li></li>
+				<li>4</li>
+			</ul>
+			<p>段落3</p>
+			<p>段落4</p>
+			<div>
+				<span>我是div下面的span元素</span>
+			</div>
+			<h3>我是标题3</h3>
+			<h2>我是最后一个标题2</h2>
+			<span>span</span>
+		</div>
+		
+	</body>
+</html>

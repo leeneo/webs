@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:;text-decoration:;
+	}
+	.div1{width:100px;height:80px;background:green;margin:0 auto;}
+ </style>
+ </head>
+     <body>
+          <div class="div1" id="div1" name="name1" class="class1" >what</div>
+          <div class="div2" id="div2"></div>
+          <div id="test">
+               <span style="color:red">test1</span> test2
+          </div>
+ </body>
+</html>
+<script type="text/javascript">
+    document.bgColor='#333';
+    var div1=document.getElementById('div1');
+    div1.style.background='red';
+    // div1.innerHTML="Hi ";
+    // div1.innerText="text";
+    //div1.className='classname1';
+    var divIntest=document.getElementById('test');
+    //alert(divIntest.innerHTML);
+    alert(divIntest.innerText);
+    //alert(divIntest.outerHTML);
+</script>

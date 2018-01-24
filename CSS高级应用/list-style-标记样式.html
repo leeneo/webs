@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*
+	list-style-type:规定列表中列表项目标记的样式,默认值：disc,实心圆
+	list-style-position:规定列表中列表项目标记的位置
+	list-style-image :使用图像来替换列表项的标记。	
+	list-styel:type position image|none:简写属性,在一个声明中设置所有的列表属性
+	*/
+	body,div,p{
+		margin:0;
+		padding:0;
+		list-style:none;
+	  }
+	div{
+		border:1px #fab solid;
+		margin-left:10px;
+		float:left;
+	}
+	.circle {
+		list-style-type:circle;
+		float:left
+	}
+	.square {
+		list-style-type:square;
+		list-style-position:inside;
+		float:left
+	}
+	.upper-roman {
+		list-style-type:upper-roman;
+		float:left
+	}
+	.lower-alpha {
+		list-style-type:lower-alpha;
+
+		float:left
+	} 
+	.listIns {
+		list-style-position:inside;/*inside.列表项目标记放置在文本以内，且环绕文本根据标记对齐。*/
+		float:left
+	}
+	.listOut {
+		list-style-position:outside;/*outside:默认值。保持标记位于文本的左侧。列表项目标记放置在文本以外，且环绕文本不根据标记对齐。*/
+		float:left
+	}
+	.listImg {
+		list-style-image:url('images/eg_arrow.gif');
+		list-style-position:outside;
+		float:left
+	} 
+	.listSty {
+		list-style:square url('images/eg_arrow.gif') inside ;
+		float:left
+	} 
+
+
+  </style>
+ </head> 
+ <body>
+	<div>
+		<p>Type Disc</p>
+		<ul class="listIns">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Coca Cola</li>
+		</ul>
+	</div>
+	<div>
+		<p>Type Disc</p>
+		<ul class="listOut">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Coca Cola</li>
+		</ul>
+	</div>
+
+	<div>
+		<p>Type circle:</p>
+		<ul class="circle">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Coca Cola</li>
+		</ul>
+	</div>
+
+	<div>
+		<p>Type square:</p>
+		<ul class="square">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Coca Cola</li>
+		</ul>
+	</div>
+
+	<div>
+		<p>Type upper-roman:</p>
+		<ol class="upper-roman">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Coca Cola</li>
+		</ol>
+	</div>
+
+	<div>
+		<p>Type lower-alpha:</p>
+		<ol class="lower-alpha">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Coca Cola</li>
+		</ol> 
+	</div>
+
+	<div>
+		<p>Type image:</p>
+		<ol class="listImg">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Coca Cola</li>
+		</ol> 
+	</div>
+
+	<div>
+		<p>Type 简写:</p>
+		<ol class="listSty">
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Coca Cola</li>
+		</ol> 
+	</div>
+  </body>
+</html>

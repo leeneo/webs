@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:;text-decoration:;
+	}
+	#dvFath{
+		width:360px;
+		height:360px;
+		margin:0 auto;
+	}
+	li img{
+		cursor:pointer;
+		float:left;
+		width:70px;
+		height:70px;
+
+	}
+ </style>
+ </head>
+ <body>
+	<div id="dvFath" class="">
+		<img id="bigImg" src="img/taobao/01big.jpg" width="" height="" border="0" alt="">
+		<ul>
+			<li id="li1"><img src="img/taobao/01.jpg" width="" height="" border="0" alt=""></li>
+			<li id="li2"><img src="img/taobao/02.jpg" width="" height="" border="0" alt=""></li>
+			<li id="li3"><img src="img/taobao/03.jpg" width="" height="" border="0" alt=""></li>
+			<li id="li4"><img src="img/taobao/04.jpg" width="" height="" border="0" alt=""></li>
+			<li id="li5"><img src="img/taobao/05.jpg" width="" height="" border="0" alt=""></li>
+		</ul>
+		<script type="text/javascript">
+			var bigImg=document.getElementById('bigImg');
+			function showImg(liId,srcImg){
+
+				var li=document.getElementById(liId);
+				li.onmouseenter=function(){
+					//alert('ll');
+					bigImg.src=srcImg;
+				}
+
+			}
+			showImg('li1','img/taobao/01big.jpg');
+			showImg('li2','img/taobao/02big.jpg');
+			showImg('li3','img/taobao/03big.jpg');
+			showImg('li4','img/taobao/04big.jpg');
+			showImg('li5','img/taobao/05big.jpg');
+		</script>
+	</div>
+ </body>
+</html>

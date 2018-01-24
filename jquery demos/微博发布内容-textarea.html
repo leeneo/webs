@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+		/*初写正文样式！*/
+
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+		/*初写超链接样式！*/
+
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+
+		.con {
+			width: 500px;
+			margin: 100px auto;
+			border: 1px solid #000;
+			overflow: hidden;
+		}
+
+		.con textarea {
+			margin: 10px 12px;
+			float: left;
+			width: 470px;
+			resize: none;
+		}
+
+		.con button {
+			width: 120px;
+			float: left;
+			margin-left: 12px;
+		}
+
+		.con ul {
+			float: left;
+			margin: 12px;
+		}
+
+		.con ul li {
+			border-bottom: 1px dashed #000;
+			width: 475px;
+			float: left;
+			font-size: 16px;
+			padding: 5px;
+		}
+
+		.con ul p {
+			float: left;
+		}
+
+		.con ul a {
+			float: right;
+		}
+
+		.con .send {
+			cursor: pointer;
+			width: 80px;
+			height: 30px;
+			color: #fff;
+			background: orange;
+			border: none;
+			border-radius: 2px;
+			font-size: 12px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			localStorage.words = '';
+			var arrWords = [];
+			var ptxt = $('ul li p').text();
+			var $ps = $('ul li p');
+			$ps.each(function () {
+				arrWords.push($(this).text());
+			});
+			console.log(arrWords);
+
+			$('button').click(function () {
+				var myval = $('.con #texa').val();
+				//			alert(myval.replace(/ /g,''));
+				if (myval.replace(/ /g, '') == '') //replace()可以替换掉字符串的特定字符，match(value|protop)可以检索字符串中是否含有特定字符，并返回该特定字符。属性可以是特定字符，也可以是正则表达式
+				{
+					alert('输入不能为空');
+				} else if (myval.length > 120) {
+					alert('输入不能超过120字');
+				} else {
+					$('.con ul').prepend('<li><p>' + myval + '</p><a href="##">删除</a></li>');
+					$('.con ul li:first').hide().slideDown();
+					$('.con #texa').val('');
+					arrWords.push(myval);
+					localStorage.words = arrWords;
+				}
+				console.log(localStorage.words);
+
+			})
+			//		$('ul li a').click(function(){ //后添加的元素无法删除，要改用on('event','selector',function(){})
+			//			$(this).parent().remove();
+			//		})
+			$(document).on('click', 'ul li a', function () {
+				//alert($(this).html());		//在这里this指示的是<a>
+				$(this).parent().slideUp(500, function () {
+					//回调函数：等动画函数执行完毕后 再执行的函数
+					$(this).remove();
+					//alert($(this).html());	//由于这是在li函数内部，所以在这里this指示是li本身
+				})
+				var deltxt = $(this).prev().text();
+				removeByValue(arrWords,deltxt);
+				localStorage.words = arrWords;
+				console.log(arrWords);
+				
+			})
+
+			function removeByValue(arr, val) {
+				for (var i = 0; i < arr.length; i++) {
+					if (arr[i] == val) {
+						arr.splice(i, 1);
+						break;
+					}
+				}
+			}
+		})
+	</script>
+</head>
+
+<body>
+	<div class="con">
+		<textarea name="ta" id="texa" cols="30" rows="10"></textarea>
+		<button class="send">发布</button>
+		<ul>
+			<li>
+				<p>快来收了这九款用上就停不下来的应用吧！！</p>
+				<a href="##">删除</a>
+			</li>
+			<li>
+				<p>超级详细的云南大理自助游攻略！！</p>
+				<a href="##">删除</a>
+			</li>
+			<li>
+				<p>外国最近很火的舞蹈，舒服简单自然，太棒了</p>
+				<a href="##">删除</a>
+			</li>
+		</ul>
+	</div>
+</body>
+
+</html>

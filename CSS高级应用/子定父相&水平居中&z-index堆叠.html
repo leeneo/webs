@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	body,div,p,span{
+		margin:0;
+		//padding:0;
+		//list-style:none;
+	}
+	.divA{
+		background:#fab;
+		width:800px;
+		border:1px solid black;
+		margin-bottom:1px;
+	}
+	.divB{
+		background:#abf;
+		width:800px;
+		border:1px solid black;
+	}
+	p,span{
+		background:yellow;
+	}
+
+	.fP{
+		float:left;
+		background:blue;
+	}
+	.fSpan{
+		float:left;
+		background:red;
+	}
+
+	.divFather{
+		border:1px solid black;
+		width:800px;
+		height:800px;
+		margin:0 auto;
+		position:relative;
+		border:1px dotted black;
+	}
+/*子元素水平居中法：设置平移量：50%，然后边距反方向平移25%；(width:50%|400px;;left:50%;margin-left:-25%|-200px;)*/
+	.divSon1{
+		background:#ccc;
+		width:50%;
+		height:40%;
+		left:50%;
+		margin-left:-25%;
+		bottom:50%;
+		margin-bottom:-25%;
+		z-index:-1;
+		position:absolute;
+		border:1px solid blue;
+		//float:left;
+	}
+	.divSon2{
+		background:#faf;
+		width:200px;
+		height:200px;
+		bottom:50%;
+		margin-bottom:-25%;
+		right:50%;
+		margin-right:-100px;
+		position:absolute;
+		//float:left;
+		z-index:2;
+		//background:rgba(255,255,255,0.5);
+	}
+  </style>
+ </head>
+ <body>
+  <div>
+	  <p class="fP">float p</p>
+	  <span class="fSpan">float span </span><br />
+  </div>
+  <div class="divFather">
+	<div class="divSon1">son1</div>
+	<div class="divSon2">son2</div>
+  </div>
+
+ </body>
+</html>

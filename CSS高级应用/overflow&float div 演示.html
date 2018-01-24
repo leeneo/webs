@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <link href="css/initial.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+
+	.divM{
+		overflow:hidden;
+		float:left;
+		background:#abf;
+	}
+	#div1{
+		font-size:18pt;
+		background-color:yellow;
+		height:80px;
+		width:175px;
+		float:left;
+	}
+	.secOp{
+		margin-left:200px;
+		width:200px;
+		float:left;
+	}
+	/*可以设置字号和颜色，但宽度，高度设置无效*/
+	.secOp option{
+		color:#fab;
+		font:28pt "宋体";	
+		//background:red;
+	}
+  </style>
+
+  <SCRIPT>
+	function SetOverflow(o, sValue)
+	{
+	o.style.overflow = sValue;
+	}
+  </SCRIPT>
+  </head>
+
+<body>
+	<div class="divM">
+		<DIV ID="div1" >
+			The quick brown fox jumped over the lazy dog.
+		</DIV>
+		<SELECT class="secOp" onchange="SetOverflow(div1,this.options[this.selectedIndex].text)"> 
+			<option SELECTED>visible</option>
+			<option>scroll</option>
+			<option>hidden</option>
+			<option>auto</option>
+		</SELECT>
+	</div>
+</body>
+</html>

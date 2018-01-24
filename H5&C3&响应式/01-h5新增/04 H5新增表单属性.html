@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>H5新增表单属性</title>
+	</head>
+	<body>
+		
+		<!--
+			属性值等于属性名的这一类属性我们只写属性名就可以了。
+			如果某个表单元素需要提交那么就应该添加 name 属性
+			01 placeholder
+			02 autofocus 
+			03 required
+			04 
+		-->
+		
+		<form action="" method="get">
+			
+			<input type="text" placeholder="请输入关键字" /> <br /> <br />
+			<input type="text" autofocus /> <br /><br />
+			<input type="text" required name="user"/> <br /><br />
+			<input type="text" autocomplete="on" name="info"/> <br /><br />
+			
+			<input type="submit" value="提交"/>
+			
+		</form>
+		
+	</body>
+</html>

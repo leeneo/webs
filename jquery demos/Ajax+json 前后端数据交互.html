@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ </head>
+
+ <body>
+  
+  <script type="text/javascript"></script>
+  <script type="text/javascript">
+		var name = "小天";
+		var age = 24;
+		var datas = { name, age };
+		$.ajax({
+			url: '/AjaxJson',
+			type: 'post',
+			data: datas,//这里JSON.stringify(datas)；后台获取的数据会是空的？？
+			success: function (e) {
+				alert(e);
+			},
+			error: function () {
+				alert('出错了。');
+			}
+		});
+
+  </script>
+ </body>
+</html>
+
+
+<!--server 端
+	//server端 return 返回的值就是前端ajax 回调函数的参数。
+        public string AjaxJson()
+        {
+            string cN = Request["name"];
+            string cA = Request["age"];
+            //string res = Json(new { success = true, msg = "test!" }).ToString();
+            return "这是服务器返回的" + "名字：" + Server.UrlDecode(cN )+";年龄：" + Server.UrlDecode(cA);
+        }
+
+-->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>常用伪类</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			div{
+				width:400px;
+				position: relative;
+				margin:100px auto 0;
+				font:normal 20px/40px "微软雅黑";
+			}
+			
+			/**/
+			
+			div:after{
+				top:200px;
+				left:10px;
+				width: 100px;
+				height: 40px;
+				color: orange;
+				content: '';
+				background: pink;
+				position: absolute;
+			}
+			div:before{
+				content: '北京';
+				color: darkred;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div>传智播客UI设计学院</div>
+		
+	</body>
+</html>

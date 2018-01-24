@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+	<TITLE>accesskey</TITLE>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=gb2312">
+	</HEAD>
+
+	<BODY TOPMARGIN=0 LEFTMARGIN=0 BGPROPERTIES="FIXED" BGCOLOR="#FFFFFF" LINK="#000000" VLINK="#808080" ALINK="#000000">
+		<BLOCKQUOTE>
+		<H1>accessKey 属性</H1>
+		<P>下面的例子使用了 label 对象和 accessKey 属性设置文本框的焦点。</P>
+
+<!--要将 LABEL 绑定到其它的控件，请将 LABEL 元素的 FOR 属性设置为与该控件的 ID 相同。将 LABEL 绑定到控件的 NAME 属性毫无用处。但是，要提交表单，你必须为将 LABEL 元素所绑定到的控件指定 NAME。
+
+有两种方法给所指定的快捷键添加下划线。LABEL 元素所支持的丰富文本使得在标签文本中把由 ACCESSKEY 属性所指定的快捷键字符两侧加上 U 元素成为可能。如果你更愿意使用样式表(CSS)来应用格式化样式，可以将该字符包含在 SPAN 中，并设置样式为“text-decoration: underline”。
+
+如果用户单击 LABEL，则会先触发 LABEL 上的 onclick 事件，然后触发由 htmlFor 属性所指定的控件上的 onclick 事件。按下 LABEL 设定的快捷键将设置焦点但并不触发 onclick 事件。-->
+		<LABEL FOR="fp1" ACCESSKEY="1">#<SPAN style="text-decoration:underline;">Alt+1</SPAN>: 按 Alt+1 将焦点设置为文本框</label>
+
+		<INPUT TYPE="text" NAME="T1" VALUE="绑定示例 1" SIZE="20" TABINDEX="1" ID="fp1">
+		<BR><BR>
+
+		<p>[用鼠标右键单击空白区域可以从快捷菜单中选择查看源代码。]</p>
+		&copy; 2001 Microsoft Corporation. 版权所有。
+		</BLOCKQUOTE>
+	</BODY>
+</HTML>

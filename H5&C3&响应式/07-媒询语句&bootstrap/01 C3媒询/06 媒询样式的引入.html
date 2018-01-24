@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>媒询样式的引入</title>
+		<link rel="stylesheet" href="07.css" />		
+
+		<!--
+			 一般在实际工作过程我们不会在外链的CSS文件中书写 媒询语句
+			而是直接书写相应的样式然后再需要显示该样式的时候通过 link
+			身上的media 属性让该套 CSS 出现
+		-->
+		<link rel="stylesheet" href="08.css" media="all and (min-width:800px) and (max-width:1000px)" />
+	</head>
+	<body>
+		
+		<div></div>
+		<ul>
+			<li></li>
+		</ul>
+		
+	</body>
+</html>

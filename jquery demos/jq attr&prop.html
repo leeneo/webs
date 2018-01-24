@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+		/*初写正文样式！*/
+
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+		/*初写超链接样式！*/
+
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h2 data="data-settings">attr 取值:
+			<b></b>
+		</h2>
+		<h4 class="wrap">prop 取值:
+			<b></b>
+		</h4>
+		<input type="text" name="" id="inp" placeholder="...">
+		<button class="btn1">设置1</button>
+		<button class="btn2">设置2</button>
+	</div>
+	<script type="text/javascript" src="jquery-2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var $atrDt = $('h2').attr('data');
+			console.log($atrDt);
+			$('h2 b').text($atrDt);
+
+			var $prpDt = $('h4').prop('class');
+			console.log($prpDt);			
+			$('h4 b').text($prpDt);
+
+			$inp=$('input:text');
+			$('.btn1').click(function () {
+				$inp.attr('value',$prpDt);
+			})
+			$('.btn2').click(function () {
+				$inp.prop('value',$atrDt);
+			})
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滑块调色</title>
+		<style type="text/css">
+
+			div{
+				width: 200px;
+				height: 200px;
+				border:1px solid #ccc;
+				background: #000;
+				
+				/* background:rgb() */
+				/*background: rgb(11,22,33);*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		红色：<input type="range" value="0" max="255"/> <br /><br />
+		绿色：<input type="range" value="0" max="255"/> <br /><br />
+		蓝色：<input type="range" value="0" max="255"/> <br /><br />
+		
+		<div></div>
+		
+	</body>
+</html>
+<script src="jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+	
+	/*
+	 * 
+	 * 我们可以利用  background: rgb() 模式来给div添加背景色，在这里 r g b 分别代表
+	 * red  green blue ，所以我们可以利用三个滑块，分别来表示三种颜色的数值，这个数值
+	 * 具有一定的范围（ 0-255 ），最后将这个颜色添加在 div 的background属性上就可以实
+	 * 现换色了。
+	 * 
+	 * 01 用jq来监测用户拖拽滑块的行为: 利用 change 事件来监测，它会在input元素里的 value
+	 * 值发生改变的时候自动触发。
+	 * 
+	 * 02 当我们有了 change 之后就可以动态的去获取到某一个input 此时的 value值
+	 * 
+	 * 03 在我们拖拽某一个滑块的时候我们需要同时获取到另外二个滑块当前的数值，然后将这
+	 * 三个数值组和在一起生成 rgb 形式添加在 div 身上
+	 * 
+	 * 
+	 */
+	
+	// 在全局的地方定义三个变量来存放我们需要用到的三个数值
+	var iR,iG,iB;
+	
+	// 下面的操作是选中所有的 input 元素然后添加上事件操作
+	$('input').mousemove( function(){	//滑块移动时发生的事件
+		
+		// 当我们改变某一个 input value 值的时候我们需要获取到三个 input 里的vlaue值
+		// iR=$(this).eq(0).val();	//this只能获取到集合中第一个元素
+		iR = $('input').eq(0).val();
+		iG = $('input').eq(1).val();
+		iB = $('input').eq(2).val();
+		
+		// 当上面拿到三个input中的值之后我们需要做的事情就将将它们组成 rgb的格式
+		$('div').css( 'background','rgb('+ iR +','+ iG +','+ iB +')' );		
+	})
+//	$('input').change( function(){		//滑块移动后发生的事件，效果js onchange()事件；
+//		
+//		// 当我们改变某一个 input value 值的时候我们需要获取到三个 input 里的vlaue值
+//		// iR=$(this).eq(0).val();	//this只能获取到集合中第一个元素
+//		iR = $('input').eq(0).val();
+//		iG = $('input').eq(1).val();
+//		iB = $('input').eq(2).val();
+//		
+//		// 当上面拿到三个input中的值之后我们需要做的事情就将将它们组成 rgb的格式
+//		$('div').css( 'background','rgb('+ iR +','+ iG +','+ iB +')' );
+//		
+//	})
+//	var inp=$('input').get();
+//	for (var i=0;i<inp.length;i++)
+//	{
+//		inp[i].onchange=function(){
+//			iR = $('input').eq(0).val();
+//			iG = $('input').eq(1).val();
+//			iB = $('input').eq(2).val();
+//			$('div').css( 'background','rgb('+ iR +','+ iG +','+ iB +')' );
+//		}
+//	}
+//	alert(inp[0].getAttribute('value'));
+</script>

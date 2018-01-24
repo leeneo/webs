@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	html,body{
+		height:100%;
+	}
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	div{
+		margin:100px auto;
+	}
+	div a{
+		border:1px solid #999;display:inline-block;width:80px;height:25px;text-align:center;line-height:25px;margin-top:45px;background:#abf;color:#555;position:absolute;
+	}
+	div .loveA{
+		background:#fab;margin-left:-84px;
+	}
+ </style>
+ </head>
+ <body>
+	<div>
+		<p>darling do you love me?</p>
+		<a href="##" class="loveA">Yes</a>
+		<a href="##" class="lvB">No</a>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+			$(window).mousemove(function(e){
+				var stX=e.pageX+10;
+				var stY=e.pageY+10;
+//				console.log('eY'+e.pageY);	//距离页面最顶端
+//				console.log('cY'+e.clientY);//距离可视区域（不含滚动区域）最顶端
+				$('.lvB').css({'left':+stX+'px','top':''+stY+'px'});
+			})
+		})
+	</script>
+ </body>
+</html>

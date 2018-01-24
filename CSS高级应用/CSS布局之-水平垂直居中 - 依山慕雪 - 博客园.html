@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://www.cnblogs.com/lslvxy/p/6670710.html -->
+<html lang="zh-cn" xmlns:wb="“http://open.weibo.com/wb”"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/analytics.js.下载"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS布局之-水平垂直居中 - 依山慕雪 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/bundle-gray.css">
+<link type="text/css" rel="stylesheet" href="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/147619.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/bundle-gray-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/lslvxy/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/lslvxy/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/lslvxy/wlwmanifest.xml">
+<script src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/jquery.js.下载" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'lslvxy', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/blog-common.js.下载" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+<!--PageBeginHtml Block Begin-->
+
+<link href="http://files.cnblogs.com/lslvxy/icon.ico" rel="SHORTCUT ICON">
+<link href="http://files.cnblogs.com/lslvxy/icon.ico" rel="Bookmark">
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="banner"><div id="bnr_pic">
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/lslvxy/">Keep It Simple</a><br>
+	</div>
+	<div class="headerDis">Simple Life,Simple Love</div>
+</div>
+</div></div>
+<div id="main">
+	<!-- left starts -->
+	<div id="left">
+	<div id="left_border">
+		<div id="mystats">
+			<br>
+				<div id="blog_stats">
+<!--done-->
+<div class="blogStats">
+随笔- 67&nbsp;
+文章- 0&nbsp;
+评论- 30&nbsp;
+
+</div></div>
+			
+		</div>
+		<div id="mylinks">
+<!--done-->
+<a id="blog_nav_sitehome" class="menu" href="http://www.cnblogs.com/">博客园</a>&nbsp;&nbsp;<a id="blog_nav_myhome" class="menu" href="http://www.cnblogs.com/lslvxy/">首页</a>&nbsp;&nbsp;<a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a>&nbsp;&nbsp;<a id="MyLinks1_NewArticleLink" class="menu" href="http://www.cnblogs.com/EnterMyBlog.aspx?NewArticle=1">新文章</a>&nbsp;&nbsp;<a id="blog_nav_contact" accesskey="9" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E4%BE%9D%E5%B1%B1%E6%85%95%E9%9B%AA">联系</a>&nbsp;&nbsp;<a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a>&nbsp;&nbsp;<a id="blog_nav_rss" class="menu" href="http://www.cnblogs.com/lslvxy/rss">订阅</a>&nbsp;<a id="blog_nav_rss_image" href="http://www.cnblogs.com/lslvxy/rss"><img src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/xml.gif" alt="订阅"></a></div>
+		<div id="topics">
+			
+<div id="post_detail">
+<!--done-->
+<div class="post">
+	<div class="postTitle">
+		<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/lslvxy/p/6670710.html">CSS布局之-水平垂直居中</a>
+	</div>
+	<div id="cnblogs_post_body" class="cnblogs-markdown"><p>对一个元素水平垂直居中，在我们的工作中是会经常遇到的，也是CSS布局中很重要的一部分，本文就来讲讲CSS水平垂直居中的一些方法。<br>
+另外，文中的css都是用less书写的，如果看不懂less，可以把我给的demo链接打开，然后在控制台中查看最终的css，或者是点击codepen上的“View Compiled”按钮，可以查看编译后的css</p>
+<p>先看一张图，这是去年cssConf大会时阿里的 @寒冬winter 老师放出来的：</p>
+<p><iframe id="iframe_0.18421609861335142" src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/saved_resource.html" style="border: none; width: 527px; height: 317px;" frameborder="0" scrolling="no"></iframe></p>
+<p>如图所示，CSS布局是可以分为几大块的：</p>
+<ul>
+<li>盒子内部的布局
+<ul>
+<li>文本的布局</li>
+<li>盒模型本身的布局</li>
+</ul></li>
+<li>盒子之间的布局visual formatting
+<ul>
+<li>脱离正常流normal flow的盒子的布局
+<ul>
+<li>absolute布局上下文下的布局</li>
+<li>float布局上下文下的布局</li>
+</ul></li>
+<li>正常流normal flow下的盒子的布局
+<ul>
+<li>BFC布局上下文下的布局</li>
+<li>IFC布局上下文下的布局</li>
+<li>FFC布局上下文下的布局</li>
+<li>table布局上下文下的布局</li>
+<li>css grid布局上下文下的布局</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>所有的CSS布局其实都是围绕着这些布局模块来的，水平垂直居中也一样。</p>
+<h4 id="一.-文本的水平垂直居中">一. 文本的水平垂直居中</h4>
+<p><strong>line-height + text-align:center</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/aOKWWO?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">'wrap'</span>&gt;
+  水平垂直居中水平垂直居中
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-tag">html</span>,<span class="hljs-selector-tag">body</span>{
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-class">.wrap</span>{
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">text-align</span>:center;
+
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">36px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+}
+</code></pre>
+<p>这种方法只适合单行文字的水平垂直居中</p>
+<h4 id="二.-利用盒模型的水平垂直居中">二. 利用盒模型的水平垂直居中</h4>
+<p>我们一般讲的盒模型都是说的块级盒的盒模型，也只有块级盒的盒模型用得多一点，块级盒block-level box又是分别由content-box、padding-box、border-box、margin-box组成的，如下图：</p>
+<p><iframe id="iframe_0.5993062455497862" src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/saved_resource(1).html" style="border: none; width: 903px; height: 481px;" frameborder="0" scrolling="no"></iframe></p>
+<p>也就说我任一个子盒子的水平和垂直方向的边与最外面盒子的间距都是可以控制的，因此也就有如下居中方法：</p>
+<p><strong>padding填充</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/EjRvgp?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"wrap"</span>&gt;
+  &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"content"</span>&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs yaml">@wrapWidth : <span class="hljs-number">400</span>px;
+
+.wrap{
+<span class="hljs-attr">  margin-left:</span> auto;
+<span class="hljs-attr">  margin-right:</span> auto;
+<span class="hljs-attr">  margin-top:</span> <span class="hljs-number">20</span>px;
+<span class="hljs-attr">  width:</span> @wrapWidth;
+<span class="hljs-attr">  height:</span> @wrapWidth;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+}
+
+.content{
+  @contentWidth : <span class="hljs-number">100</span>px;
+<span class="hljs-attr">  width:</span> @contentWidth;
+<span class="hljs-attr">  height:</span> @contentWidth;
+<span class="hljs-attr">  padding:</span> (@wrapWidth - @contentWidth) / <span class="hljs-number">2</span>;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#333;</span>
+<span class="hljs-attr">  background-clip:</span>content-box;
+}
+</code></pre>
+<p>也可以用css3的calc()动态计算:</p>
+<p><a href="http://codepen.io/Dudy/pen/RPJZVw?editors=110">DEMO链接</a></p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"wrap"</span>&gt;
+  &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"content"</span>&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs yaml">.wrap{
+<span class="hljs-attr">  margin-top:</span> <span class="hljs-number">20</span>px;
+<span class="hljs-attr">  margin-left:</span> auto;
+<span class="hljs-attr">  margin-right:</span> auto;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">400</span>px;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">400</span>px;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .content{
+<span class="hljs-attr">    padding:</span> -webkit-calc(~<span class="hljs-string">"(100% - 100px) / 2"</span>);
+<span class="hljs-attr">    padding:</span> calc(~<span class="hljs-string">"(100% - 100px) / 2"</span>);
+<span class="hljs-attr">    width:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    height:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+<span class="hljs-attr">    background-clip:</span> content-box;
+  }
+}
+</code></pre>
+<p>注意这里我在calc中使用了一个~""的写法，这是less中的一个语法，告诉less这里不被less所编译，要是被less编译了的话，css的calc函数的参数就不是100% - 100px，而是0%了。</p>
+<p><strong>margin填充</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/jPKxYL?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"wrap"</span>&gt;
+  &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"ele"</span>&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs yaml">.wrap{
+  @wrapHeight : <span class="hljs-number">400</span>px;
+  @contenHeight : <span class="hljs-number">100</span>px;
+<span class="hljs-attr">  overflow:</span> hidden;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> @wrapHeight;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .ele{
+<span class="hljs-attr">    margin-left:</span> auto;
+<span class="hljs-attr">    margin-right:</span> auto;
+<span class="hljs-attr">    margin-top:</span> (@wrapHeight - @contenHeight) / <span class="hljs-number">2</span>;
+<span class="hljs-attr">    width:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    height:</span> @contenHeight;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+<span class="hljs-attr">    color:</span> <span class="hljs-comment">#fff;</span>
+  }
+}
+</code></pre>
+<p>使用margin填充我们需要知道元素的宽度，这点不太灵活，不过CSS3搞出了一个加fit-content的属性值，可以动态计算元素的宽度，<a href="http://codepen.io/Dudy/pen/yNEZVQ">DEMO链接</a></p>
+<p>使用盒模型进行布局不会产生reflow，兼容也好，使用盒模型布局是一种布局思想，其实仅仅靠它就能实现很多visual formatting才能实现的布局，这是另一个话题，这里不展开。</p>
+<h4 id="三.-absolute布局上下文下的水平垂直居中">三. absolute布局上下文下的水平垂直居中</h4>
+<p><strong>50% + -50%</strong></p>
+<p>原理很简单，就是利用left：50%将盒子的左边先置于父容器的中点，然后再将盒子往左偏移盒子自身宽度的50%，这里有三种具体实现：</p>
+<p><a href="http://codepen.io/Dudy/pen/VLdzRv?editors=110">DEMO链接</a></p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele margin"</span>&gt;</span>水平垂直居中水平垂直<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中水平垂直居中水平<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>垂直居中水平垂直居<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>中水平垂直居中<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele translate"</span>&gt;</span>水平垂直居中水平垂直<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中水平垂直居中水平<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>垂直居中水平垂直居<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>中水平垂直居中<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele relative"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele-inner"</span>&gt;</span>水平垂直居中水平垂直<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中水平垂直居中水平<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>垂直居中水平垂直居<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>中水平垂直居中<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs yaml">.wrap{
+<span class="hljs-attr">  position:</span> relative;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">200</span>px;
+<span class="hljs-attr">  border:</span><span class="hljs-number">1</span>px solid;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .ele{
+<span class="hljs-attr">    position:</span> absolute;
+<span class="hljs-attr">    left:</span> <span class="hljs-number">50</span>%;
+<span class="hljs-attr">    top:</span> <span class="hljs-number">50</span>%;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+    &amp;.margin{
+<span class="hljs-attr">      width:</span> <span class="hljs-number">160</span>px;
+<span class="hljs-attr">      height:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">      margin-left:</span> <span class="hljs-bullet">-80</span>px;
+<span class="hljs-attr">      margin-top:</span> <span class="hljs-bullet">-50</span>px;
+    }
+    &amp;.translate{
+<span class="hljs-attr">      -webkit-transform:</span>translate3d(<span class="hljs-bullet">-50</span>%, <span class="hljs-bullet">-50</span>%, <span class="hljs-number">0</span>);
+<span class="hljs-attr">      transform:</span>translate3d(<span class="hljs-bullet">-50</span>%, <span class="hljs-bullet">-50</span>%, <span class="hljs-number">0</span>);
+    }
+    .ele-inner{
+<span class="hljs-attr">      position:</span> relative;
+<span class="hljs-attr">      left:</span> <span class="hljs-bullet">-50</span>%;
+<span class="hljs-attr">      top:</span> <span class="hljs-bullet">-50</span>%;
+<span class="hljs-attr">      width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">      height:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">      background-color:</span> <span class="hljs-comment">#333;</span>
+    }
+    &amp;.relative{
+<span class="hljs-attr">      width:</span> <span class="hljs-number">150</span>px;
+<span class="hljs-attr">      height:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">      background-color:</span> transparent;
+    }
+  }
+}
+</code></pre>
+<p>上面三个方法中，margin方法和relative方法都需要知道元素的宽高才行(relative方法只知道高也行)，适用于固定式布局，而transform方法则可以不知道元素宽高</p>
+<p><strong>text-align:center + absolute</strong></p>
+<p>text-aign:center本来是不能直接作用于absolute元素的，但是没有给其left等值的行级absolute元素是会受文本的影响的，可以参考张老师的<a href="http://www.zhangxinxu.com/wordpress/2011/12/position-absolute-text-align-center/">这篇文章</a></p>
+<p><a href="http://codepen.io/Dudy/pen/BNVwJx?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"wrap"</span>&gt;
+  &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"ele"</span>&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.wrap</span>{
+  <span class="hljs-attribute">text-align</span>: center;
+
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">0</span>;
+}
+<span class="hljs-selector-class">.ele</span>{
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">margin-left</span>: <span class="hljs-built_in">-</span>(<span class="hljs-number">100px</span> / <span class="hljs-number">2</span>);
+  <span class="hljs-attribute">margin-top</span>: (<span class="hljs-number">400px</span> - <span class="hljs-number">100px</span>) / <span class="hljs-number">2</span>;
+
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#333</span>;
+}
+</code></pre>
+<p>简单解释下，首先，text-align:center作用的是文本而不是absolute的元素，但是，当absolute元素为inline-block的时候，它会受到文本的影响，然后你可能会问这里没文本啊，我只能告诉你说这下面是有的，是个匿名的文本节点。具体的这里不展开，可以参考<a href="http://www.w3.org/TR/CSS2/visudet.html#propdef-line-height">标准</a>，然后理解这句话:</p>
+<blockquote>
+<p>If the inline box contains no glyphs at all, it is considered to contain a strut (an invisible glyph of zero width) with the A and D of the element's first available font</p>
+</blockquote>
+<p>然后这个匿名文本由于受到text-align:center影响居中了，这个时候absolute盒子的左边跟父容器的中点对齐了，所以就还需要往回拉50%，这里用的是margin-left，你也可以用其它方式拉。然后就是垂直方向的对齐，垂直方向是不能被操作文本的属性影响的，所以我这里用的是margin-top来让它偏移下去。</p>
+<p><strong>absolute + margin : auto</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/mJKqXa?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"wrap"</span>&gt;
+  &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"ele"</span>&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs yaml">html,body{
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  margin:</span> <span class="hljs-number">0</span>;
+}
+.wrap{
+<span class="hljs-attr">  position:</span> relative;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .ele{
+<span class="hljs-attr">    position:</span> absolute;
+<span class="hljs-attr">    left:</span> <span class="hljs-number">0</span>;
+<span class="hljs-attr">    right:</span> <span class="hljs-number">0</span>;
+<span class="hljs-attr">    top:</span> <span class="hljs-number">0</span>;
+<span class="hljs-attr">    bottom:</span> <span class="hljs-number">0</span>;
+<span class="hljs-attr">    margin:</span> auto;
+<span class="hljs-attr">    width:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    height:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+  }
+}
+</code></pre>
+<p>关于这种布局的原理，在标准中能找到如下解释：</p>
+<p><a href="http://www.w3.org/TR/CSS21/visudet.html#abs-non-replaced-width">w3c.org</a>中有这样一句话：</p>
+<blockquote>
+<p>The constraint that determines the used values for these elements is:<br>
+'left' + 'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' + 'right' = width of containing block</p>
+</blockquote>
+<p>这句话说的是absolute性质的盒子，它的包含块的宽度等于它的盒模型的宽度 + left + right值，包含块的高度同理，盒模型包括margin-box、border-box、padding-box、content-box，而在这个居中方法中，.ele的left + right值是0，width是定值，width所在盒子包括了除了margin-box外的那三个box，margin都是auto值，按照上面那个公式，margin-left + margin-right的值应该等于包含块的宽度 - left的值 - right的值 - width的值，也就是说margin-left + margin-right的值等于除了width所占宽度外的剩下宽度，拥有剩下宽度后，就是平分其宽度，以让左右两边相等，达到居中，标准中给出了答案：</p>
+<blockquote>
+<p>If none of the three is 'auto': If both 'margin-left' and 'margin-right' are 'auto', solve the equation under the extra constraint that the two margins get equal values, unless this would make them negative, in which case when direction of the containing block is 'ltr' ('rtl'), set 'margin-left' ('margin-right') to zero and solve for 'margin-right' ('margin-left')</p>
+</blockquote>
+<p>这里的"three"指的是left, width, right。如果left、right和width都不为auto，同时margin-left和margin-right都是auto，除非特别情况，它们俩就是相等的，而这个例子中不在特殊情况之列，因此两者平分，此时达到了水平居中。而对于垂直方向的margin的auto值的计算，标准中也有如下两句话，跟水平方向的同理(这里的“three”指的是“top, height, bottom”)：</p>
+<blockquote>
+<p>the used values of the vertical dimensions must satisfy this constraint:<br>
+'top' + 'margin-top' + 'border-top-width' + 'padding-top' + 'height' + 'padding-bottom' + 'border-bottom-width' + 'margin-bottom' + 'bottom' = height of containing block</p>
+<p>if none of the three are 'auto': If both 'margin-top' and 'margin-bottom' are 'auto', solve the equation under the extra constraint that the two margins get equal values.</p>
+</blockquote>
+<p>垂直方向也就因此也居中了。</p>
+<p>这种方法能简单的做到居中，但是必须有width和height值</p>
+<p><strong>适用于图片居中的网易nec的一个方法</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/GJGzJr?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://nec.netease.com/img/s/1.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://nec.netease.com/img/s/1.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>  
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs yaml">html,body{
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  margin:</span> <span class="hljs-number">0</span>;
+}
+
+.wrap{
+<span class="hljs-attr">  position:</span>relative;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">100</span>%;
+  p{
+<span class="hljs-attr">    position:</span>absolute;
+<span class="hljs-attr">    left:</span><span class="hljs-number">50</span>%;
+<span class="hljs-attr">    top:</span><span class="hljs-number">50</span>%;
+  }
+  img{
+    &amp;:nth-child(<span class="hljs-number">1</span>){
+<span class="hljs-attr">      position:</span>static;
+<span class="hljs-attr">      visibility:</span>hidden;
+    }
+    &amp;:nth-child(<span class="hljs-number">2</span>){
+<span class="hljs-attr">      position:</span>absolute;
+<span class="hljs-attr">      right:</span><span class="hljs-number">50</span>%;
+<span class="hljs-attr">      bottom:</span><span class="hljs-number">50</span>%;
+    }
+  }
+}
+</code></pre>
+<p>这种方法主要是利用了一个图片进行占位，以让父容器获得高宽，从而让进行-50%偏移的图片能有一个参照容器作百分比计算。优点是可以不知道图片的大小，随便放张尺寸不超过父容器的图片上去都能做到居中。另外，兼容性好，如果是不使用nth-child选择器的花，IE6都是能顺利兼容的</p>
+<h4 id="四.-float布局上下文下的水平垂直居中">四. float布局上下文下的水平垂直居中</h4>
+<p><strong>float + -50%</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/xGzjZa?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele-inner"</span>&gt;</span>居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中居中居中居中居中居中居中居中居<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>中居中居中居中居中居中居中居中居中居<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>中居中居中居中居中居中居中<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs yaml">.wrap{
+<span class="hljs-attr">  float:</span> left;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">400</span>px;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .ele{
+<span class="hljs-attr">    float:</span> left;
+<span class="hljs-attr">    position:</span> relative;
+<span class="hljs-attr">    left:</span> <span class="hljs-number">50</span>%;
+<span class="hljs-attr">    top:</span> <span class="hljs-number">50</span>%;
+  }
+  .ele-inner{
+<span class="hljs-attr">    position:</span> relative;
+<span class="hljs-attr">    left:</span> <span class="hljs-bullet">-50</span>%;
+<span class="hljs-bullet">    -</span>webkit-transform : translate3d(<span class="hljs-number">0</span>, <span class="hljs-bullet">-50</span>%, <span class="hljs-number">0</span>);
+    transform : translate3d(<span class="hljs-number">0</span>, <span class="hljs-bullet">-50</span>%, <span class="hljs-number">0</span>);
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+<span class="hljs-attr">    color:</span> <span class="hljs-comment">#fff;</span>
+  }
+}
+</code></pre>
+<p>这种方法的原理，首先是利用float属性将需要居中的元素的父元素.ele的宽度收缩，然后left:50%将.ele的左边和水平中线对齐，这个时候还没居中，还需要将其往回拉自身宽度的50%，于是.ele-inner便是真正需要水平居中的元素，我给它一个position:relative，将其往回拉自身宽度50%就行了。对于垂直方向，依然是先将.ele top:50%到垂直方向中点，但是这时给.ele-inner top:50%是不起作用的，因为如果没给父元素明确高度的话，这个50%是计算不出来的，因此，就有了transform : translate3d(0, -50%, 0)。</p>
+<p>这种方法的好处是元素可以不定宽，任何时候都可以做到居中</p>
+<p>我当时在w3cplus的站上发现这个方法后，当时觉得这个方法很好，兼容性好，又还可以不定宽，但当我用了一段时间后，发现了一个问题：</p>
+<p>就是当居中元素的父元素left:50%时，如果元素宽度足够大，会超出外面的容器，而如果外面的容器又正好是overflow:auto的话，那就会在外面产生滚动条，问题DEMO链接<a href="http://codepen.io/Dudy/pen/vENMwr?editors=110">在这里</a>，后来我找到了一个办法：<a href="http://codepen.io/Dudy/pen/YPWeYY?editors=110">DEMO链接</a> ，基本思想就是利用元素超出父元素的左边不会产生滚动条的特性，有点奇淫技巧，但是能解决问题，有兴趣的可以看看</p>
+<p><strong>margin-bottom : -50%</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/bdKMrB?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"wrap"</span>&gt;
+  &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"placeholder"</span>&gt;&lt;/div&gt;
+  &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">'content'</span>&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs yaml">.wrap{
+<span class="hljs-attr">  float:</span> left;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">400</span>px;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  @contentHeight : <span class="hljs-number">100</span>px;
+  .placeholder{
+<span class="hljs-attr">    float:</span> left;
+<span class="hljs-attr">    width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">    height:</span> <span class="hljs-number">50</span>%;
+    /*居中元素.content高度一半*/
+<span class="hljs-attr">    margin-bottom:</span> -(@contentHeight / <span class="hljs-number">2</span>);
+  }
+  .content{
+<span class="hljs-attr">    position:</span> relative;
+<span class="hljs-attr">    left:</span> <span class="hljs-number">50</span>%;
+<span class="hljs-attr">    transform:</span>translate3d(<span class="hljs-bullet">-50</span>%, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+<span class="hljs-attr">    clear:</span> both;
+    /*演示用，实际不需要定宽*/
+<span class="hljs-attr">    max-width:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    height:</span> @contentHeight;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+  }
+}
+</code></pre>
+<p>这种方法是先让占位元素.placeholder占据50%高度，然后给一个居中元素高度一半的负的margin-bottom，然后下面的元素只要跟着摆放就能垂直居中了。水平方向就是利用translate做偏移，这个没什么好说的，你也可以换成其他办法。</p>
+<p>这种方法就是各种固定死，首先最外层的父容器需要一个固定高度，以让.placeholder的height:50%有效，然后，margin-bottom也需要固定死，而且得需要知道居中元素高度。单纯就水平方向来说，这个方法比较适合需要兼容低版本IE的固定式布局的项目，因为兼容性好。</p>
+<h4 id="五.bfc布局上下文下的水平垂直居中">五.BFC布局上下文下的水平垂直居中</h4>
+<p>BFC的全称是块级排版上下文，这里有篇<a href="http://div.io/topic/834?page=1#3261">文章</a>对齐进行了简单的介绍，BFC布局上下文下的布局其实就是利用盒模型本身进行的布局，前面在利用盒模型布局的那一节中已经讲过了，这里就不重复了</p>
+<h4 id="六.ifc布局上下文下的水平垂直居中">六.IFC布局上下文下的水平垂直居中</h4>
+<p>IFC又是个什么概念呢，你可以看看<a href="http://www.w3.org/TR/CSS21/visuren.html#inline-formatting">官方文档</a>，也可以简单的理解为 display为inline性质的行级元素的布局。</p>
+<p><strong>text-align:center + vertical-align:middle</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/pJKVZa?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'placeholder'</span>&gt;</span><span class="hljs-comment">&lt;!--占位元素，用来作为居中元素的参照物--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs yaml">.wrap{
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">400</span>px;
+  /* min-height: <span class="hljs-number">400</span>px; */
+<span class="hljs-attr">  text-align:</span>center;
+<span class="hljs-attr">  font-size:</span> <span class="hljs-number">0</span>;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .placeholder,
+  .ele{
+<span class="hljs-attr">    vertical-align:</span> middle;
+<span class="hljs-attr">    display:</span> inline-block;
+  }
+  .placeholder{
+<span class="hljs-attr">    overflow:</span> hidden;
+<span class="hljs-attr">    width:</span> <span class="hljs-number">0</span>;
+<span class="hljs-attr">    min-height:</span> inherit;
+<span class="hljs-attr">    height:</span> inherit;
+  }
+  .ele{
+<span class="hljs-attr">    width:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    height:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+  }
+}
+</code></pre>
+<p>行级元素会受到text-align和vertical-align的影响，关于vertical-align，不太好理解，我多贴几篇文章：<a href="http://www.html-js.com/article/2952">@灵感idea 的</a>，<a href="http://www.zhangxinxu.com/wordpress/2010/05/%E6%88%91%E5%AF%B9css-vertical-align%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E4%B8%8E%E8%AE%A4%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/">张鑫旭的</a>，<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align">MDN上的</a>，<a href="https://css-tricks.com/almanac/properties/v/vertical-align/">css-trick上的</a>，以及<a href="http://www.w3.org/TR/CSS21/visudet.html#line-height">官方文档</a>，这里首先是用text-center让inline-block水平居中，然后给一个vertical-align:middle，但是仅仅给vertical-align:middle是不够的，因为此时它还没有vertical-align对齐的参照物，所以就给了一个占位的inline-block，它的高度是100%。</p>
+<p>这个方法对于居中元素不需要定宽高，而且元素根据vertical-align值的不同不仅仅可以实现居中，还可以将其放在上面下面等。缺点是父元素需定高</p>
+<p><strong>text-align:center + line-height</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/ZGRmqL?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele"</span>&gt;</span>居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中居中居中居中居中居中居中居中<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs yaml">.wrap{
+<span class="hljs-attr">  text-align:</span> center;
+<span class="hljs-attr">  line-height:</span> <span class="hljs-number">400</span>px;
+
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">400</span>px;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+<span class="hljs-attr">  font-size:</span> <span class="hljs-number">0</span>;
+  .ele{
+<span class="hljs-attr">    line-height:</span> normal;
+<span class="hljs-attr">    vertical-align:</span> middle;
+<span class="hljs-attr">    display:</span> inline-block;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+<span class="hljs-attr">    font-size:</span> <span class="hljs-number">18</span>px;
+<span class="hljs-attr">    color:</span> <span class="hljs-comment">#fff;</span>
+  }
+}
+</code></pre>
+<p>这个方法，首先是水平方向，text-align:center就行了，至于垂直方向，起作用的就是父容器的一个line-height和居中元素的vertical-align:middle，为什么这两个属性可以让一个inline-block垂直居中呢，这里重点是父容器在其下面产生了一个隐匿的文本节点，这个我在上面 text-align:center + absolute 那个方法的讲解中说到过了，然后这个这个隐匿文本节点会因line-height属性的作用而拥有了一个父容器一样高的行高，此时元素有了一个vertical-align对齐的参照物，再给其vertical-align:middle值就能垂直对齐了。</p>
+<p>使用这个方法，居中元素无需定宽高，但缺点是得给父容器一个固定的行高才行。</p>
+<p><strong>text-align:center + font-size</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/vOrvBP?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"wrap"</span>&gt;
+  &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"ele"</span>&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs yaml">.wrap{
+<span class="hljs-attr">  text-align:</span> center;
+<span class="hljs-attr">  font-size:</span> <span class="hljs-number">400</span>px * <span class="hljs-number">0.873</span>;/*约为高度的<span class="hljs-number">0.873</span>*/
+
+<span class="hljs-attr">  margin-left:</span> auto;
+<span class="hljs-attr">  margin-right:</span> auto;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">400</span>px;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">400</span>px;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .ele{
+<span class="hljs-attr">    vertical-align:</span> middle;
+
+<span class="hljs-attr">    width:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    height:</span> <span class="hljs-number">100</span>px;
+<span class="hljs-attr">    display:</span> inline-block;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+  }
+}
+</code></pre>
+<p>这个方法来自淘宝，基本原理还是让隐匿文本节点所占据的行高等于父容器的高度，然后给居中元素一个vertical-align:middle对齐的一个参照。只是这里把定义line-height值换成了定义font-size值，让font-siz足够大从而让其行高等于父容器高度。为了证明这个font-size的作用，我把居中元素换成文本</p>
+<p><a href="http://codepen.io/Dudy/pen/JdZwGa?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs cs">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"wrap"</span>&gt;
+  a
+&lt;/div&gt;
+</code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.wrap</span>{
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">400px</span> * <span class="hljs-number">0.873</span>;<span class="hljs-comment">/*约为高度的0.873*/</span>
+
+  <span class="hljs-attribute">margin-left</span>: auto;
+  <span class="hljs-attribute">margin-right</span>: auto;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">400px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+}
+</code></pre>
+<p>效果：</p>
+<p><iframe id="iframe_0.9408336306676754" src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/saved_resource(2).html" style="border: none; width: 802px; height: 788px;" frameborder="0" scrolling="no"></iframe></p>
+<p>可以看到字母a垂直居中了，这个字母a就对应那个隐匿文本节点</p>
+<h4 id="七.ffc布局上下文下的水平垂直居中">七.FFC布局上下文下的水平垂直居中</h4>
+<p><strong>父元素、子元素都定义flex：</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/PqaXOZ?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele"</span>&gt;</span>
+  居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中居中
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs yaml">html,body{
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">100</span>%;
+}
+
+.wrap{
+<span class="hljs-attr">  display:</span> flex;
+<span class="hljs-attr"> align-items:</span> center;
+<span class="hljs-attr">  justify-content:</span> center;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .ele{
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+  }
+}
+</code></pre>
+<p><strong>只有父元素定义flex，子元素定义margin:auto：</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/zGLzRN?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"wrap"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele"</span>&gt;</span>
+  居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中居中
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs yaml">html,body{
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">100</span>%;
+}
+
+.wrap{
+<span class="hljs-attr">  display:</span> flex;
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#ccc;</span>
+  .ele{
+<span class="hljs-attr">    margin:</span>auto;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+  }
+}
+</code></pre>
+<p>flex box的标准中有这句话(参考链接:<a href="http://www.w3.org/TR/css-flexbox-1/#item-margins">http://www.w3.org/TR/css-flexbox-1/#item-margins):</a>:)</p>
+<blockquote>
+<p>The margins of adjacent flex items do not collapse. Auto margins absorb extra space in the corresponding dimension and can be used for alignment and to push adjacent flex items apart; see Aligning with auto margins.</p>
+</blockquote>
+<p>意思就是说flex item的margin不会折叠，在flex-item有明确大小并且margin:auto时外边距吸收了伸缩包含块下的额外的空间，并且能被用于居中以及会让其相邻的flex item尽可能的往这个flex item所在的那一个方向靠。</p>
+<p>flexbox是个很强大的布局模块，也就三个属性就搞定居中了，而且不论父容器还是居中元素都可以不定宽高。参考链接：<a href="http://www.w3cplus.com/css3/a-visual-guide-to-css3-flexbox-properties.html">图解CSS3 Flexbox属性</a></p>
+<h4 id="八.table布局上下文下的水平垂直居中">八.table布局上下文下的水平垂直居中</h4>
+<p><a href="http://codepen.io/Dudy/pen/EjRGRO?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'wrap'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'ele'</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ele-inner"</span>&gt;</span>居中居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中居中居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>居中居中居中居中居中居中居中居中居中居中<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs css"><span class="hljs-selector-class">.wrap</span>{
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+  <span class="hljs-attribute">display</span>: table;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+}
+<span class="hljs-selector-class">.ele</span>{
+  <span class="hljs-attribute">text-align</span>:center;
+  <span class="hljs-attribute">vertical-align</span>: middle;
+  <span class="hljs-attribute">display</span>:table-cell;
+}
+
+<span class="hljs-selector-class">.ele-inner</span>{
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#333</span>;
+}
+</code></pre>
+<p>原理就是把div模拟成表格（换成真正的表格标签也是可以的），然后给那几个属性就成了，这个没什么好讲的，不懂的去翻翻手册就明白了，然后<a href="http://weibo.com/u/2945647940?topnav=1&amp;wvr=6&amp;topsug=1">@于江水</a>写的一篇<a href="http://yujiangshui.com/about-table/">table那些事</a>还不错</p>
+<h4 id="九.css-grid布局上下文下的水平垂直居中">九.CSS grid布局上下文下的水平垂直居中</h4>
+<p>CSS3 grid layout是IE搞出来的一个布局模块，目前貌似还只有IE0和IE11支持，我没有研究过其居中的方法，有兴趣的可以看看<a href="http://www.w3cplus.com/blog/tags/356.html">大漠老师的介绍文章</a></p>
+<h4 id="十.其它未知归属的水平垂直居中方法">十.其它未知归属的水平垂直居中方法</h4>
+<p><strong>使用button标签</strong></p>
+<p><a href="http://codepen.io/Dudy/pen/aOKPgr?editors=110">DEMO链接</a></p>
+<p>代码：</p>
+<pre><code class="hljs django"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    居中居中居中居中居中居中<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>  
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</span></code></pre>
+<pre><code class="hljs yaml">button{
+<span class="hljs-attr">  width:</span> <span class="hljs-number">100</span>%;
+<span class="hljs-attr">  height:</span> <span class="hljs-number">400</span>px;
+<span class="hljs-attr">  background-color:</span> <span class="hljs-comment">#cccccc;</span>
+<span class="hljs-attr">  border-width:</span><span class="hljs-number">0</span>;
+  &amp;:focus{
+<span class="hljs-attr">    outline:</span>none;
+  }
+  div{
+<span class="hljs-attr">    display:</span> inline-block;
+<span class="hljs-attr">    font-size:</span> <span class="hljs-number">18</span>px;
+<span class="hljs-attr">    background-color:</span> <span class="hljs-comment">#333;</span>
+<span class="hljs-attr">    color:</span> <span class="hljs-comment">#fff;</span>
+  }
+}
+</code></pre>
+<p>这种方法属于奇淫技巧，利用button标签天生外挂的这一技能对其里面的元素进行居中。</p>
+<p><strong>（本文完）</strong></p>
+<blockquote>
+<p>原文地址: <a href="http://div.io/topic/1155" class="uri">http://div.io/topic/1155</a></p>
+</blockquote>
+</div><div id="MySignature" style="display: block;"><div style="padding:15px;background-color: loightblue;border: 3px solid #5EC1CE;"><p>宝剑锋从磨砺出，梅花香自苦寒来。</p>
+<p>
+如果，您认为阅读这篇博客让您有些收获，不妨点击一下右下角的【推荐】按钮。</p><p>
+如果，您希望更容易地发现我的新博客，不妨关注一下或者分享一下。
+</p><p>
+未注明转载的文章，版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </p>
+</div>
+<div id="back-to-top">
+    <a href="http://www.cnblogs.com/lslvxy/p/6670710.html#top"></a>
+</div>
+
+<!--code highlight-->
+
+<!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+<!-- Duoshuo Comment BEGIN -->
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="{{page.url}}" data-title="{{page.url}}" data-url="{{page.url}}"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+<!-- 多说公共JS代码 end -->
+
+
+<!-- Duoshuo Comment END -->
+<style>
+
+#back-to-top{right:-40px;overflow:hidden;position:fixed;bottom:60px;width:100px;margin:0;padding:0;z-index:1000;}
+
+div#back-to-top a {
+    background: url("http://images.cnblogs.com/cnblogs_com/fb-boy/545821/o_q_back2top_default.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 53px;
+    width: 53px;
+}
+div#back-to-top a:hover {
+    background: url("http://images.cnblogs.com/cnblogs_com/fb-boy/545821/o_q_back2top_default.png") no-repeat scroll -70px 0 rgba(0, 0, 0, 0);
+}
+</style></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/lslvxy/category/471557.html" target="_blank">JavaScript</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6670710,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;8a893051-cf5e-e211-aa8f-842b2b196315&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/lslvxy/" target="_blank"><img src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/20161114152030.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/lslvxy/">依山慕雪</a><br>
+            <a href="http://home.cnblogs.com/u/lslvxy/followees">关注 - 2</a><br>
+            <a href="http://home.cnblogs.com/u/lslvxy/followers">粉丝 - 46</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;8a893051-cf5e-e211-aa8f-842b2b196315&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6670710,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(6670710,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/lslvxy/p/6670704.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/lslvxy/p/6670704.html" title="发布于2017-04-05 21:24">JavaScript 字符串常用操作</a><br></div>
+</div>
+
+
+	<div class="postDesc"><img src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/speech.gif" align="absmiddle">&nbsp;posted on <span id="post-date">2017-04-05 21:25</span> <a href="http://www.cnblogs.com/lslvxy/">依山慕雪</a> 阅读(<span id="post_view_count">182</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6670710" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/lslvxy/p/6670710.html#" onclick="AddToWz(6670710);return false;">收藏</a></div>
+</div>
+<script src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/highlight.min.js.下载"></script><script>markdown_highlight();</script><script type="text/javascript">var allowComments=false,cb_blogId=147619,cb_entryId=6670710,cb_blogApp=currentBlogApp,cb_blogUserGuid='8a893051-cf5e-e211-aa8f-842b2b196315',cb_entryCreatedDate='2017/4/5 21:25:00';loadViewCount(cb_entryId);</script>
+
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="http://www.cnblogs.com/lslvxy/p/6670710.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/lslvxy/p/6670710.html#top">返回顶部</a></div>
+<div id="comment_form_container">（评论功能已被禁用）</div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://click.aliyun.com/m/21970/" target="_blank">【阿里云】云计算科技红利邀您免费体验！云服务器、云数据库等35+产品，6个月免费使用！</a><br><a href="https://cloud.tencent.com/developer/labs?fromSource=gwzcw.241259.241259.241259" target="_blank">【免费】从零开始学编程，开发者专属实验平台免费实践！</a><br><a href="https://www.upyun.com/618?utm_source=cnblogs&amp;utm_medium=referral&amp;utm_content=618" target="_blank">【推荐】又拍云年中大促！现在注册，充值最高送4800元</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="http://click.aliyun.com/m/19236/" target="_blank"><img width="300" height="250" src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/24442-20170502163240086-1545306933.jpg" alt="阿里云B1"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/572469/" target="_blank">中国大火箭长征五号准备第二发：全新大卫星平台</a><br> ·  <a href="http://news.cnblogs.com/n/572468/" target="_blank">小米米粉卡月卡“返流量”最高40GB 这样操作才对</a><br> ·  <a href="http://news.cnblogs.com/n/572467/" target="_blank">Windows自动更新的.NET Framework 4.7补丁居然未经验证</a><br> ·  <a href="http://news.cnblogs.com/n/572456/" target="_blank">58到家上线萌芽日记，大数据重塑月嫂行业</a><br> ·  <a href="http://news.cnblogs.com/n/572465/" target="_blank">支付宝自动贩卖机魔盒CITYBOX问世：先享后付</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="https://www.mtyun.com/activity-anniversary?site=cnblogs&amp;campaign=20170601sales" target="_blank"><img width="468" height="60" src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/24442-20170615095125603-13625507.png" alt="美团云"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/570194/" target="_blank">小printf的故事：什么是真正的程序员？</a><br> ·  <a href="http://kb.cnblogs.com/page/569992/" target="_blank">程序员的工作、学习与绩效</a><br> ·  <a href="http://kb.cnblogs.com/page/569056/" target="_blank">软件开发为什么很难</a><br> ·  <a href="http://kb.cnblogs.com/page/565901/" target="_blank">唱吧DevOps的落地，微服务CI/CD的范本技术解读</a><br> ·  <a href="http://kb.cnblogs.com/page/566523/" target="_blank">程序员，如何从平庸走向理想？</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+		</div>
+	</div>
+	</div>
+	<!-- left ends -->
+	<!-- right starts -->
+	<div id="right">
+		<!-- 右侧工具部分 -->
+		<div id="right_content">
+	
+			
+<!--done-->
+<h1 class="listtitle" style="padding-top:14px;padding-left:42px;">公告</h1>
+<div class="newsItem">
+	<div id="blog-news"><img alt="" src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/20161114152030(1).png" height="150" width="150">
+<p>
+HomePage:<img src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/o_icon.png" alt="" height="16" width="16"><a href="http://lise.io/" target="_blank"><span style="color: #ff00ff;">lise.io</span></a>
+</p>
+<div id="qqwb_share__" data-pic="" data-content="推荐一篇博文：" data-counter="0" data-icon="1" data-appkey="801363972"></div>
+<p>
+</p>
+<p><wb:follow-button type="red_1" height="24" width="67" uid="2804601572"></wb:follow-button>
+</p>
+<wb:share-button title="推荐一篇博文：" type="button" height="35" size="middle" count="n">
+</wb:share-button>
+<p>邮箱：<a href="mailto://i@lslvxy.com">i@lslvxy.com</a></p>
+<p>QQ：398819560 <br>
+<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=398819560&amp;Site=http://www.cnblogs.com/lslvxy/&amp;Menu=yes" target="blank"><img alt="联系我" src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/pa" border="0"></a> </p>
+<p>技术爱好：java、extJs、数据库</p>
+<p>&nbsp;</p><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/lslvxy/">依山慕雪</a><br>园龄：<a href="http://home.cnblogs.com/u/lslvxy/" title="入园时间：2013-01-15">4年5个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/lslvxy/followers/">46</a><br>关注：<a href="http://home.cnblogs.com/u/lslvxy/followees/">2</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;8a893051-cf5e-e211-aa8f-842b2b196315&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+	
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/05/01&#39;);return false;">&lt;</a></td><td align="center">2017年6月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2017/07/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td class="CalWeekendDay" align="center">3</td></tr><tr><td class="CalWeekendDay" align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td class="CalWeekendDay" align="center">10</td></tr><tr><td class="CalWeekendDay" align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td class="CalWeekendDay" align="center">17</td></tr><tr><td class="CalWeekendDay" align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td class="CalWeekendDay" align="center">24</td></tr><tr><td class="CalWeekendDay" align="center">25</td><td class="CalTodayDay" align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td class="CalOtherMonthDay" align="center">1</td></tr><tr><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+				<div id="leftcontentcontainer">
+					<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/lslvxy/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/lslvxy/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/lslvxy/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/lslvxy/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/lslvxy/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div></div><div id="sidebar_recentposts" class="sidebar-block">
+<h3 class="catListTitle">最新随笔</h3>
+<div class="RecentComment" id="RecentPosts">
+<ul style="word-break:break-all">
+<li><a href="http://www.cnblogs.com/lslvxy/p/6670710.html">1. CSS布局之-水平垂直居中</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6670704.html">2. JavaScript 字符串常用操作</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6202528.html">3. 深入了解 JavaScript 中的 for 循环</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6202525.html">4. JavaScript 字符串常用操作</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6122092.html">5. 10个习惯助你成为一名优秀的程序员</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6122089.html">6. Ubuntu日常问题搜集和解决办法</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6088254.html">7. 提升你的开发效率，10 个 NPM 使用技巧</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6062018.html">8. Redux教程3：添加倒计时</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6062011.html">9. Redux教程1：环境搭建，初写Redux</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/6062017.html">10. Redux教程2：链接React</a></li>
+</ul>
+</div>
+</div><div id="sidebar_toptags" class="sidebar-block">
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="http://www.cnblogs.com/lslvxy/tag/javascript/">javascript</a>(11)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/Extjs/">Extjs</a>(10)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/ExtJS4/">ExtJS4</a>(9)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/web/">web</a>(6)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/java/">java</a>(4)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/Redux/">Redux</a>(4)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/Maven/">Maven</a>(4)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/Oracle/">Oracle</a>(4)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/grid/">grid</a>(4)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/React/">React</a>(4)</li><li><a href="http://www.cnblogs.com/lslvxy/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<!--done-->
+
+		<h1 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(67)</span></h1>
+		
+				<div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_0" class="listitem" href="http://www.cnblogs.com/lslvxy/category/469860.html">ExtJs(20)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_1" class="listitem" href="http://www.cnblogs.com/lslvxy/category/473211.html">FineReport(1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_2" class="listitem" href="http://www.cnblogs.com/lslvxy/category/486897.html">HTML(3)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_3" class="listitem" href="http://www.cnblogs.com/lslvxy/category/471565.html">Java(7)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_4" class="listitem" href="http://www.cnblogs.com/lslvxy/category/471566.html">JavaFx(1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_5" class="listitem" href="http://www.cnblogs.com/lslvxy/category/471557.html">JavaScript(17)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_6" class="listitem" href="http://www.cnblogs.com/lslvxy/category/487809.html">JQuery</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_7" class="listitem" href="http://www.cnblogs.com/lslvxy/category/469863.html">Spring(1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_8" class="listitem" href="http://www.cnblogs.com/lslvxy/category/471567.html">其他技术(7)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_9" class="listitem" href="http://www.cnblogs.com/lslvxy/category/471563.html">数据库(6)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_0_Link_10" class="listitem" href="http://www.cnblogs.com/lslvxy/category/469861.html">杂文(4)</a>
+				</div>
+			
+				</div>
+			
+	
+		<h1 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(67)</span></h1>
+		
+				<div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_0" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2017/04.html">2017年4月 (2)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_1" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2016/12.html">2016年12月 (4)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_2" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2016/11.html">2016年11月 (5)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_3" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2016/05.html">2016年5月 (1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_4" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2016/04.html">2016年4月 (2)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_5" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2015/06.html">2015年6月 (3)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_6" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2014/10.html">2014年10月 (1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_7" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2014/08.html">2014年8月 (1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_8" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2014/04.html">2014年4月 (2)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_9" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2014/02.html">2014年2月 (2)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_10" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2014/01.html">2014年1月 (1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_11" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2013/12.html">2013年12月 (3)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_12" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2013/11.html">2013年11月 (3)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_13" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2013/10.html">2013年10月 (1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_14" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2013/08.html">2013年8月 (2)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_15" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2013/07.html">2013年7月 (1)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_16" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2013/06.html">2013年6月 (4)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_17" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2013/05.html">2013年5月 (8)</a>
+				</div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_1_Link_18" class="listitem" href="http://www.cnblogs.com/lslvxy/archive/2013/04.html">2013年4月 (21)</a>
+				</div>
+			
+				</div>
+			
+	
+		<h1 class="catListTitle">相册<span style="font-size:11px;font-weight:normal">(8)</span></h1>
+		
+				<div>
+			
+				<div class="catList">
+				 <a id="CatList_LinkList_2_Link_0" class="listitem" href="http://www.cnblogs.com/lslvxy/gallery/470713.html" rel="nofollow">我的相册(8)</a>
+				</div>
+			
+				</div>
+			
+	
+</div><div id="sidebar_scorerank" class="sidebar-block">
+<h3>积分与排名</h3>
+<ul>
+	<li>
+		积分 -
+		45983
+	</li><li>
+		排名 -
+		6425
+	</li>
+</ul>
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/lslvxy/p/3915916.html#3009420">1. Re:通过MD5排除重复文件</a></li>
+        <li class="recent_comment_body">@一个程序员的故事你是哪个啊？...</li>
+        <li class="recent_comment_author">--依山慕雪</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/lslvxy/p/3915916.html#3009006">2. Re:通过MD5排除重复文件</a></li>
+        <li class="recent_comment_body">大山子，顶个。</li>
+        <li class="recent_comment_author">--一个程序员的故事</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/lslvxy/archive/2013/04/17/3025456.html#2969635">3. Re:JS设置IE可信站点及ActiveX设置</a></li>
+        <li class="recent_comment_body">这里的脚本只能在受信站点中执行噢。</li>
+        <li class="recent_comment_author">--Firehack</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/lslvxy/p/3642466.html#2911384">4. Re:实现用CSS切割图片的方法</a></li>
+        <li class="recent_comment_body">@Tmsky亲，clip:rect(top, left, bottom, right)应该是这样的吧顺序应该是上、左、下、右，逆时针方向...</li>
+        <li class="recent_comment_author">--codeflyto</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/lslvxy/p/3642466.html#2911369">5. Re:实现用CSS切割图片的方法</a></li>
+        <li class="recent_comment_body">我记得看书的时候还有种方法就是用div切割,overflow:hide</li>
+        <li class="recent_comment_author">--王小力</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/lslvxy/p/3457049.html">1. Oracle中TO_DATE用法(15008)</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/3273108.html">2. IDEA调试javaScript(6345)</a></li><li><a href="http://www.cnblogs.com/lslvxy/archive/2013/05/26/3099768.html">3. Extjs4 之grid组件(6087)</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/3395018.html">4. ExtJs 4 中的MVC应用架构(5527)</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/3418617.html">5. SSH框架之一详解maven搭建多模块项目(4802)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/lslvxy/p/3642466.html">1. 实现用CSS切割图片的方法(5)</a></li><li><a href="http://www.cnblogs.com/lslvxy/archive/2013/06/14/3135366.html">2. ExtJs 常用代码片段（7.30更新）(5)</a></li><li><a href="http://www.cnblogs.com/lslvxy/archive/2013/06/08/3126677.html">3. JAVA基础：JAVA代码编写的30条建议(4)</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/3395018.html">4. ExtJs 4 中的MVC应用架构(4)</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/3402182.html">5. GitHub Pages 搭建流程-基于jekyll-bootstrap(2)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/lslvxy/p/5504329.html">1. 12个非常实用的JavaScript小技巧(10)</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/3395018.html">2. ExtJs 4 中的MVC应用架构(10)</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/5411313.html">3. JavaScript 开发的45个经典技巧(6)</a></li><li><a href="http://www.cnblogs.com/lslvxy/archive/2013/05/26/3099768.html">4. Extjs4 之grid组件(6)</a></li><li><a href="http://www.cnblogs.com/lslvxy/p/3642466.html">5. 实现用CSS切割图片的方法(5)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+				</div>
+			
+		</div>
+		<!-- //右侧工具部分 -->
+	</div>
+	<!-- right ends -->
+	<div class="clear"></div>
+</div>
+<div id="footer">
+<!--done-->
+Copyright ©2017 依山慕雪</div>
+
+<!--PageEndHtml Block Begin-->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000137390'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000137390' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1000137390"><a href="http://www.cnzz.com/stat/website.php?web_id=1000137390" target="_blank" title="站长统计">站长统计</a></span><script src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/z_stat.php" type="text/javascript"></script><script src="./CSS布局之-水平垂直居中 - 依山慕雪 - 博客园_files/core.php" charset="utf-8" type="text/javascript"></script>
+<!--PageEndHtml Block End-->
+
+
+</body></html>

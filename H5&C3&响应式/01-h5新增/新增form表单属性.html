@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+ </style>
+ </head>
+ <body>
+	<!-- h5对表单的增强：
+	某些表单元素要提交内容，需要指定name属性;
+	checked autofocus reuired这一类属性值等于属性名的属性，只写属性名就可以
+	autocomplete:on|off; 自动完成，浏览器记录之前输入的内容，并在再次输入时，自动提示不否填充
+	autofocus 自动获取输入焦点；
+	required 指定该项为必填项
+	placeholder 定位光标在文本前，并且输入文本时，清空原始文本
+	method="get|post通过url提交数据；post不会显示；
+	 -->	
+	<form action="#" method="post">
+		<input type="text" placeholder="请输入文本"><br /></input>
+		<input type="text" autofocus ><br /></input>
+		<input type="text" required name="user"><br /></input>
+		<input type="text" autocomplete="on" name="info" ><br /></input>
+		<input type="submit" value="提交"><br /></input>
+	</form>
+ </body>
+</html>

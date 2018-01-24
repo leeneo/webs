@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script>
+			$(function(){
+				$('button').eq(0).click(function(){
+					//1、保存节点到变量中
+					var myTag = $('<li>222222</li>');
+					//2、通过节点操作函数插入到页面的指定位置
+					//$('ul').append(myTag);//在同级内部之后添加
+					$('ul').prepend(myTag);//在同级内部之前添加
+				})
+				$('button').eq(1).click(function(){
+					var myTag = $('<li>222222</li>');
+					//$('ul').before(myTag);//同级之前
+					$('ul').after(myTag);//同级之后
+				})
+				
+				$('button').eq(2).click(function(){
+					$('ul').remove();//彻底删除选中的标签    斩草除根
+				})
+				$('button').eq(3).click(function(){
+					$('ul').empty();//删除选中标签中间包裹的内容   斩草留根
+				})				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<button>同级的内部添加节点</button>
+		<button>同级添加节点</button>
+		<button>删除节点</button>
+		<button>清空节点</button>
+		<ul>
+			<li>11111111</li>
+		</ul>
+	</body>
+</html>

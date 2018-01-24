@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+
+  /*cursor 属性规定要显示的光标的类型（形状）。默认值：auto*/
+	p{
+		color:blue;
+		font:14pt '宋体';
+		background:#fab;
+		cursor:auto;
+		float:left;
+		margin-left:10px;
+	}
+  </style>
+ </head>
+ <body>
+  <span><p style="float:none;width:520px;background:yellow">请把鼠标放到文本上，你将看到指针变化</p></span>
+  <P >cursor:auto</p>
+  <P onmouseover="this.style.cursor='pointer'">cusor: pointer</p> 
+  <P onmouseover="this.style.cursor='all-scroll'">cusor: all-scroll</p>
+  <P onmouseover="this.style.cursor='move'">cusor: move</p>
+  <P onmouseover="this.style.cursor='col-resize'">cusor: col-resize</p> 
+  <P onmouseover="this.style.cursor='crosshair'">cusor: crosshair</p> 
+  <P onmouseover="this.style.cursor='default'">cusor: default</p>
+  <P onmouseover="this.style.cursor='help'">cusor: help</p>
+  <P onmouseover="this.style.cursor='no-drop'">cusor: no-drop</p> 
+  <P onmouseover="this.style.cursor='not-allowed'">cusor: not-allowed</p>
+  <P onmouseover="this.style.cursor='progress'">cusor: progress</p>
+  <P onmouseover="this.style.cursor='row-resize'">cusor: row-resize</p> 
+  <P onmouseover="this.style.cursor='text'">cusor: text</p> 
+
+  <!--cusor:url(uri);设置用户自定义指针样式，uri必需是.cur或者.ani文件-->
+  <P onmouseover="this.style.cursor='url(images/Parallax.cur)'">cusor: url(uri)</p>
+
+  <P onmouseover="this.style.cursor='vertical-text'">cusor: vertical-text</p>
+  <P onmouseover="this.style.cursor='wait'">cusor: wait</p>  
+
+  <!--cusor:*-resize;设置方向性指针；*号指示方向，可以是N, NE, NW, S, SE, SW, E, or W，分别指示一个方向-->
+  <P onmouseover="this.style.cursor='se-resize'">cusor: *-resize</p>
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JQ中的事件绑定</title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: seagreen;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div></div>
+		
+	</body>
+</html>
+<script src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript">
+	
+	/*$( 'div' ).click(function(){
+		alert(1)
+	});*/
+	//单个事件绑定写法
+	$('div').on( 'mouseout',function(){
+		alert('单个事件绑定');
+	} );
+	//多个事件绑定写法
+	$('div').on( {
+		'click':function(){
+			alert( '多个事件绑定'+1 );
+		},
+		'mouseenter':function(){
+			alert('多个事件绑定'+2 );
+		}
+	} );
+	
+	$('div').off( 'mouseenter' );
+	
+	
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>音频标签</title>
+	</head>
+	<body>
+		
+		<!--
+			我们现在可以将 声音理解为一种资源。
+			<img src="" />
+			
+			1 利用 audio标签中的 src 属性可以引入一段声音资源，然后默认不会自动播放，通过 autoplay
+		    可以设置自动播放
+		    
+		    2 目前为止没有哪种音频格式可以被所有的浏览器都支持。
+		    
+		    3 我们在使用的audio的时候为了照顾所有的浏览器我们需要准备不同格式的声音资源，然后引入在
+		     网页中。
+		     
+		    4 我们一般在实际使用 audio 标签的时候不会直接将 src 写在 audio标签身上。我们会在 audio中
+		    嵌套source标签来引入不同的 音频格式。
+			
+		-->
+		
+		<!--audio src="music/yinyue.mp3" autoplay="autoplay"></audio-->
+		
+		<audio autoplay controls loop>
+			
+			<!-- 下面这段文本内容只有当前浏览器不支持audio标签的时候才会显示在网页中 -->
+			对不起，您的浏览器不支持该标签，请前往 <a href="icd.itcast.cn">传智UI学院</a>
+			<source src="music/yinyue.mp3" />
+			<source src="music/yinyue.ogg" />
+			
+		</audio>
+		
+		
+	</body>
+</html>

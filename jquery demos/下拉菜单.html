@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			ul{list-style: none;}
+			a{color:white; text-decoration: none; font-size: 12px;}
+			#box{width:400px; margin:100px auto 0;}
+			#box li{ width: 100px; height:30px; line-height: 30px; float: left; background-color: #ccc; text-align: center; position: relative; }
+			#box li a{ display: block; width: 100px; height: 30px; line-height: 30px; position: relative; }
+			#box li a:hover{background-color: pink;}
+	
+			#box ul li ul{ left: 0; top: 30px; display: none; position: absolute; }
+		</style>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script>
+			$(function(){
+				//方法1
+				//给li添加移入事件
+//				$('#box .demo>li').mouseenter(function(){
+//					//鼠标移入 让儿子ul显示
+//					$(this).children('ul').show();
+//				})
+//				//给li添加移出事件
+//				$('#box .demo>li').mouseleave(function(){
+//					$(this).children('ul').hide();
+//				})
+
+				//方法2
+//				$('#box .demo>li').mouseenter(function(){
+//					//鼠标移入 让儿子ul显示
+//					$(this).children('ul').stop().slideDown();
+//				})
+//				//给li添加移出事件
+//				$('#box .demo>li').mouseleave(function(){
+//					$(this).children('ul').stop().slideUp();
+//				})
+				
+				//方法3
+//				$('#box .demo>li').hover(function(){
+//					//这里代表移入事件
+//					$(this).children('ul').stop().slideDown();
+//				},function(){
+//					//代表移出事件
+//					$(this).children('ul').stop().slideUp();
+//				})
+				//方法4
+//				$('#box .demo>li').hover(function(){
+//					//这里代表移入事件
+//					$(this).children('ul').stop().slideToggle();
+//				},function(){
+//					//代表移出事件
+//					$(this).children('ul').stop().slideToggle();
+//				})
+				//方法5
+				$('#box .demo>li').hover(function(){
+					//如果移入和移出事件的代码完全一样 那么就写一个匿名函数就够了
+					$(this).children('ul').stop().slideToggle();
+				})
+			})
+			
+		</script>
+	</head>
+	<body>
+	<div id="box">
+		<ul class="demo">
+			<li id="li01">
+				<a href="#">平面设计</a>
+				<ul id="ul01">
+                    <li><a href="#">网页内容</a></li>
+                    <li><a href="#">平面内容</a></li>
+                    <li><a href="#">平面内容</a></li>
+                    <li><a href="#">平面内容</a></li>
+				</ul>
+			</li>
+			<li id="li02">
+				<a href="#"> 网页设计</a>
+				<ul id="ul02">
+					<li><a href="#">平面内容</a></li>
+					<li><a href="#">网页内容</a></li>
+					<li><a href="#">网页内容</a></li>
+					<li><a href="#">网页内容</a></li>
+				</ul>
+
+			</li>
+			<li id="li03">
+				<a href="#"> SEO优化</a>
+				<ul id="ul03">
+					<li><a href="#">平面内容</a></li>
+					<li><a href="#">SEO内容</a></li>
+					<li><a href="#">SEO内容</a></li>
+					<li><a href="#">SEO内容</a></li>
+				</ul>
+
+			</li>
+			<li id="li04">
+				<a href="#"> UI设计</a>
+				<ul id="ul04">
+					<li><a href="#">平面内容</a></li>
+					<li><a href="#">UI内容</a></li>
+					<li><a href="#">UI内容</a></li>
+					<li><a href="#">UI内容</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	</body>
+</html>

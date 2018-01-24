@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	html,body{
+		height:400px;
+	}
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;
+		height:2000px;
+		}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	div{
+		margin:100px auto;background:#fab;width:200px;height:200px;
+	}
+ </style>
+ </head>
+ <body>
+	<div>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript">
+//		document.onclick=function(){
+//			console.log("screen.width:"+screen.width);
+//		}
+		$(function(){
+			$(window).mousemove(function(e){
+				var eY=e.pageY;
+				var cY=e.clientY;
+				console.log('e.pageY:'+eY);	//距离页面最顶端
+				console.log('e.clientY:'+cY);//距离可视区域（不含滚动区域）最顶端
+				console.log('screen.height:'+window.screen.height);//当前屏幕的尺寸
+				console.log('screen.width:'+window.screen.width);
+				console.log('$(window).height():'+$(window).height());//浏览器可视区域，去掉滚动条
+				console.log('$(window).width():'+$(window).width());
+				console.log('$(window).innerWidth():'+$(window).innerWidth());
+				console.log('$(window).innerHeight():'+$(window).innerHeight());
+			})
+		})
+	</script>
+ </body>
+</html>

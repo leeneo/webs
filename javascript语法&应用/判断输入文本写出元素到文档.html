@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		/* background:no-repeat; */	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;
+		font:14px '微软雅黑';
+		background-color:#fdfcf8;
+		line-height:1.5;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+ </style>
+ </head>
+ <body>
+	<form action="#" method="post" target="_self" >
+		<label for="texInp">请输入你的星座：</label><input type="text" placeholder="十二星座" onclick="this.placeholder=''" id="texInp" />
+		<input type="button" value="提交" id="btn1" />
+	</form>
+	<script type="text/javascript">
+		var btn=document.getElementById('btn1');
+		var tex=document.getElementById('texInp');
+		var box=document.createElement('div');			
+		box.setAttribute('id','box1');
+		/*var str=document.createTextNode("思想超前，理性自重的星座。一样的不爱受约束，一样的博爱，但他们还是不同射手座；他们较著重於精神层次的提升，是很好的启发对象");*/
+		//box.appendChild(str);alert(tex.value);
+		document.body.appendChild(box);
+		btn.onclick=function(){
+
+			if (tex.value=="水瓶座" || tex.value=="水瓶")
+			{					
+				box.innerHTML="<p><br/>思想超前，理性自重的星座。一样的不爱受约束，一样的博爱，但他们还是不同射手座；他们较著重於精神层次的提升，是很好的启发对象。</p>";
+
+			}else if (tex.value=="双鱼座" || tex.value=="双鱼"){
+				
+				box.innerHTML="<p><br/>多愁敏感，爱作梦、幻想的星座。天生多情，使他们常为情字挣扎，情绪的波动起伏也跟脱不了关系；但他们生性柔弱，很喜欢奉献，也不会随意伤人。</p>";
+
+			}else if (tex.value=="白羊座" || tex.value=="白羊"){
+				
+				box.innerHTML="<p><br/>精力旺盛、活力充沛的星座。性格与爱情多数“横冲直撞”，但纯真的个性里没有杀伤力，所以不用太担心。</p>";
+
+			}else{
+				box.innerHTML="<p><br/>输入错误，请重新输入！</p>";
+			}
+
+		}
+
+</script>
+ </body>
+</html>

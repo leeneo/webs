@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>默认视口大小及视口使用</title>
+		<style type="text/css">
+			*{
+				margin:0;padding: 0px;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div></div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	//我们可以将浏览器的大小理解为视口
+	//获取当前视口大小
+	var vw=document.documentElement.clientWidth;
+	console.log(vw);	
+</script>
+
+

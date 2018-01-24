@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;width:80px;height:25px;display:inline-block;font:normal 14px/25px '宋体';
+	}
+	a[href='www.baidu.com']{
+		background:pink;
+	}
+	a[href='www.sohu.com']{
+		background:#afb;
+	}
+	a[href *='youdao']{
+		background:orange;
+	}
+	a[href *='netease']{
+		background:lightblue;
+	}
+	p{
+		margin:100px auto;
+	}
+	/* 自定义属性：data-**:"***"; */
+	li[data-aihao]{		/* //匹配所有带有data-aihao属性的li */
+		background:#abf;
+	}
+	li[data-aihao='td']{		/* //匹配data-aihao='td'的li */
+		background:pink;
+	}
+	li[data-aihao *='s']{	/* //data-aihao的属性值包含字母s */
+		background:#afb;
+	}
+	li[data-aihao ^='k']{	/* //首字母以k开头 */
+		background:orange;
+	}
+	li[data-aihao $='x']{	/* //以字母x结尾 */
+		background:lightblue;
+	}
+	li[data-aihao |='abc']{	/* //以abc开头，或者等于abc */
+		background:#fab;
+	}
+ </style>
+ </head>
+ <body>
+	<p>
+		<a href="www.baidu.com">百度</a>
+		<a href="www.sohu.com">搜狐</a>
+		<a href="www.youdao.com">有道</a>
+		<a href="www.netease.com">网易</a>
+	</p>
+	<ul>
+		<li data-aihao="td">特定</li>
+		<li data-aihao="cf">吃饭</li>
+		<li data-aihao="sj">睡觉</li>
+		<li data-aihao="xx">学习</li>
+		<li data-aihao="ks">看书</li>
+		<li data-aihao="abc">学习</li>
+		<li data-aihao="lx">旅行</li>
+		<li data-aihao="abc-lq">学习</li>
+	</ul>
+ </body>
+</html>

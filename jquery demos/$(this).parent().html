@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;/* list-style:none;text-align:center; */	
+	}
+	
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	.popBox{
+		background:url('images/59.jpg');width:280px;height:188px;position:fixed;margin:50px auto;left:35%;
+	}
+	#closeA{
+		background:url('images/530.jpg');width:24px;height:24px;position:absolute;top:0;right:0;cursor:pointer;
+	}
+ </style>
+ </head>
+ <body>
+	<div id="" class="popBox">
+		<span id="closeA"></span>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+	
+		$(function(){
+			$('#closeA').click(function(){
+				//alert('1');
+//				$('.popBox').hide(500);
+				$(this).parent().slideUp(500);
+			})
+		})
+	
+	</script>
+ </body>
+</html>

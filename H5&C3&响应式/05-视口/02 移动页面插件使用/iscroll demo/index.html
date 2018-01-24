@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">	
+<title>iScroll demo: simple</title>
+
+<!--
+	第一步引入iscroll.js
+-->
+<script type="text/javascript" src="iscroll.js"></script>
+<!--
+<script src="flexible.js"></script>
+-->
+<script type="text/javascript">
+
+var myScroll;
+function loaded() {
+	//第三步，new iScroll();对象,这个对象里面传入的的值，是我们刚才需要由iscroll管理的块的id的值
+	myScroll = new iScroll('wrapper');
+}
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+
+</script>
+
+<style type="text/css" media="all">
+body,ul,li {
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+body {
+	font-size:12px;
+	font-family:helvetica;
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+}
+
+#header {
+	z-index:2;
+	top:0; 
+	left:0;
+	width:100%;
+	height:45px;
+	padding:0;
+	color:#eee;
+	font-size:20px;
+	line-height:45px;
+	position:absolute;
+	text-align:center;
+	background:lightblue;
+}
+
+#footer {
+	position:absolute; 
+	z-index:2;
+	bottom:0; 
+	left:0;
+	width:100%;
+	height:48px;
+	background:#333;
+	padding:0;
+	border-top:1px solid #444;
+}
+
+#wrapper {
+	/*定义滚动的区域*/
+	position:absolute;
+	top:50px; 
+	bottom:100px; 
+	left:0px;
+	/*宽度占满整个屏幕*/
+	width:100%;
+	 
+}
+
+#scroller {
+	z-index:1;
+	width:100%;
+	padding:0;
+}
+</style>
+</head>
+<body>
+
+<div id="header">传智播客</div>
+
+<!--第二部，定义一个快交由iscroll.js来管理-->
+<div id="wrapper">
+	<!--
+		wrapper下的第一个元素节点，是可以用来滚动的元素节点，要滚动的内容放置到该标签里面
+	-->
+	<div id="scroller">
+		页面内容区域
+		<ul>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			
+		</ul>
+	</div>
+</div>
+<div id="footer"></div>
+
+</body>
+</html>

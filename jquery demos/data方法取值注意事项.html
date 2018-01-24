@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ </head>
+
+ <body>
+ <!--html data 属性 自动转换为小写，这里data('lvClean')方法是获取不到，lvClean&lv-Clean的值的，因为浏览器自动把大写的data自定义属性转换为小写的了-->
+	<input type=""  id="lvClean" data-lvClean="5" />
+	<input type=""  id="lvDirty" data-lv-Dirty="9" />
+	<input type=""  id="lsNum" data-last-Num="19" />
+	<input type=""  id="fsNum" data-first-num="21" />
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//$('#lvClean').data("lvClean","123");
+	var lvClean=$('#lvClean').data("lvClean");		//错误获取不到值
+	var lastNum=$('#lsNum').data("lastnum");		//错误获取不到值
+	//var firstNum=$('#fsNum').data('firstnum');	//错误获取不到值
+
+//	var lvClean=$('#lvClean').data("lvclean");		//正常
+	var lvDirty=$('#lvDirty').data("lv-Dirty");		//正常
+//	var lvDirty=$('#lvDirty').data("lv-dirty");		//正常
+//	var lastNum=$('#lsNum').data("lastNum");		//正常	
+	//var firstNum=$('#fsNum').data('firstNum');	//正常
+	//var firstNum=$('#fsNum').data('first-Num');	//正常
+	console.log("lvClean:"+lvClean);
+	console.log("lvDirty:"+lvDirty);
+	console.log("lastNum:"+lastNum);
+	console.log("firstNum:"+firstNum);
+})
+</script>
+ </body>
+</html>

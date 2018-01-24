@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		/* 图片自适应的两种方式，一般定高不定宽。
+			1,backgroundImage
+				用background-size控制图片平铺方式：cover:填充容器（会变形），contain:适应容器（保持比例）。
+			2,img
+				父容器不定高，高度由图片高度决定；img标签可定高和不定高；不定高，容器通过图片高度撑起
+		 */
+		html,
+		body {
+			width: 100%;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.bd {
+			border: 1px solid #ccc;
+		}
+
+		.divImg {
+			background: url('images/flygirl.jpg') no-repeat center 0 #afb;
+			background-size: contain;
+			background-size: cover;
+			height: 400px;
+			width: 100vw;
+			box-sizing: border-box
+		}
+
+		.imgWrap {
+			width: 100%;
+			/* height: 400px; */
+			box-sizing: border-box;
+			text-align: center;
+			overflow: hidden;
+			border: 1px solid #d2dcdf;
+			border-radius: 2px;
+			box-shadow: 0 0 4px 1px #ddd;
+			margin: 40px auto;
+		}
+
+		.txtWrap {
+			width: 100%;
+			height: 400px;
+			box-sizing: border-box;
+			text-align: center;
+			overflow: hidden;
+			border: 1px solid #d2dcdf;
+			border-radius: 2px;
+			box-shadow: 0 0 4px 1px #ddd;
+			margin: 40px auto;
+		}
+
+		.imgWrap img {
+			max-width: 100%;
+			/* height: 300px; */
+		}
+
+		.txtWrap p {
+			font-size: 1rem;
+			color: rgb(175, 75, 189);
+			height: 300px;
+			background: rgb(189, 215, 252);
+			line-height: 300px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="divImg"></div>
+	<div class="imgWrap">
+		<img src="./images/picture/2016191416191900.jpg"></img>
+	</div>
+	<div class="txtWrap bd">
+		<p class="">图片的自适应</p>
+	</div>
+	<div class="txtWrap">
+	</div>
+</body>
+
+</html>

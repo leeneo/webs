@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+      <title> new document </title>
+      <meta name="generator" content="editplus" />
+      <meta name="author" content="" />
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+</head>
+
+<body>
+      <script type="text/javascript">
+            var arr = [
+                  [1, 2],
+                  [2, 4, 7, 8],
+                  [8, 9, 10, 11],
+                  [9, 12, 13, 15]
+            ];
+
+            var brr = [
+                  [1, 2],
+                  ['a','b']
+            ];
+
+            var crr = new Array(); //先声明一维 
+            for (var i = 0; i < 5; i++) { //一维长度为5 
+                  crr[i] = new Array(); //在声明二维 
+                  for (var j = 0; j < 5; j++) { //二维长度为5 
+                       crr[i][j] = j;
+                  }
+            }
+
+            console.log(arr[2][3]); //表示第1维第3个，索引为3的元素=>11
+            console.log(arr[0]);    //[1,2]
+            console.log(brr[1][0]); //a 第1维第2个，索引为0的元素=>'a'
+            console.log(crr); //a 第2列第1行所在的元素=>1
+            
+      </script>
+
+</body>
+
+</html>

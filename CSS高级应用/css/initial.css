@@ -1,0 +1,16 @@
+/*初始化CSS！*/
+body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+	margin:0; 
+	padding:0; 
+	list-style:none;
+}
+
+/*初写正文样式！*/
+body{
+	color:#666;font:12px '宋体';
+}
+
+/*初写超链接样式！*/
+a{
+	color:#666;text-decoration:none;
+}

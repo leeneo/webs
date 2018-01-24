@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	.wrap{
+		width:958px;overflow:hidden;margin:50px auto;position:relative;border:1px solid #ccc;
+	}
+	.dvImg img{
+		position:absolute;left:0;width:232px;height:400px;z-index:1;background:url('images/course_bg.png');
+	}
+	.dvCont{
+		width:958px;overflow:hidden;height:400px;position:relative;
+	}
+
+	/* img所有的li一定要加position:absolute;否则图片切换时会有闪烁； */
+	.dvCont ul li{
+		display:none;width:958px;height:400px;overflow:hidden;position:absolute;left:0;top:0;
+	}
+/*	.dvCont ul li.current{*/
+/*		display:block;*/
+/*	}*/
+	.dvCont ol{
+		position:absolute;bottom:12px;right:20px;background:#000;border-radius:15px;padding:2px 8px;
+	}
+	.dvCont ol li{
+		width:10px;height:10px;background:#919090;float:left;border-radius:50%;margin:0 3px;border:2px solid #626262;cursor:pointer;
+	}
+	.dvCont ol .current{
+		background:#fff;border-color:#aaa;
+	}
+	.dvCont .leftAr,.dvCont .rightAr{
+		background:url('images/arr.png') no-repeat -84px top;width:41px;height:69px;position:absolute;left:232px;top:50%;margin-top:-35px;
+	}
+	.dvCont .leftAr:hover{
+		background-position:0 top;
+	}
+	.dvCont .rightAr{
+		right:0;left:auto;background-position:right top;
+	}
+	.dvCont .rightAr:hover{
+		background-position:-42px top;
+	}
+ </style>
+ </head>
+ <body>
+
+	<div class="wrap">
+		<div class="dvImg"><img src="images/slideNa.png" alt="" /></div>
+		<div class="dvCont">
+			<ul>
+				<li style="display: block;"><a href="##"><img src="images/picture/2016521716520830.jpg" alt="" /></a></li>
+				<li><a href="##"><img src="images/picture/2016151714153100.jpg" alt="" /></a></li>
+				<li><a href="##"><img src="images/picture/2016391210390800.jpg" alt="" /></a></li>
+				<li><a href="##"><img src="images/picture/2016381210381700.jpg" alt="" /></a></li>
+				<li><a href="##"><img src="images/picture/2016191416191900.jpg" alt="" /></a></li>
+				<li><a href="##"><img src="images/picture/2016111915115000.jpg" alt="" /></a></li>
+				<li><a href="##"><img src="images/picture/2016091211094200.jpg" alt="" /></a></li>
+			</ul>
+			<ol>
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+			<a href="##" class="leftAr"></a>
+			<a href="##" class="rightAr"></a>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var inx=0;//这个变量是轮换图的索引值信息
+			$('ol li').click(function(){				
+				$(this).addClass('current').siblings().removeClass('current');
+				$('.dvCont ul li').eq($(this).index()).fadeIn().siblings().fadeOut();
+				//点击ol的li 要把全局变量的值改成当前点击的索引值
+				inx=$(this).index();
+			})
+
+			$('.leftAr').click(function(){
+				inx--;
+				if (inx<0)
+				{
+					inx=6;
+				}else{
+					
+				}
+				$('.dvCont ol li').eq(inx).addClass('current').siblings().removeClass('current');
+				$('.dvCont ul li').eq(inx).fadeIn().siblings().fadeOut();
+			})
+
+			$('.rightAr').click(function(){
+				rightPlus();
+			})
+
+			function rightPlus(){
+				inx++;
+				if (inx>6)
+				{
+					inx=0;
+				}else{
+					
+				}
+				$('.dvCont ol li').eq(inx).addClass('current').siblings().removeClass('current');
+				$('.dvCont ul li').eq(inx).fadeIn().siblings().fadeOut();
+			}
+
+		   	//定时器自动轮换
+			var timer=null;
+			timer=setInterval(function(){
+				rightPlus();
+			},2000)
+
+		   	//为了用户体验 当鼠标放在banner图区域的时候应该停止定时器 离开后再开启定时器
+			$('.dvCont').hover(function(){
+//				clearInterval('timer');	//错误，定时器变量不能加引号
+				clearInterval(timer);
+			},function(){
+				timer=setInterval(function(){
+					rightPlus();
+				},2000);
+			})
+		})
+	</script>
+ </body>
+</html>

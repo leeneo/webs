@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	ul {
+		margin:0 auto;width:225px;overflow:hidden;
+	}
+	ul li{
+		padding-left:18px;float:left;cursor:pointer;background:url('images/duo1.png') no-repeat left center ;background-size:12px 12px;line-height:20px;
+	}
+	.duo .current{
+		background:url('images/duo2.png') no-repeat left center ;background-size:12px 12px;		
+	}
+	.dan li{
+		background:url('images/radio.gif') no-repeat -2px 3px;background-size:16px 32px;
+	}
+	.dan .current{
+		background:url('images/radio.gif') no-repeat -2px -14px;background-size:16px 32px;
+	}
+ </style>
+ </head>
+ <body>
+	<br /><h3>单选</h3>
+	<input type="radio" name="haha" /><input type="radio" name="haha" /><br />
+	<ul class="dan">
+		<li>我是LI1，但我可以变为单选按钮</li>
+		<li class="current">我是LI2，但我可以变为单选按钮</li>
+		<li>我是LI3，但我可以变为单选按钮</li>
+	</ul>
+
+	<br /><h3>多选</h3>
+	<input type="checkbox" name="cBox" id="" />
+	<input type="checkbox" name="cBox" id="" />
+	<input type="checkbox" name="cBox" id="" />
+	<ul class="duo">
+		<li class="current">我是LI1，但我可以变为多选按钮</li>
+		<li>我是LI2，但我可以变为多选按钮</li>
+		<li>我是LI3，但我可以变为多选按钮</li>
+	</ul>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+	<!--
+		$(function(){
+			//单选按钮
+			$('.dan li').click(function(){
+				//alert($(this).parent('.duo').html());
+				$(this).addClass('current').siblings().removeClass('current');//单选，不需要切换
+			})
+			
+			$('.duo li').click(function(){
+				//单选切换方法1
+				/*if ($(this).hasClass('current'))
+				{
+					$(this).removeClass('current');
+				}else{
+					$(this).addClass('current').siblings().removeClass('current');
+				}*/
+
+				//单选单选切换方法2，toggleClass等同于方法1 if判断语句
+				//$(this).toggleClass('current').siblings().removeClass('current');//单选，可以切换
+				$(this).toggleClass('current');	//多选，可以切换
+			})
+
+				/*$('ul li').click(function(){
+					alert($(this).html());//可以获取到自身和特定父级，但是再获取父级下的子级时就出错了
+					alert($(this).parent('.dan').children().html());//只能获取到子级下第一个孩子,不建议连用
+					alert($(this).parent('.dan').children().html());
+					$(this).parent('.dan').children().addClass('current').siblings().removeClass('current');
+					$(this).parent('.duo').children().toggleClass('current');
+				})*/
+		})
+	-->
+	</script>
+ </body>
+</html>

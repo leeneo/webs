@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding: 0;
+			}
+			div{
+				height:100px;
+			}
+			
+			/*第一种表示法使为直接写颜色的英文，
+			 * 例如：blue（蓝色），red（红的），总共可以表示17种颜色（这里不一一举例，没意义！）
+			 * 
+			*/
+			.div1{
+				background:gold;
+			}
+			
+			/*
+			 * 第二种表示方法为用黄色，绿色，蓝色的值设定color的值。例如：rgb（204,213,9），
+			 * （r代表red红色，g代表green绿色，b代表blue蓝色）
+			 * 括号中的第一个值是red的值，第二个值是绿色的值，第三个是蓝色的值，
+			 * （每个值范围在0~255之间）。
+			 */
+			.div2{
+				/*rgb(),rgba()*/
+				background:rgba(0,0,0,0.6);
+			}
+			
+			/**
+			 *  第三种表示方法为用黄色，绿色，蓝色的值的百分比设定color的值。例如rgb（20%，20%，0）。
+			 */
+			.div3{
+				background:rgb(10%,50%,30%);
+			}
+			
+			/**
+			 * 第四种表示方法是使用颜色的十六进制值设定color的值；
+			 * 十六进制颜色表示以#开头 0123456789abcdef 分别表示0~16的数字,
+			 * #后面第一二位数字表示红色的值，三四位数字表示绿色的值，最后两位数字表示蓝色的值
+			 */
+			.div4{
+				background:#aabbcc;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+		<div class="div4"></div>	
+	</body>
+</html>

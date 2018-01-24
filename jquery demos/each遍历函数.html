@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	.con {
+		width:60px;position:fixed;right:0;top:50%;margin-top:-200px;
+	}
+	.con li{
+		width:58px;height:58px;border:1px solid #E0E0E0;
+	}
+	.con li.first,.con li.last{
+		background:#E60012;color:#E60012;
+	}
+	.con li.last{
+		border-color:#E0E0E0;
+	}
+	.con li a{
+		display:block;width:58px;height:58px;color:#333;overflow:hidden;
+	}
+	.con li .icon_s{
+		display:block;width:24px;height:26px;margin:7px auto 4px;
+	}
+	.con li p{
+		font-size:12px;text-align:center;
+	}
+	.con li.first p,.con li.last p{
+		color:#fff;
+	}
+	.con li.first .icon_s{
+		background:url('images/zxzx1.gif') no-repeat;
+	}
+	.con li.liqq .icon_s{
+		background:url('images/qq_icon.png') no-repeat;
+	}
+/*	.con li.liSpr .icon_s{*/
+/*		background:url('images/tubiao.png') no-repeat;*/
+/*	}*/
+/*	.con li.liSpr .icon_s{*/
+/*		background:url('images/tubiao.png') no-repeat -84px 0;*/
+/*	}*/
+/*	.con li.liSpr .icon_s{*/
+/*		background:url('images/tubiao.png') no-repeat -169px 0;*/
+/*	}*/
+	.con li.liphone .icon_s{
+		background:url('images/dhzx.gif') no-repeat;
+	}
+	.con li.last .icon_s{
+		background:url('images/zx_bg1.png') no-repeat;
+	}
+	.con .liphone{
+		height:80px;
+	}
+	.con li:hover{
+		background:#E60012;border-color:#E60012;
+	}
+	.con li:hover p{
+		color:#fff;
+	}
+	.con .liphone:hover span{
+		background-image:url('images/dhzx1.gif');
+	}
+	.con .liqq:hover{
+		border-top:1px solid #E0E0E0;
+	}
+	.con .liqq:hover span{
+		background:url('images/qq_icon.png') no-repeat;
+	}
+	.con .last:hover span{
+		background:url('images/zx_bg1.png') no-repeat;
+	}
+	/* 首先为3个liSpr设置相同的背景显示状态，然后利用each函数改变每个对象具体的positon值*/
+	.con .liSpr span{background:url('images/tubiao.png') no-repeat 0 0;}
+	.con .liSpr:hover span{background-position-y:bottom;}
+
+	</style>
+	<script type="text/javascript" src="jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.con .liSpr span').each(function(index,el){
+				/*
+					第1（0）个span  x值为0    = -84*0
+					第2（1）个span  x值为-84  = -84*1
+					第3（2）个span  x值为-168 = -84*2
+				*/
+				var xval=-84*index;
+				$(this).css('background-position-x',xval+'px');
+				console.log('index:'+index+'\n');
+				console.log('el:'+el+'\n');
+			})
+		})
+	</script>
+
+ </head>
+ <body>
+	<div class="con">
+		<ul>
+			<li class="first"><a href="##"><span class="icon_s">&nbsp;</span><p>在线咨询</p></a></li>
+			<li class="liqq"><a href="##"><span class="icon_s">&nbsp;</span><p>QQ咨询</p></a></li>
+			<li class="liSpr"><a href="##"><span class="icon_s">&nbsp;</span><p>武汉咨询</p></a></li>
+			<li class="liSpr"><a href="##"><span class="icon_s">&nbsp;</span><p>匿名咨询</p></a></li>
+			<li class="liSpr"><a href="##"><span class="icon_s">&nbsp;</span><p>在线报名</p></a></li>
+			<li class="liphone"><a href="##"><span class="icon_s">&nbsp;</span><p>电话咨询</br>25763845</p></a></li>
+			<li class="last" id="back"><a href="##"><span class="icon_s">&nbsp;</span><p>返回顶部</p></a></li>
+		</ul>
+	</div>
+ </body>
+</html>

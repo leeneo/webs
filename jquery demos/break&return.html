@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ </head>
+
+ <body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var arr=[1,2,3,4,5];
+			//break 退出整个循环，循环外语句照常执行
+//			for(var i in arr){
+//				console.log('正常:'+i);
+//				if(i==3){
+//					console.log('break前:'+i);
+//					break;
+//				}
+//				console.log('break后:'+i);
+//
+//			}
+//			console.log("for循环外语句");
+			//return 退出循环及当前函数体，循环外语句也不执行
+			testReturn();
+			function testReturn(){		
+				for(var i in arr){
+					console.log('正常:'+i);
+					if(i==3){
+						console.log('return前:'+i);
+						return;
+					}
+					console.log('return后:'+i);
+
+				}
+				console.log("for循环外语句");
+			}
+			console.log('入口函数语句');
+		}
+	</script>
+ </body>
+</html>

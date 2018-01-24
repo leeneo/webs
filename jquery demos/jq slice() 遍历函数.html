@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+<!--
+jq slice(a,b);匹配 a--<b之间的元素，从a开始，但不包含b,即等于a，小于b；
+   slice(a);匹配a 及a以后的所有元素。
+-->
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+<p>This is a paragraph.</p>
+
+<ul>
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+  <li>list item 4</li>
+  <li>list item 5</li>
+</ul>
+<dl>
+	<dt>标题1</dt>
+	<dd>内容1</dd>
+	<dt>标题2</dt>
+	<dd>内容2</dd>
+	<dt>标题3</dt>
+	<dd>内容3</dd>
+	<dt>标题4</dt>
+	<dd>内容4</dd>
+</dl>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+$("p").slice(1, 2).wrapInner("<b></b>");			//匹配p[1]
+$('li').slice(0,2).css('background-color', 'red');	//匹配li[0-1]
+$('dl dt').slice(2).css('backgroundColor','#faf');	//匹配dt[1]及其后的所有元素
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:;text-decoration:;
+	}
+	button{
+		width:80px;
+		height:40px;
+	}
+ </style>
+ </head>
+ <body>
+		<button id="btn1" onclick="div1.style.display='block'">按钮1</button>
+		<button id="btn2" onclick="div2.style.display='block'">按钮2</button>
+		<button id="btn3" onclick="div3.style.display='block'">按钮3</button>
+		<!-- <script type="text/javascript">
+			var btn1=document.getElementById('btn1');
+			var btn2=document.getElementById('btn2');
+			var btn3=document.getElementById('btn3');
+			btn1.onclick=function(){
+				document.write("<div style='width:200px;height:100px;background:#abf;border:1px solid #333'></div>");
+			}
+		</script> --> 
+
+		<script type="text/javascript">
+			function addBox(){
+				var layer1=document.createElement("div");
+				var layer2=document.createElement("div");
+				var layer3=document.createElement("div");
+				//var txt=document.createTextNode("div里面放置的内容");
+				layer1.setAttribute("id","div1");
+				layer2.setAttribute("id","div2");
+				layer3.setAttribute("id","div3");
+				//layer.innerHTML="<div style='width:200px;height:100px;background:#abf;border:1px solid #333'></div>";
+				layer1.setAttribute("style","width:200px;height:100px;background:#abf;border:1px solid #333;display:none");
+				layer2.setAttribute("style","width:200px;height:100px;background:#abf;border:1px solid #333;display:none;margin:0.5px 0");
+				layer3.setAttribute("style","width:200px;height:100px;background:#abf;border:1px solid #333;display:none");
+				//layer.appendChild(txt);
+				document.body.appendChild(layer1);
+				document.body.appendChild(layer2);
+				document.body.appendChild(layer3);
+
+			}
+			addBox();
+		</script>
+ </body>
+</html>
