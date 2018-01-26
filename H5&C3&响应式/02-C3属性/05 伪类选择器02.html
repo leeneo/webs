@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>伪类选择器02</title>
+	<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			ul{
+				width:200px;
+				margin:100px auto 0;
+			}
+			li{
+				border:1px solid #ccc;
+				margin-bottom: 10px;
+				text-align: center;
+				font:normal 20px/40px '微软雅黑';
+			}
+			p{
+				margin-bottom:10px;
+			}
+			/* 
+			 * 
+			 * li:nth-child(1)--> 最终想要选中是 li元素，而且这个 li元素必须是它父元素下第一个子元素
+			 * 
+			 * li:nth-of-type(1)->最终想要选中是 li元素，且这个 li 在它父元素下所有的 li 中应该是排
+			 * 在第一位的。
+			 */
+			p:nth-child(1){
+				background: orange;
+			}
+
+			li:nth-child(2){
+				background: seagreen;
+			}
+			
+			p:nth-child(3){
+				background: orange;
+			}
+			li:nth-of-type(2){
+				background: seagreen;
+			}
+			
+			li:nth-last-child(1){
+				background: seagreen;
+			}
+			li:nth-last-of-type(2){
+				background: lightcoral;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<ul>
+			<!-- 原则上 ul 下面的一级子元素不可能有除了 li之外的元素 -->
+			<p>我是ul里的p1元素</p>
+			<li>1</li>
+			<p>我是ul里的p2元素</p>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+		</ul>
+		
+	</body>
+</html>
+

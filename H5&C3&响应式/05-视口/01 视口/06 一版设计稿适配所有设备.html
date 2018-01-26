@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			//!!注意：这个脚本外面不能用window.onload；否则，重写meta标签会把所有文档写成只用一个meta标记的文档
+
+			//动态设置初始缩放比率；比率系数会因为设备dpr不同而做作相应变化，从而达到适配不同设备的目的;
+			// 视口主要是针对iOS设备；安卓屏幕规格过于碎片化，因而不做适配，即同web端一样采用1倍尺寸。
+			var iScale = 1/window.devicePixelRatio;
+			console.log("缩放系数:" + iScale);
+		
+			// 利用JS来重写 meta 标签
+			document.write( '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale='+ iScale +', maximum-scale='+ iScale +', minimum-scale='+ iScale +'" />' );	
+			
+			// 为了达到页面元素在所有设备中看起来大小都是一样的效果，我们需要动态的来根据当前的视口大小
+			// 缩放页面中的元素，那么这个时候我们就可以使用 C3上新增的一个相对字体单位 rem 	
+			// 什么是rem ,1rem 等于多少。	
+			// rem 就是网页根元素的字体大小---》 html的字体大小
+			// 1rem 等于？----》 如果 html 身上的font-size:12px--->1rem 就等于 12px	
+			// 目前我们采用 淘宝的做法，将当前视口等分为 10 份，每份所占据的宽度就是 1rem 的大小。
+			// var vw    = document.documentElement.clientWidth;//clientWidth 就是不同设备下的html文档大小
+			// console.log(vw);
+			// var remFont = vw/10;
+			// var oHtml = document.getElementsByTagName('html')[0];
+			// oHtml.style.fontSize = remFont+'px';
+		
+			// console.log(document.documentElement);//documentElement指示整个HTML文档
+			document.documentElement.style.fontSize = document.documentElement.clientWidth/10+"px";	
+		</script>
+		<title>一版设计稿适配所有设备</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			div{
+				width: 1.3333rem;
+				height: 1.3333rem;
+				background: seagreen;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div></div>
+		
+	</body>
+</html>

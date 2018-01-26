@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ </head>
+
+ <body>
+	  <ul class="am-list" data-flag="true">
+				<li class="am-g" style="padding:15px;" id="paid" onclick="showDetails(this)">
+					<span>
+						<span class="fw">
+							<i class="am-icon-star am-icon-fw star"></i>订单号：
+						</span>@item.OrderNo
+					</span><br />
+					<span>
+						<span class="fw">
+							<i class="am-icon-star am-icon-fw star"></i>金额：
+						</span>@item.PayAmount
+					</span><br />
+					<span>
+						<span class="fw">
+							<i class="am-icon-star am-icon-fw star"></i>下单日期：
+						</span>@item.CreateDate
+					</span>
+					<span class="am-badge am-badge-success am-radius">
+						<i class="am-icon-check"></i>&nbsp;已支付
+					</span>
+				</li>
+				<li class="am-g" style="padding:15px;" onclick="location.href='/store/prepay?orderNo=@item.OrderNo'">
+					<span><span class="fw"><i class="am-icon-star  am-icon-fw star"></i>订单号：</span>@item.OrderNo</span><br />
+					<span><span class="fw"><i class="am-icon-star  am-icon-fw star"></i>金额：</span>@item.PayAmount</span><br />
+					<span><span class="fw"><i class="am-icon-star  am-icon-fw star"></i>下单日期：</span>@item.CreateDate</span>
+					<span class="am-badge am-badge-warning am-radius">
+						<i class="am-icon-credit-card"></i>&nbsp;未支付
+					</span>
+				</li>
+	</ul>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var $flag = $('.am-list').data('flag');
+            var $list_ft = $('.am-list-news-ft');
+            if (!$flag) {
+                $list_ft.hide();
+            }
+            console.log($flag);
+
+            $('#paid').click(function () {
+                console.log("jq click this:"+this);          //返回内部html元素
+                console.log("jq click $(this):"+$(this));    //返回object
+            });
+
+        });
+
+        function showDetails(obj) {
+            console.log("标签click:"+obj);               //先执行，返回内部html元素
+        }
+    </script>
+
+ </body>
+</html>

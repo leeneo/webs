@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	* { margin: 0; padding: 0; list-style: none; }
+	.con { width: 320px; margin: 100px auto; border:1px solid #000; text-align: center; }
+	.con ul li { border-bottom: 1px dashed #ccc; padding: 10px 0; color: gold; }
+	.con ul li img { display: none; }
+	.con ul li p { background:url(images/01.jpg) no-repeat 20px center; }
+</style>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//方法1
+/*		$('.con ul li').mouseover(function(e) {
+            //被滑过的li的儿子p消失，img显示
+			$(this).children('p').hide();
+			$(this).children('img').show();
+        });
+		
+		$('.con ul li').mouseout(function(e) {
+            //被划出的li的儿子p显示，img消失
+			$(this).children('p').show();
+			$(this).children('img').hide();
+        });*/
+		
+		//方法2
+/*		$('.con ul li').hover(function(e) {
+        	//移入
+			$(this).children('p').hide();
+			$(this).children('img').show();
+        },function(){
+			//移出
+			$(this).children('p').show();
+			$(this).children('img').hide();
+		});*/
+
+		//方法3
+/*		$('.con ul li').hover(function(e) {
+        	//移入
+			$(this).children('p').toggle();
+			$(this).children('img').toggle();
+        },function(){
+			//移出
+			$(this).children('p').toggle();
+			$(this).children('img').toggle();
+		});*/
+		
+		//方法4
+/*		$('.con ul li').hover(function(e) {
+        	//移入
+			$(this).children().toggle();
+        },function(){
+			//移出
+			$(this).children().toggle();
+		});*/
+		
+		//方法5
+		$('.con ul li').hover(function(e) {
+			$(this).children().toggle();
+        });
+	})
+</script>
+</head>
+
+<body>
+	<div class="con">
+   		<img src="images/top.png" width="320" height="47" />
+       	<ul>
+        	<li>
+            	<p>怎样在不为人知的情况 15.10元</p>
+            	<img src="images/img.jpg" width="269" height="108" /> 
+            </li>
+        	<li>
+            	<p>怎样在不为人知的情况 15.10元</p>
+            	<img src="images/img.jpg" width="269" height="108" /> 
+            </li>
+        	<li>
+            	<p>怎样在不为人知的情况 15.10元</p>
+            	<img src="images/img.jpg" width="269" height="108" /> 
+            </li>
+        	<li>
+            	<p>怎样在不为人知的情况 15.10元</p>
+            	<img src="images/img.jpg" width="269" height="108" /> 
+            </li>
+        </ul> 
+    </div>
+</body>
+</html>

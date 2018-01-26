@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style>
+	* { margin: 0; padding: 0; }
+	.ad { position: fixed; right: 0; bottom: 0; width: 320px; }
+	.closeBtn { width: 12px; height: 12px; position: absolute; right: 7px; top: 7px; }
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+	$(function(){
+		$('.closeBtn').click(function(){
+			$(this).parent().animate({'bottom':'-165px'},500).animate({'right':'-320px'},500,function(){
+				//此处代码就是回调函数的位置 
+				alert('开机时间打败了80%的人');
+			});
+		})
+	})
+</script>
+</head>
+
+<body>
+	<div class="ad">
+		<a href="##" class="closeBtn"></a>
+		<img src="360/up.png" alt="" />
+		<img src="360/down.png" alt="" />
+	</div>
+</body>
+</html>

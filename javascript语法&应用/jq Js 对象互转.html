@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> Dom&Jq 对象互转 </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ </head>
+
+ <body>
+	<input type="date" id="bDate" class="dateInp"/>
+	<input type="date" id="eDate" class="dateInp"/>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		//jq对象转js
+		$bDate=$('#bDate');
+		var bDate=$bDate[0]||$bDate.get(0);	
+		bDate.valueAsDate=new Date();
+		
+		//DOM对象转JQ对象
+		var eDate=document.getElementById('eDate');
+		$eDate=$(eDate);
+		$eDate.val('2018-10-10');
+	</script>
+ </body>
+</html>

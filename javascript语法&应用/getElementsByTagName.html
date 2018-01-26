@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		/* list-style:none; */
+		/* text-align:center; */	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;
+		font:14px '微软雅黑';
+		background-color:#fdfcf8;
+		line-height:1.5;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	div { 
+		width:100px; height:30px; border: 1px solid #000; background: #ccc; 
+	}
+	.setPink{
+		background:pink;
+	}
+ </style>
+ </head>
+ <body>
+ 	<button id="btn" value="刷漆" type="button">刷漆</button>
+    <div id="box01"></div>
+    <div id="box02"></div>
+    <div class="bc1"></div>
+    <div class="bc2"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+	<script type="text/javascript">
+		var btn=document.getElementById('btn');
+		var arDiv=document.getElementsByTagName('div');
+		btn.onclick=function(){
+			if (btn.innerText=="刷漆")
+			{
+				btn.innerText="去漆";
+				for (var i=0;i<arDiv.length ;i++ )
+				{
+					if (arDiv[i].classname != 'setPink' )
+					{
+						arDiv[i].setAttribute('class','setPink');	//会重写已存在的类名；
+					}else{
+						arDiv[i].setAttribute('class','');
+					}
+				}
+
+			}else{
+				btn.innerText="刷漆";				
+				for (var i=0;i<arDiv.length ;i++ )
+				{
+					if (arDiv[i].classname != 'setPink' )
+					{
+						arDiv[i].setAttribute('class','');	//会重写已存在的类名；
+					}else{
+						arDiv[i].setAttribute('class','setPink');
+					}
+				}
+			}
+		}
+//		alert(btn.innerText);
+	</script>
+ </body>
+</html>

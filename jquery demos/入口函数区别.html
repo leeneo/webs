@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				margin:0 auto;
+			}
+		</style>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script>
+			window.onload = function(){
+				//alert('onload:haha');
+			}
+			window.onload = function(){
+				//alert('onload:hehe');
+				var btn=document.getElementById('btn1');
+				btn.onclick=function(){
+					alert('onload:onclick01');
+				}
+				btn.onclick=function(){
+					alert('onload:onclick02');
+				}
+			}			
+			$(document).ready(function(){
+				//alert('jq:haha');
+			})
+			$(function(){
+				//alert('jq:hehe');
+				$('#btn1').click(function(){
+					alert('jq:onclick01');
+				})
+				$('#btn1').click(function(){
+					alert('jq:onclick02');
+				})
+			})
+		</script>
+		
+	</head>
+	<body>
+		<input type="button" id="btn1" value="单击产生多个事件" />
+	</body>
+</html>

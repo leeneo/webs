@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>H5本地存储</title>
+	</head>
+	<body>		
+		<!--
+			在 HTML5中新增了一些存储方案，可以将直在客户端去保存一些数据
+			
+			localStorage
+			sessionStorage
+			
+			
+		-->		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	// 一般我们在存数据的时候都会以键值对的形式出理。
+	
+	/*
+	 * 01 setItem() 存数据
+	 * 02 getItem() 获取数据
+	 * 03 removeItem()
+	 */
+	
+	// localStorage
+	/*localStorage.setItem( 'name','abc' );
+	var name1 = localStorage.getItem('name');
+	localStorage.removeItem('name');
+	var name2 = localStorage.getItem('name');
+	alert( name2 );*/
+	
+	// sessionStorage
+	/*sessionStorage.setItem('pass','123');
+	var pass1 = sessionStorage.getItem('pass');
+	sessionStorage.removeItem('pass');
+	
+	var pass2 = sessionStorage.getItem('pass');
+	alert(pass2);*/
+	
+	// 上述二种存储的区别
+	
+	//alert( localStorage.getItem('name') );
+	
+	//localStorage.setItem('name','abc');
+	//localStorage.removeItem('name')
+	
+	///alert( localStorage.getItem('name') );
+	
+	alert( sessionStorage.getItem('pass') );
+	sessionStorage.setItem('pass','123');
+	alert( sessionStorage.getItem('pass') );
+	
+	
+	
+</script>

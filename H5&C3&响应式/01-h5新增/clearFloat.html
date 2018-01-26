@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0}
+			.area{
+				width:1000px;
+				margin:0 auto;
+			}
+			.header{
+				height:50px;
+				background:green;
+			}
+			.nav{
+				height:100px;
+				background: blue;
+			}
+			.content{
+				background:orange;
+				margin:10px auto;
+			}
+			.left{
+				background:#ccc;
+				height:300px;
+				width:300px;
+				float:left;
+			}
+			.right{
+				background:#A34100;
+				height:300px;
+				width:670px;
+				float:right;
+			}
+			/*第一种方式，父层div定义高度*/
+			/*第二种方式,在浮动结尾处添加空div标签,添加样式clear:both
+			div.clear{
+				clear:both;
+			}*/
+			/*第三种方式,通过伪元素:after*/
+			div.content:after{
+				content:"";
+				clear:both;
+				display:block;
+			}
+			/*第四种方式,在浮动元素的父元素盒子上添加overflow:hidden*/
+			.footer{
+				height:200px;
+				background:#3071A9;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		
+		
+		<div class="header area"></div>
+		<div class="nav area"></div>
+		<div class="content area">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div class="footer area"></div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>iScroll demo: simple</title>
+
+<script type="text/javascript" src="js/iscroll.js"></script>
+
+<script src="js/flexible.js"></script>
+
+
+<script type="text/javascript">
+
+var myScroll;
+function loaded() {
+	myScroll = new iScroll('wrapper');
+}
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+
+</script>
+
+<style type="text/css" media="all">
+body,ul,li {
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+body {
+	font-size:12/64px;
+	font-size:0.187rem;
+	font-family:helvetica;
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+}
+
+/*
+ 
+ 	rem px 换算说明:
+ 	设计稿: 宽640px ====  10rem   ----> 1rem = 64px
+ 	头部header: 高85px
+ 	换算为rem:  85px = 85/64 rem = 1.328rem
+ 
+ 	这个rem你可以自己定义,例如:定义为20
+ 	设计稿: 宽640px ====  20rem   ----> 1rem = 640/20=32px
+ 	头部header: 高85px
+ 	换算为rem:  85px = 85/32 rem 
+ 
+ * */
+#header {
+	z-index:2;
+	top:0; 
+	left:0;
+	width:100%;
+	font-size:35px;
+	font-size:0.59372rem;/*38px-->38/64rem = */
+	height:1.328rem;
+	padding:0;
+	color:#eee;
+	line-height:1.328rem;
+	position:absolute;
+	text-align:center;
+	background:#e03e3f;
+}
+
+#footer {
+	position:absolute; 
+	z-index:2;
+	bottom:0; 
+	left:0;
+	width:100%;
+	height:48px;
+	background:#333;
+	padding:0;
+	border-top:1px solid #444;
+}
+
+#wrapper {
+	/*定义滚动的区域*/
+	position:absolute;
+	top:1.328rem; 
+	bottom:0px; 
+	left:0px;
+	/*宽度占满整个屏幕*/
+	width:100%;
+	 
+}
+
+#scroller {
+	z-index:1;
+	width:100%;
+	padding:0;
+}
+
+
+
+
+#wrapper .sc_bd {
+  color: #adadad;
+  overflow: hidden;
+  font-size: 0.34375rem;
+  border-bottom: 1px solid #ccc;
+}
+#wrapper .sc_bd .sc_1,
+#wrapper .sc_bd .sc_2 {
+  width: 50%;
+  float: left;
+  padding: 0.3125rem 0;
+  box-sizing: border-box;
+  padding-left: 1.953125rem;
+  background-size: 1.25rem !important;
+}
+#wrapper .sc_bd .sc_1 {
+  border-right: 1px solid #ccc;
+  background: url(images/img_01.jpg) 0.46875rem center no-repeat;
+}
+#wrapper .sc_bd .sc_2 {
+  background: url(images/img_02.jpg) 0.46875rem center no-repeat;
+}
+#wrapper .sc_bd h2 {
+  color: #2b2b2b;
+  font-size: 0.46875rem;
+}
+
+</style>
+</head>
+<body>
+
+<div id="header">有态度俱乐部</div>
+<div id="wrapper">
+	<!--
+		wrapper下的第一个元素节点，是可以用来滚动的元素节点，要滚动的内容放置到该标签里面
+	-->
+	<div id="scroller">
+		
+		<!-- banner图 -->
+		<div class="banner">
+				<img src="images/banner01.jpg" width="100%">
+		</div>
+		
+		
+		
+		<!-- 我的商城 -->
+		<div class="sc_bd">
+			<div class="sc_1">
+				<h2>我的商城</h2>
+				<p>立即登录查看</p>
+			</div>
+			<div class="sc_2">
+				<h2>我的商城</h2>
+				<p>立即登录查看</p>
+			</div>
+		</div>
+			
+			
+		<ul>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			<li>ss</li>
+			
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

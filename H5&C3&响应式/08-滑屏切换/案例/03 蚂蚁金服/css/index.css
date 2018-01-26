@@ -1,0 +1,92 @@
+*{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+html,body,.list{
+	width: 100%;
+	height: 100%;
+}
+.list{
+	overflow: hidden;
+	position: relative;
+}
+.list > li{
+	top:0;
+	left:0;
+	width:100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+	border-top: 1px solid #fff;
+	background-size: cover!important;
+}
+.list > .act{
+	z-index: 10;
+}
+.list>li:nth-child(1){
+	display: block;
+	background: #D82056;
+}
+.list>li:nth-child(2){
+	background: url(../img/p2.jpg) center 0 no-repeat;
+}
+.list>li:nth-child(3){
+	background: url(../img/p3.jpg) center 0 no-repeat;
+}
+.list>li:nth-child(4){
+	background: url(../img/p4.jpg) center 0 no-repeat;
+}
+
+
+
+/* 下方的滑动箭头 */
+
+@keyframes arrow_move{
+	from{
+		opacity: 0;
+		bottom:10px;
+	}
+	to{
+		opacity: 1;
+		bottom: 50px;
+	}
+}
+
+.arrow{
+	left: 50%;
+	width:90px;
+	height: 52px;
+	bottom:10px;
+	z-index: 100;
+	margin-left: -45px;
+	position: absolute;
+	background:url(../img/arr.png) center 0 no-repeat;
+	
+	animation: arrow_move .8s ease-in 0s infinite normal;
+}
+
+.area{
+	top:50%;
+	left:50%;
+	width: 640px;
+	height: 960px;
+	position: absolute;
+	border:10px solid #333;
+	transform: translate(-50%,-50%);
+}
+
+/*第一屏动画样式*/
+.section1 .tv{
+	top:40px;
+	width: 268px;
+	height: 181px;
+	left:50%;
+	position: absolute;
+	margin-left: -134px;
+	background: url(../img/page2/TV.png) 0 0 no-repeat;
+}
+.section1 .hand{
+	top:200px;
+	position: absolute;
+}

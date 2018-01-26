@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>PC拖拽</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			top: 0;
+			left: 0;
+			width: 200px;
+			height: 200px;
+			position: relative;
+			background: seagreen;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div></div>
+
+</body>
+
+</html>
+<script src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript">
+	/*
+	 * 我们需要做的事情就是鼠标在 div 身上按下然后滑动鼠标拖着 div 在屏幕中移动
+	 * 当鼠标抬起的时候让 div 停止当前位置上。
+	 * 
+	 * 01 鼠标按下： 求出此时鼠标距离 div 左边和上边不变的值。
+	 * 02 鼠标滑动： 不停的去设置 div 此时应该具有的left top
+	 * 03 鼠标抬起： 将上一步中的赋值去除，让 div 停在某一个位置
+	 * 
+	 */
+	var $div = $('div');
+	$div.on('mousedown', function (ev) {
+
+		var disx = ev.clientX - $div.offset().left;
+		var disy = ev.clientY - $div.offset().top;
+
+		$(document).on('mousemove', function (ev) {
+			var l = ev.clientX - disx;
+			var t = ev.clientY - disy;
+			$div.css({
+				'left': l,
+				'top': t
+			});
+		});
+
+		$(document).on('mouseup', function () {
+			console.log('mouse has uped');
+			$(this).off('mousemove mouseup');
+		});
+
+	});
+</script>

@@ -1,0 +1,122 @@
+body {
+    font-size:12px;
+    font-family:helvetica;
+    -webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+}
+// 头部样式
+#header {
+    top:0; 
+    left:0;
+    padding:0;
+    z-index:2;
+    color:#fff;
+    width:100%;
+    height:90/64rem;
+    position:absolute;
+    text-align:center;
+    font-size:38/64rem;
+    background:#e03e3f;
+    line-height:90/64rem;
+}
+
+// 主体内容样式
+#wrapper {
+    left:0;
+    z-index:1;
+    width:100%;
+    bottom:0; 
+    top:90/64rem;
+    overflow:auto;
+    position:absolute;
+    #scroller {
+        z-index:1;
+        width:100%;
+        padding:0;
+        position:absolute; 
+    }
+    
+    // 轮播图插件样式
+    .focus {
+        width:10rem;
+        margin:0 auto;
+        height:250/64rem;
+        position:relative;
+        overflow:hidden;
+        .hd{
+            width:100%;
+            height:11px;
+            position:absolute;
+            z-index:1;
+            bottom:5px;
+            text-align:center;
+            ul{
+                display:inline-block;
+                height:5px;
+                padding:3px 5px;
+                background-color:rgba(255,255,255,0.7);
+                -webkit-border-radius:5px;
+                -moz-border-radius:5px;
+                border-radius:5px;
+                font-size:0;
+                vertical-align:top;
+                li{
+                    display:inline-block;
+                    width:5px;
+                    height:5px;
+                    -webkit-border-radius:5px;
+                    -moz-border-radius:5px;
+                    border-radius:5px;
+                    background:#8C8C8C;
+                    margin:0 5px;
+                    vertical-align:top;
+                    overflow:hidden;
+                }
+            }
+        }
+    }
+    .focus .hd ul .on {
+        background:#FE6C9C;
+    }
+    .focus .bd {
+        position:relative;
+        z-index:0;
+    }
+    .focus .bd li img {
+        width:100%;
+        height:250/64rem;
+    }
+    .focus .bd li a {
+        -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+        
+    }
+    
+    // 我的商城样式
+    .sc_bd{
+        color: #adadad;
+        overflow: hidden;
+        font-size: 22/64rem;
+        border-bottom: 1px solid #ccc;
+        .sc_1,.sc_2{
+            width: 50%;
+            float: left;
+            padding:20/64rem 0;
+            box-sizing: border-box;
+            padding-left: 125/64rem;
+            background-size: 80/64rem!important;
+        }
+        .sc_1{
+            border-right: 1px solid #ccc;
+            background: url(../images/img_01.jpg) 30/64rem center no-repeat;
+        }
+        .sc_2{
+            background: url(../images/img_02.jpg) 30/64rem center no-repeat;
+        }
+        h2{
+            color: #2b2b2b;
+            font-size: 30/64rem;
+        }
+    }
+    
+}
+

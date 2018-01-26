@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+  /*初始化CSS*/
+		body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+			margin:0; padding:0; list-style:none;  
+		}
+		.divMain{
+			background:#ddd;
+			width:150px;
+			margin:120px;
+		}
+		a{
+			color:#000;
+			font:10pt "宋体";
+			text-decoration:none;
+		}
+
+/*元素达成父子关系时，后面引用子元素时，必需带上父级路径*/		
+		.divMain li{
+			padding-left:10px;
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #fff ;
+			background:url("about-arrow-hover.png") no-repeat 120px center;
+		}
+/*在此不加.divMain .topLi就不会生效*/
+		.divMain .topLi{
+			background:#49f url('about-arrow.png') no-repeat 120px center;
+		}
+		.topA{
+			color:#fff;
+		}
+  </style>
+ </head>
+ <body>
+	<div class="divMain">
+		<ul>
+			<li class="topLi"><a href="#" class="topA">企业介绍</a></li>
+			<li><a href="#">管理团队</a></li>
+			<li><a href="#">组织架构</a></li>
+			<li><a href="#">公司照片</a></li>
+			<li><a href="#">合作伙伴</a></li>
+			<li><a href="#">媒体报道</a></li>
+		</ul>
+	</div>
+ </body>
+</html>

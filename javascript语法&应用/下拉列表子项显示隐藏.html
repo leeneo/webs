@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:#333;text-decoration:none;letter-spacing:2px;
+	}
+	div{
+		margin:50px auto;
+		width:200px;
+		position:relative;
+	}
+	a.buy{
+		background:url('images/right.gif') no-repeat right center #fff;
+		display:inline-block;
+		padding:5px;
+		width:75px;
+		line-height:20px;
+		text-align:left;
+		border:1px solid #000;
+		position:absolute;
+		z-index:1;
+		/*border-style:solid solid none solid;相当于，border-bottom-style:none;*/
+		
+	}
+	#ulBuy{
+		top:1px;
+		width:200px;
+		border:1px solid #000;
+		position:absolute;
+		margin:30px auto;
+		z-index:-1;
+/*		visibility:hidden;*/
+		display:none;
+	}
+	#ulBuy li{
+		padding:5px;
+		text-align:left;
+		line-height:20px;
+		height:20px;
+		width:200px;
+	}
+	
+ </style>
+ </head>
+ <body>
+  <div id="divFather">
+	<a href="#" class="buy" id="buy">我要买</a>
+	<ul id="ulBuy">
+		<li><a href="#">搜宝贝</a></li>
+		<li><a href="#">逛商城</a></li>
+		<li><a href="#">我的足迹</a></li>
+		<li><a href="#">购物车</a></li>
+	</ul>
+  </div>
+ </body>
+</html>
+<script type="text/javascript">
+	var buy=document.getElementById('buy');
+	var ulBuy=document.getElementById('ulBuy');
+	var divFather=document.getElementById('divFather');
+
+	divFather.onmouseenter=function(){
+		//ulBuy.style.visibility='visible';
+		ulBuy.style.display='block';
+		buy.style.borderBottomStyle='none';
+		buy.style.backgroundImage="url('images/down.gif')";
+		ulBuy.style.top='0px';
+	}
+	divFather.onmouseleave=function(){
+		//ulBuy.style.visibility='hidden';
+		ulBuy.style.display='none';
+		buy.style.borderBottomStyle='solid';
+		buy.style.backgroundImage="url('images/right.gif')";
+		ulBuy.style.top='1px';
+	}
+
+
+</script>

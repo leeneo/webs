@@ -1,0 +1,7 @@
+#55d30f 亮绿
+#E4ECF9	浅褐
+#EBF9E5
+#C0DA6D
+#1-E|FFEFE	青色系
+#FE|1-E|FFE	紫色系
+#FEFE|1-E|F	黄色系

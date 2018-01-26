@@ -1,0 +1,54 @@
+﻿zen coding 快捷键
+
+ctrl+shift+a 用标记包围选中文本,文本框中输入用来包围文本的标记；
+
+ctrl ,|. 光标选择前一个文本|下一个文本
+
+ctrl+/ 光标处切换为/**/注释
+
+ctrl+e 自动闭合标签
+
+ctrl+'+' 标签结尾处或者CSS样式结尾处‘}’，复制此行
+
+ctrl+回车 行内任意位置定位光标到下行起点
+
+
+缩写规则
+E   元素名 (div, p);  
+E#id   带id的元素 (div#content, p#intro, span#error);  
+E.class   带class的元素 (div.header, p.error.critial). id 和 class 可以连写，如： div#content.column.width; 
+E+   自动添加子元素（ul+） 
+E>N  子元素 (div>p, div#footer>p>span);
+E>N*num num:个数；生成num个子元素（ul>li*6,会生成6个li标记）;  
+E+N   兄弟元素 (h1+p, div#header+div#content+div#footer);  
+E*N   多项元素 (ul#nav>li*5>a); 
+E$*N   带序号的元素 (ul#nav>li.item-$*5);
+
+例：
+直接输入文本，按ctrl+e;
+div -><div></div>
+ul>li>a--><ul><li><a href=""></a></li></ul>
+div#p><div id="p"></div>
+div.class><div class="class"></div>
+div>p-><div><p></p></div>
+div#footer>p>span-->
+<div id="footer">
+	<p></p><span></span>
+</div>
+
+style标记内：
+
+p>paddin;pl>padding-left;fl>float;l>left;bg>background;
+bd+-->border:1px solid #000;
+fl:l-->float:l;
+td-->text-decoration
+td:n-->text-decoration:none;
+b->bottom;bd->border:;
+bdb-->border-bottom:;
+bdb+-->border-bottom:1px solid #000;
+m:a>margin:auto;
+pos=>position;
+bdrs=>border-radius
+ov=>overflow;
+fs=font-style
+fz=font-size

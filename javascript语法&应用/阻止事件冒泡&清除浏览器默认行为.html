@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            text-decoration: none;
+        }
+
+        body {
+            background: rgba(109, 139, 199, 0.6);
+            text-align: center;
+        }
+
+        .mainTit {
+            font-size: 4rem;
+            margin: 10rem 0 5rem;
+        }
+
+        .linkWrap {
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .a {
+            font-size: 2.6rem;
+            padding: 1.4rem 2.2rem;
+            display: inline-block;
+            color: #fff;
+        }
+
+        .neo-lgBtn {
+            padding: 1rem 2.4rem;
+            font-size: 2.6rem;
+            line-height: 5.333333333333333rem;
+            cursor: pointer;
+        }
+
+        .neo-lgBtn:first-child {
+            background: rgba(188, 207, 1, 0.9);
+            float: left;
+        }
+
+        .neo-lgBtn:last-child {
+            background: cadetblue;
+            float: right;
+        }
+
+        .neo-btn-halfCircle {
+            border-radius: 66px;
+        }
+
+        .neo-btn-shadow {
+            color: #fff;
+            border-color: rgba(69, 140, 203, 0);
+            box-shadow: 0 0 4px 0 rgba(6, 42, 74, 0.56);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="linkWrap">
+        <a class="neo-lgBtn neo-btn-shadow neo-btn-halfCircle" href="./cc-release.apk" id="adLink">
+            <i class="bgAd"></i>
+            下载 Andorid版
+        </a>
+        <a class="neo-lgBtn neo-btn-shadow neo-btn-halfCircle" href="###">
+            <i class="bgIs"></i>
+            下载 iPhone版
+        </a>
+    </div>
+
+</body>
+
+</html>
+<script>
+    // return false 就可以取消事件默认行为
+    var ua = navigator.userAgent;
+    var isWeiXin = !!/MicroMessenger/i.test(ua);
+    var adLink = document.getElementById("adLink");
+    adLink.onclick = function (e) {
+        if (isWeiXin) {
+            alert("请点击右上角，选择在浏览器中打开");
+            return false;
+        }
+    }
+
+    // 功能:停止事件冒泡 
+    function stopBubble(e) {
+        // 如果提供了事件对象，则这是一个非IE浏览器
+        if (e && e.stopPropagation) {
+            // 因此它支持W3C的stopPropagation()方法
+            e.stopPropagation();
+        } else {
+            // 否则，我们需要使用IE的方式来取消事件冒泡
+            window.event.cancelBubble = true;
+        }
+    }
+
+    // 功能：阻止事件默认行为
+    function stopDefault(e) {
+        // 阻止默认浏览器动作(W3C)
+        if (e && e.preventDefault) {
+            e.preventDefault();
+        } else {
+            // IE中阻止函数器默认动作的方式
+            window.event.returnValue = false;
+        }
+        return false;
+    }
+</script>

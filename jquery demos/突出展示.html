@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;list-style: none;}
+		.fast_r { width: 1000px; margin: 100px auto;}
+		.fast_r ul{overflow: hidden;}
+		.fast_r ul li { float: left; margin-left: 10px; }
+	</style>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script>
+		$(function(){
+			$('.fast_r ul li').hover(function(){
+			//移入 自己不变 小伙伴透明度0.5
+				$(this).siblings().stop().fadeTo(500,0.5);
+			},function(){
+				//移出 自己不变 小伙伴透明度1
+				$(this).siblings().stop().fadeTo(500,1);
+			})
+		})
+	</script>
+</head>
+<body>
+			<div class="fast_r">
+				<ul>
+					<li><a href="#" target="_blank"><img src="images/picture/20161014113433498.jpg" /></a></li>
+					<li><a href="#" target="_blank"><img src="images/picture/20161014113453577.jpg" /></a></li>
+					<li><a href="#" target="_blank"><img src="images/picture/20160219132710304.jpg" /></a></li>
+					<li><a href="#" target="_blank"><img src="images/picture/20161014113534360.jpg" /></a></li>
+				</ul>
+			</div>
+</body>
+</html>

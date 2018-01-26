@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	.org{
+		background:orange!important;
+	}
+	.pink{
+		background:pink;
+	}
+	.show{
+		display:block;
+	}
+	dl{
+		width:100px;margin:100px auto;border:1px solid #aaa;font:bold 14pt '微软雅黑';
+	}
+	dl dt{
+		background:url('images/IconBg.png') no-repeat -407px -458px;cursor:pointer;
+	}
+	dl div{
+		display:none;
+	}
+ </style>
+ <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+ <script type="text/javascript">
+ <!--
+		$(function(){
+			$('dl dt').click(function(){
+//				$(this).siblings().addClass('show');
+				$(this).next().addClass('show');
+			})
+			$('dl dd').hover(function(){
+				$(this).addClass('pink').siblings().removeClass('pink');
+			})
+			$('dl dd').click(function(){
+	//			alert($(this).html());
+				$(this).parent().prev().html($(this).html());
+				$(this).parent().removeClass('show');
+				$(this).addClass('org').siblings().removeClass('org');
+			})
+		})
+ -->
+ </script>
+ </head>
+ <body>
+	<dl>
+		<dt>年付</dt>
+		<div>
+			<dd class="org">半年付</dd>
+			<dd>季付</dd>
+			<dd>月付</dd>
+		</div>
+	</dl>
+ </body>
+</html>

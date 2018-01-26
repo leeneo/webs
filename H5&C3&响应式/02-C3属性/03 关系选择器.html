@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关系选择器</title>
+		
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			.box{
+				width:400px;
+				margin:100px auto 0;
+				font:normal 20px/2em '微软雅黑';
+			}
+			
+			/* 
+			 * > 只能选中某一个元素下面一层的 儿子 元素（带儿不带孙）
+			 * 
+			 * + 首先选中的是兄弟元素，而且该兄弟满足一个特点，它是紧挨着前面元素的后面显示
+			 * 
+			 * ~ 
+			 * 
+			 *  */
+			 .box>span{	/*只对子级生效*/
+				color: red;
+			}
+			.par+h2{	/*只对同级下一个生效*/
+				color: rgb(32, 180, 190);
+				font-size:16px;
+				font-weight: 400
+			}
+			span~p{
+				background: orange;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<!-- 父子兄 -->
+		<div class="box">
+			<p class="par">我是段落1</p>
+			<h2>我是段落2</h2>
+			<h2>我是段落3</h2>
+			<p>45567</p>
+			<span>我.box元素下面的 span</span>
+			<p>
+				<span>我是p元素下面的 span</span>
+			</p>
+			<p>我是.box下的p</p>
+			<div>
+				<p>12345</p>
+				<span>我是div中的span元素</span>
+			</div>
+			<p>我是段落4</p>
+			<p>我是段落5</p>
+		</div>
+	</body>
+</html>

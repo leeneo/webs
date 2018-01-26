@@ -1,0 +1,317 @@
+//头部样式
+#header {
+    top:0; 
+    left:0;
+    z-index:2;
+    width:100%;
+    color: #fff;
+    height:90/64rem;
+    position:absolute; 
+    text-align: center;
+    background-color:#e03e3f;
+    font:normal 38/64rem/1em '宋体';
+}
+
+// 主体内容样式
+#wrapper {
+    left:0;
+    z-index:1;
+    width:100%;
+    bottom:1rem; 
+    top:90/64rem; 
+    overflow:auto;
+    position:absolute;
+    background: #f4f4f4;
+}
+
+#scroller {
+    position:absolute;
+    z-index:1;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    width:100%;
+    padding:0;
+}
+
+/*头部轮播图样式*/
+.slideBox {
+    overflow:hidden;
+    position:relative;
+    height: 250/64rem;
+    min-width:640/64rem;
+}
+.slideBox .hd{
+    z-index:1;
+    right: 10/64rem;
+    bottom:10/64rem;
+    height:28/64rem;
+    position:absolute;
+    padding-top:10/64rem;
+    line-height:28/64rem;
+    border-radius: 10/64rem;
+    background: rgba(0,0,0,.6);
+}
+.slideBox .hd li {
+    float: left;
+    width:20/64rem;
+    height:20/64rem;
+    background:#333;
+    overflow:hidden;
+    background: #ccc;
+    border-radius:50%;
+    text-indent:-9999px;
+    margin-left: 10/64rem;
+}
+.slideBox .hd li.on {
+    background:#fff;
+}
+.slideBox .bd {
+    position:relative;
+    z-index:0;
+}
+.slideBox .bd li {
+    position:relative;
+    text-align:center;
+}
+.slideBox .bd li img {
+    vertical-align:top;
+    width:100%;
+    /* 图片宽度100%，达到自适应效果*/
+}
+.slideBox .bd li a {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+/* 去掉链接触摸高亮*/
+    .slideBox .bd li .tit {
+    display:block;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    text-indent:10/64rem;
+    height:28/64rem;
+    line-height:28/64rem;
+    background:url(images/focusBg.png) repeat-x;
+    color:#fff;
+    text-align:left;
+}
+
+/* 我的商城样式 */
+.my_shop{
+    width: 100%;
+    height: 120/64rem;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    div{
+        width: 50%;
+        float: left;
+        height: 100%;
+        padding-top:30/64rem;
+        background-size: 82/64rem!important;
+        box-sizing: border-box;
+        border-right: 1px solid #ccc;
+    }
+    .title{
+        color: #333;
+        font-size: 30/64rem;
+        padding-left: 125/64rem;
+    }
+    p{
+        color: #adadad;
+        font-size: 22/64rem;
+        padding-left: 125/64rem;
+    }
+    .shop_1{
+        background:url(../images/img_02.jpg) 30/64rem 20/64rem no-repeat;
+    }
+    .shop_2{
+        background:url(../images/img_01.jpg) 30/64rem 20/64rem no-repeat;
+    }
+}
+
+// 限时抢购样式
+.qiangou{
+    background: #fff;
+    margin-top:20/64rem;
+    margin-bottom: 20/64rem;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    .bd_1{
+        height: 215/64rem;
+        padding-top:30/64rem;
+        padding-left: 20/64rem;
+        box-sizing: border-box;
+        border-bottom:1px solid #ccc;
+        background: url(../images/img_03.jpg) right center no-repeat;
+        background-size: 232/64rem 212/64rem;
+        .title{
+            color: #7e2606;
+            font-size: 32/64rem;
+            span{
+                color: #df3031;
+                font-size: 24/64rem;
+                font-weight: normal;
+            }
+        }
+        .txt{
+            color: #000;
+            font-size: 24/64rem;
+            margin-bottom:15/64rem;
+        }
+        h3{
+            float: left;
+            width: 50/64rem;
+            color: #666666;
+            font-size: 20/64rem;  
+            margin-right:10/64rem;
+        }
+        .time{
+            span,i{
+            float: left;
+                font-size: 36/64rem;
+            }
+            i{
+                margin:0 10/64rem;
+            }
+            span{
+                padding:0 10/64rem;
+                border:2px solid #ccc;
+            }
+        }
+        
+    }
+    
+    .bd_2{
+        width: 100%;
+        height: 145/64rem;
+        box-sizing: border-box;
+        div{
+            float: left;
+            width: 50%;
+            height: 100%;
+            padding-top:15/64rem;
+            padding-left: 20/64rem;
+            box-sizing: border-box;
+            border-right:1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background: url(../images/img_04.jpg) right center no-repeat;
+            background-size:100/64rem 145/64rem!important;
+        }
+        .title{
+            color: #eb5984;
+            font-size: 32/64rem;
+        }
+        .txt,span{
+            font-size: 24/64rem;
+        }
+        span{
+            display: block;
+            color: #df3031;
+            margin-top: 10/64rem;
+        }
+        .tm{
+            background: url(../images/img_05.jpg) right center no-repeat;
+            .title{
+                color:#2e8ae0;
+            }
+        }
+    }
+}
+
+// 夏日大趴体
+.xiari{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 25/64rem;
+    border-top:2px solid #fe8501;
+    .title{
+        height: 67/64rem;
+        font-size: 28/64rem;
+        line-height: 67/64rem;
+        padding-left: 20/64rem;
+        border-bottom:1px solid #ccc;
+    }
+    .img{
+        padding:20/64rem;
+        padding-bottom: 0;
+        img{
+            width: 600/64rem;
+            height: 186/64rem;
+        }
+    }
+    .con1{
+        font-size: 26/64rem;
+        padding-left: 20/64rem;
+        padding-bottom: 20/64rem;
+        border-bottom:1px solid #ccc;
+        .txt{
+            color: #1f1f1f;
+        }
+        span{
+            display: block;
+            color:#df3031;
+            margin-top: 10/64rem;
+        }
+    }
+    .con2{
+        width: 100%;
+        box-sizing: border-box;
+        padding:20/64rem;
+        padding-bottom:0;
+        overflow: hidden;
+        div{
+            width:50%;
+            float: left;
+            box-sizing: border-box;
+            border-right: 1px solid #ccc;
+            font-size: 26/64rem;
+        }
+        div:nth-child(2){
+            border-right: 0;
+            padding-left: 20/64rem;
+        }
+        img{
+            width:281/64rem;
+            height: 187/64rem;
+        }
+        .title{
+            padding-left: 0;
+            border-bottom:none;
+        }
+        .txt{
+            color: #1f1f1f;
+            margin-top:0px;
+        }
+        span{
+            display: block;
+            color:#df3031;
+            margin-top: 10/64rem;
+        }
+    }
+}
+
+/* 底部固定导航条样式 */
+#footer {
+    left:0;
+    bottom:0; 
+    z-index:2;
+    width:100%;
+    height:1rem;
+    position:absolute; 
+    background-color:#ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

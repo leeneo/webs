@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+	*{margin:0;padding:0;list-style:none;font-family:Microsoft Yahei;}
+	a{color:#333;text-decoration:none;font-size:14px;}
+	.right{float:right;}
+	.left{float:left;}
+	.wrap{width:800px;margin:50px auto;border:1px solid #ccc;}
+	.wrap h3{height:42px;line-height:42px;padding:0 40px;background:#f9f9f9;color:#333;font-weight:normal;}
+	.wrap li{padding:30px 40px;overflow:hidden;}
+	.wrap .second{border:1px solid #ccc;border-left:none;border-right:none;}
+	.wrap img{border:1px solid #ddd;padding:5px;}
+	.wrap a,.wrap input{float:left;margin-right:15px;}
+	
+	.wrap .right button{float:left;background:#fff;border:1px solid #ccc;width:20px;height:22px;}
+	.wrap .right input{width:50px;height:20px;border:1px solid #ccc;border-left:none;border-right:none;margin:0;text-align:center;}
+	.buyer{background:#f9f9f9;overflow:hidden;padding:20px 40px;font-size:12px;color:#929191;}
+	.buyer span{font-size:16px;color:red;font-weight:bold;padding:0 2px;}
+</style>
+</head>
+
+<body>
+	<div class="wrap">
+    	<h3>购物车</h3>
+    	<ul>
+        	<li>
+            	<div class="left">
+                	
+                    <a><img src="images/1.jpg" width="80" height="80"></a>
+                    <a href="#" id="price">5288</a>
+                </div>
+                <div class="right">
+                	<button id="minu">-</button>
+                    <input type="text" value="1" id="num">
+                    <button id="add">+</button>
+                </div>
+            </li>
+        </ul>
+        <div class="buyer">
+        	
+            <div class="right">
+            	共<span id="sum">1</span>件
+                总价：￥<span id="money">5288</span>                
+            </div>
+        </div>
+    </div>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    /*
+		自定义函数   val方法   change方法
+    */
+    	$(function(){
+			var oPrice = $('#price').html();
+			var num = 1;//商品总数默认是1
+			
+			/*
+				加减：输入框的个数发生变化，下面的商品总数个数也发生边框
+				输入框的数据change的时候，下面的商品总数个数也发生边框
+			*/
+			//减 
+			$('#minu').click(function(){
+				if(num > 0){
+					num--;
+				}
+				$('#num').val(num);
+				setNum();//自定义函数
+			})
+			//加
+			$('#add').click(function(){
+				num++;
+				$('#num').val(num);
+				setNum();
+			})
+			//当手动输入商品个数时：
+			$('#num').change(function(){
+				num = $('#num').val();
+				setNum();
+			})
+			//自定义函数
+			function setNum(){
+				$('#sum').html(num);
+				$('#money').html(oPrice*num) ; //商品总额 = 商品个数*商品的单价
+			}
+			//升级版（思维更严谨）
+			// $('#num').blur(function(){
+			// 	var getNum = $('#num').val();
+			// 	if(Number(getNum)){//控制输入的内容是数字
+			// 		num = getNum;
+			// 	}else{
+			// 		alert('请输入正确的数字');
+			// 	}
+			// 	setNum();
+			// })
+			
+		})
+    </script>
+</body>
+</html>

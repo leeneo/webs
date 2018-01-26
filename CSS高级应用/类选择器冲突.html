@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:;text-decoration:;
+	}
+	/* .obj1{width:800px;height:200px;color:#ccc;} */
+	
+	.obj1 {color:#abc;}
+	.title{color:purple}
+	/* .obj1 .title{color:red} */
+	.obj3 .obj1{color:#afb;}
+	/* .obj3 .title{color:blue;} */
+ </style>
+ </head>
+ <body>
+ <!--
+CSS子元素类名不可与顶级元素(body下第一级)类名相同，即使兄弟元素下的子元素一样会继承顶级类元素的样式，与顶级元素下的子元素类名相同无碍。-->
+  <div class="obj1">obj1
+	<div class="title">obj1.title</div>
+  </div>
+
+  <div class="obj2"></div>
+
+  <div class="obj3">
+	<span class="obj1">ob3.obj1
+	</span>			
+	<span class="title">obj3.title
+	</span>
+  </div>
+
+
+
+ </body>
+</html>

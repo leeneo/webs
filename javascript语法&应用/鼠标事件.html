@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:;text-decoration:;
+	}
+	li{
+		margin:0 auto;
+		margin-top:40px;
+		border:1px solid #000;
+		background:#666;
+		width:200px;
+		height:40px;
+		line-height:40px;
+		text-align:center;
+		color:#fff;
+	}
+ </style>
+ </head>
+ <body>
+  <ul>
+  	<li id="li01">单击</li>
+  	<li id="li02">双击</li>
+  	<li id="li03">移入</li>
+  	<li id="li04">移出</li>
+  	<li id="li05">悬浮</li>
+  	<li id="li06">脱离</li>
+  </ul>
+ </body>
+</html>
+<script type="text/javascript">
+	var li01=document.getElementById('li01');
+	li01.onclick=function(){
+		alert("获取单击事件");
+	}
+	var li02=document.getElementById('li02');
+	li02.ondblclick=function(){
+		alert("获取双击事件");
+	}
+	var li03=document.getElementById('li03');
+	li03.onmouseenter=function(){
+		alert("获取移入事件");
+	}
+	var li04=document.getElementById('li04');
+	li04.onmouseleave=function(){
+		alert("获取移出事件");
+	}
+	var li05=document.getElementById('li05');
+	li05.onmouseover=function(){
+		alert("获取悬浮事件");
+	}
+	var li06=document.getElementById('li06');
+	li06.onmouseout=function(){
+		alert("获取脱离悬浮事件");
+	}
+</script>

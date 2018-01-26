@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=640px, user-scalable=no" />
+		<title>滑屏切换完成</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			html,body,.list{
+				width: 100%;
+				height: 100%;
+			}
+			.list{
+				overflow: hidden;
+				position: relative;
+			}
+			.list > li{
+				top:0;
+				left:0;
+				width:100%;
+				height: 100%;
+				display: none;
+				position: absolute;
+				border-top: 1px solid #fff;
+				background-size: cover!important;
+			}
+			.list > .act{
+				z-index: 10;
+			}
+			.list>li:nth-child(1){
+				display: block;
+				background: url(img/p1.jpg) center 0 no-repeat;
+			}
+			.list>li:nth-child(2){
+				background: url(img/p2.jpg) center 0 no-repeat;
+			}
+			.list>li:nth-child(3){
+				background: url(img/p3.jpg) center 0 no-repeat;
+			}
+			.list>li:nth-child(4){
+				background: url(img/p4.jpg) center 0 no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<ul class="list">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+	</body>
+</html>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+	
+	/*
+	 * 此时我们先完成手指向上滑动屏里需要做的事情，根椐我们的分析，手指向中滑动时
+	 * 我们要让下一从屏幕的下方慢慢显示出来，而且滑动过程中手指滑运多少距离，屏幕
+	 * 就滑动多少距离。
+	 * 
+	 * 所以在这里我们遇到了一个问题，我们需要根据当前屏来判断一下需要显示的下一屏
+	 * 是第几屏，此时我们能获取到的就是当前屏的编号。
+	 * 
+	 */
+	
+	var aLi = $('.list > li');
+	var iH  = $(window).height();
+	
+	var strartY,moveY,endY,nowIndex,nextIndex;
+	
+	aLi.on( 'touchstart',startFn );
+	
+	
+	//	？aLi.on();与$(aLi).on()的效果一样;那么哪个才是标准呢？
+	aLi.on( 'transitionend',function(){
+		
+		aLi.eq(nextIndex).css( {'transition':''} )
+		aLi.eq(nextIndex).show().siblings().hide();
+		
+		// 当上一屏的滑动动画结束之后开启下一屏动画
+		aLi.on( 'touchstart',startFn );
+		
+	} );
+	
+	// 定义手指按下函数
+	function startFn(ev){
+		
+		nowIndex = $(this).index();
+		strartY = ev.originalEvent.changedTouches[0].clientY;
+		
+		$(this).on( 'touchmove', moveFn);
+		
+		$(this).on( 'touchend', endFn);
+		
+	}
+	
+	// 定义手指滑动函数
+	function moveFn(ev){
+		endY = ev.originalEvent.changedTouches[0].clientY;
+		
+		if( strartY > endY ){
+		
+			nextIndex = nowIndex+1;
+			if( nextIndex == 4 ){
+				nextIndex = 0
+			}
+			
+			// 无论是上滑还是下滑，我们需要做的第一步就是找到下一屏li然后让它显示出来
+			aLi.eq(nextIndex).show();
+			aLi.eq(nextIndex).addClass('act').siblings().removeClass('act');
+			
+			// 当我们拿到了下一屏的编号之后需要做的事情就是拿着这个编号去
+			// li所在的集合找到对应的 li 让它向中做动画。
+			moveY = strartY - endY;
+			aLi.eq(nextIndex).css( 'top',iH-moveY );
+			
+			console.log( nextIndex );
+		
+		}else if( strartY < endY ){
+			nextIndex = nowIndex-1;
+			if( nextIndex == -1 ){
+				nextIndex = 3
+			}
+			
+			aLi.eq(nextIndex).show();
+			aLi.eq(nextIndex).addClass('act').siblings().removeClass('act');
+			
+			// 当我们拿到了下一屏的编号之后需要做的事情就是拿着这个编号去
+			// li所在的集合找到对应的 li 让它向中做动画。
+			moveY = endY - strartY;
+			aLi.eq(nextIndex).css( 'top',-iH+moveY );
+			console.log(-iH+moveY);
+		}
+		
+	}
+	
+	// 定义手指抬起函数
+	function endFn(ev){
+		// 当手指抬起时我们需要让下一屏运动到目标点（ 都是top为0的位置 ）
+		aLi.eq(nextIndex).css('top',0);
+		aLi.eq(nextIndex).css( {'transition':'all .5s'} )
+		endY = ev.originalEvent.changedTouches[0].clientY;
+		
+		if( endY != strartY ){
+			aLi.off( 'touchmove touchstart touchend' );
+		}
+		
+	}
+	
+	
+	
+</script>

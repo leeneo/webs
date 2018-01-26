@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS*/
+
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input,i {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+			font-style: normal;
+		}
+		body{
+			background: #61a9cdad;
+		}
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+			animation: myfirst 9s;
+			-moz-animation: myfirst 9s;
+			/* Firefox */
+			-webkit-animation: myfirst 9s;
+			/* Safari and Chrome */
+		}
+
+		.ne-sub {
+			position: relative;
+			display: inline-block;
+			margin: 6% auto;
+			opacity: .6;
+			width: 100px;
+			transition: all 1s;
+			-moz-transition: all 1s;
+			-webkit-transition: all 1s;
+		}
+
+		.btn-default {
+			color: #333;
+			background-color: #fff;
+			border-color: #ccc;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 6px 12px;
+			margin-bottom: 0;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.42857143;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			-ms-touch-action: manipulation;
+			touch-action: manipulation;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			background-image: none;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+
+		.ne-sub i {
+			transform: rotate(360deg);
+			position: absolute;
+			top: 6px;
+			background: url(./images/btnLoop.png) center no-repeat;
+			background-size: contain;
+			float: right;
+			height: 20px;
+			width: 20px;
+			content: '';
+			right: 8px;
+			animation: rollBtn linear .6s infinite;
+		}
+		@keyframes rollBtn {
+            0% {transform: rotate(0deg)}
+            100%{transform:rotate(360deg)}
+        }
+
+		/*创建CSS动画，需要声明@keyframes 规则。在 @keyframes 中规定某项 CSS 样式，就能创建由当前样式逐渐改为新样式的动画效果*/
+		/*@keyframes 中创建动画时，请把它捆绑到某个选择器，否则不会产生动画效果。
+	通过规定至少以下两项 CSS3 动画属性，即可将动画绑定到选择器：
+	规定动画的名称
+	规定动画的时长*/
+
+		@keyframes myfirst {
+			0% {
+				background: red;
+				background: rgba(255, 0, 0, 0.9);
+				transform: rotate(1deg);
+				margin-left: 0
+			}
+			25% {
+				background: yellow;
+				background: rgba(255, 255, 0, 0.6);
+				transform: rotate(180deg);
+				margin-left: 20%
+			}
+			50% {
+				background: blue;
+				background: rgba(0, 0, 255, 0.3);
+				transform: rotate(360deg);
+				margin-left: 90%
+			}
+			750% {
+				background: purple;
+				background: rgba(255, 0, 255, 0.6);
+				transform: rotate(180deg);
+				margin-right: 50%
+			}
+			100% {
+				background: green;
+				background: rgba(0, 255, 0, 0.9);
+				transform: rotate(1deg);
+				margin-right: 90%
+			}
+		}
+
+		@-moz-keyframes myfirst
+		/* Firefox */
+
+		{
+			0% {
+				background: red;
+			}
+			25% {
+				background: yellow;
+			}
+			50% {
+				background: blue;
+			}
+			100% {
+				background: green;
+			}
+		}
+
+		@-webkit-keyframes myfirst
+		/* Safari and Chrome */
+
+		{
+			0% {
+				background: red;
+			}
+			25% {
+				background: yellow;
+			}
+			50% {
+				background: blue;
+			}
+			100% {
+				background: green;
+			}
+		}
+
+		@-o-keyframes myfirst
+		/* Opera */
+
+		{
+			0% {
+				background: red;
+			}
+			25% {
+				background: yellow;
+			}
+			50% {
+				background: blue;
+			}
+			100% {
+				background: green;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div></div>
+	<p>
+		<b>注释：</b>当动画完成时，会变回初始的样式。</p>
+	<p>
+		<b>注释：</b>本例在 Internet Explorer 中无效。</p>
+	<button type="button" class="btn btn-default ne-sub" value="123">
+		登录<i></i>
+	</button>
+</body>
+
+</html>

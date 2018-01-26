@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多条件的媒体查询实现</title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+			
+			@media all and  (min-width:1000px){
+				div{
+					background: orange;
+				}
+			}
+			
+			@media all and (min-width:800px) and (max-width:1000px){
+				div{
+					background: lightblue;
+				}
+			}
+			
+			@media all and  (max-width:800px){
+				div{
+					background: red;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<!--
+			当屏幕尺寸大于等于1000px 的时候让div 显示黄色
+			屏幕尺寸在800-1000px 之间的时候显示蓝色
+			小于800px 的时候显示红色
+		-->
+		
+		<div></div>
+		
+	</body>
+</html>

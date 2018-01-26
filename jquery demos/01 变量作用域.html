@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script>
+			var tv = '电视';//公共变量、全局变量 一旦被修改那么后人再获取这个变量就是被修改后的值
+			$(function(){//我家
+				var dv = 'DV';	//局部变量，只在本方法内有效，其他地方无法获取
+				//alert(tv);
+				tv = '坏电视';
+			})
+			$(function(){//隔壁老王家
+				alert("wang:"+tv);
+				alert("wang:"+dv);
+			})
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

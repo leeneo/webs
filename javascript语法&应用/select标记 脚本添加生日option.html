@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	<!--
+	function getOption(){
+		var arrayA=['1','3','5','7','8','10','12'];
+		var arrayB=['4','6','9','11'];
+		var myform=document.getElementById("frm1");
+		var mymonth=document.getElementById("month");
+		var opMonth=mymonth.options;
+		//alert(opMonth.length);
+		for(var j=1;j<=opMonth.length;j++){
+			if(opMonth[j].selected==true){
+				//alert("被选中的月份："+opMonth[j].selected+"\n月");
+				var boolOp=opMonth[j].value;
+				//alert(mymonth.selectedIndex);
+				for(var k=0;k<=12;k++){
+					if(boolOp==arrayA[k]){
+						//alert("boolOp:"+boolOp+"\n arrayA:"+arrayA[k]);
+						for(var i=1,l=1;i<=31;i++,l++){
+							var oDate = document.createElement("OPTION");
+							oDate.text=i;
+							oDate.value=l;
+							myform.date.add(oDate);
+						}
+					}
+					else if(boolOp==arrayB[k]){
+						for(var i=1,l=1;i<=30;i++,l++){
+							var oDate = document.createElement("OPTION");
+							oDate.text=i;
+							oDate.value=l;
+							myform.date.add(oDate);
+						}
+					}
+					else{
+						for(var i=1,l=1;i<=28;i++,l++){
+							var oDate = document.createElement("OPTION");
+							oDate.text=i;
+							oDate.value=l;
+							myform.date.add(oDate);
+						}
+					}
+				
+
+					continue;
+				}
+			}
+			else{
+				boolOp="";
+				//break;
+			}
+		}
+		
+	}
+	-->
+  </script>	 
+ </head>
+ <body>
+  <h1>基本资料</h1>
+  <hr />
+  <form id='frm1' action="index.html" method="post" name="myform" target="_blank">
+	  <div>
+    性别：<input type="radio" id="sexradio" name="sexradio" value="female" />男<input type="radio" id="sexradio" name="sexradio" value="male" />女<br />
+	生日：<select name="year" id="year">
+			<SCRIPT LANGUAGE="JScript">
+				for(var i=1980,k=0;i<2018;i++,k++){
+					var oYear = document.createElement("OPTION");
+					oYear.text=i;
+					oYear.value=k;
+					myform.year.add(oYear);
+				}
+			</SCRIPT>
+		  </select>
+
+		  <select name="month" id="month" onChange="getOption()">
+			<SCRIPT LANGUAGE="javascript">
+				for(var i=1,k=1;i<=12;i++,k++){
+					var oMonth = document.createElement("OPTION");
+					oMonth.id=i;
+					oMonth.text=i;
+					oMonth.value=k;
+					myform.month.add(oMonth);
+				}
+				//var bool=1;
+				/*if(oMonth.selected=true){
+					alert(oMonth.value);
+				}*/
+			</SCRIPT>
+		  </select>
+
+		  <select name="date" id="date" ><!--思路：在此添加onclick()事件，判定月份被选中项的值-->
+			<SCRIPT LANGUAGE="javascript">
+				for(var i=1,k=1;i<=31;i++,k++){
+					var oDate = document.createElement("OPTION");
+					oDate.text=i;
+					oDate.value=k;
+					myform.date.add(oDate);
+				}
+				
+
+				/*if(document.getElementById(month).oMonth.value==arrayA.value){
+					for(var i=1,k=1;i<=31;i++,k++){
+						oDate.text=i;
+						oDate.value=k;
+						date.add(oDate);
+					}
+				}*/
+
+				/*var x=document.getElementById("month");
+				alert(x.options.length);
+				alert(x.options.value);*/
+
+				/*var coll = document.all.tags("SELECT");
+				if (coll.length>0) {
+
+					for (i=0; i< coll(0).options.length; i++){
+						alert(coll(0).options(i).text + " " + coll(0).options(i).value);
+					}
+					for (i=0; i< coll(1).options.length; i++){
+						alert(coll(1).options(i).text + " " + coll(1).options(i).value);
+					}
+				}*/
+
+			</SCRIPT>
+		  </select><br />
+
+		  血型：<select name="bstyle" id="bstyle">
+					<option value="1">未知</option>	
+					<option value="1">A型</option>	
+					<option value="1">B型</option>	
+					<option value="1">O型</option>	
+
+				</select><br />
+
+		  出生地：<select name="homeland" id="homeland">
+					<option value="1">北京</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+				</select>
+				<select name="homeland_city" id="homeland_city">
+					<option value="1">定西</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+				</select>
+				<select name="homeland_area" id="homeland_area">
+					<option value="1">西城区</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+				</select>
+				<br />
+
+
+		  居住地：<select name="liveland" id="liveland">
+					<option value="1">北京</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+				</select>
+				<select name="liveland_house" id="liveland_house">
+					<option value="1">朝阳区</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+					<option value="1">未知</option>	
+				</select>
+				<br />
+				
+				<textarea name="msgtxar" rows=15 cols=40 wrap="physical" onclick="document.myform.msgtxar.value=''">你想说点什么？</textarea>
+				<br /><input type="submit" name="btSm" id="btSm" value="提交" />
+	 </div>
+
+  </form>
+ </body>
+</html>

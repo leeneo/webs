@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0 auto; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:;text-decoration:;
+	}
+	div.clear,div.placeholder,div.labelForId {width:800px;margin:0 auto;margin-top:50px;height:50px;line-height:50px;text-align:center;
+		background:#abf;}
+	div.placeholder{background:#afb;outline:none;margin-top:0;}
+	div.labelForId{background:#ffb;outline:none;margin-top:0;}
+ </style>
+ </head>
+ <body>
+	<div class="clear">
+		<!--获取焦点清空文本-->
+		<!--用户名： <input type="text" name="username" value="请输入用户名" size=17 maxlength=8 onclick="document.myform.username.value=''" /> form表单中用此形式-->
+		用户名： <input type="text" name="username" value="请输入用户名" size=17 maxlength=8 onclick="this.value=''" />
+	</div> 
+	<div class="placeholder">
+		<!--placeholder-->
+		用户名： <input type="text" name="username" placeholder="请输入用户名" size=17 maxlength=8 />
+	</div> 
+	<div class="labelForId">
+		<!--labelForId,label绑定input:text-->
+		<label for="usaInp" ACCESSKEY="1" >用户名： </label>		
+		<input type="text" name="username" id="usaInp" placeholder="请输入用户名" TABINDEX="1" size=17 maxlength=8 /><br />
+		<SPAN style="text-decoration:underline;">按Alt+1 将焦点设置为黄色文本框</SPAN>
+	</div> 
+</body>
+</html>

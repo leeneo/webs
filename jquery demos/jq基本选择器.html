@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script>
+			$(function(){
+				$('button').eq(0).click(function(){
+					$('p').css('background','pink');
+				})
+//				$('button:eq(0)').click(function(){
+//					$('p').css('background','pink');
+//				})
+				$('button').eq(1).click(function(){
+					$('.left').css('background','pink');
+				})
+				$('button').eq(2).click(function(){
+					$('#box').css('background','pink');
+				})
+				$('button').eq(3).click(function(){
+					$('*').css('background','pink');
+				})
+				
+				$('button').eq(4).click(function(){
+					$('h1,h2,h3').css('background','pink');
+				})				
+				
+				$('button').eq(5).click(function(){
+					$('ul li').css('background','pink');
+				})
+				
+				
+				
+				
+				$('button').eq(6).click(function(){
+					$('.box>div').css('background','pink');
+				})
+				$('button').eq(7).click(function(){
+					$('p+div').css('background','pink');
+				})
+				$('button').eq(8).click(function(){
+					$('p~div').css('background','pink');
+				})
+
+				
+			})
+		</script>
+	</head>
+	<body>
+<button>选择所有段落标签</button>
+<button>选择class为left的标签</button>
+<button>选择id为box的标签</button>
+<button>选择所有标签</button>
+<button>选择所有标题标签</button>
+<button>选择ul里面的li标签</button>
+<button>选择类名box盒子的第一级子盒子添加背景色</button>
+<button>选择p后的一个同级div，等同于.next()</button>
+<button>选择p后的所有同级div</button>
+<p>段落标签</p>
+<p>段落标签</p>
+<p>段落标签</p>
+<div class="left">类选择器</div>
+<div class="left">类选择器</div>
+<div id="box">id选择器</div>
+<h1>标题1标签</h1>
+<h2>标题2标签</h2>
+<h3>标题3标签</h3>
+<ul>
+	<li>列表项</li>
+	<li>列表项</li>
+	<li>列表项</li>
+    <div>我也是div</div>
+</ul>
+<ol>
+	<li>列表项</li>
+	<li>列表项</li>
+	<li>列表项</li>
+</ol>
+<div class="box">
+    <div>
+        我是二级div
+        <div>
+            &nbsp;&nbsp;我是三级div
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;我是四级div</div>
+        </div>
+    </div>
+    <div>我是二级div</div>
+    <div>我是二级div</div>
+</div>
+	</body>
+</html>

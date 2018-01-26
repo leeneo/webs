@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	div{
+		position:relative;
+	}
+	ul{
+		width:500px;overflow:hidden;margin:0 auto;margin-top:100px;border:1px solid #000;font:14pt '微软雅黑';
+		padding:10px 0 40px 88px;
+	}
+	ul li{
+		float:left;width:120px;line-height:40px;text-align:left;
+	}
+	button{
+		background:url('images/down.gif') no-repeat 5px center;border:1px solid #000;line-height:28px;/* font:16px/28px '宋体'; */font-size:16px;position:absolute;padding-left:20px;bottom:95px;left:45%;
+	}
+	.btnChanImg{
+		background:url('images/up.gif') no-repeat 5px center;
+	}
+/*	.dpHide{*/
+/*		display:none;*/
+/*	}*/
+ </style>
+	 <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	 <script type="text/javascript">
+		$(function(){
+			var myLi=$('ul li:gt(3):not(:last)');
+			myLi.hide();
+			$('button').click(function(){
+				$('button').toggleClass('btnChanImg');	//toggleClass()可以替换掉，注释掉的两条语句
+				if ($('button').html()=='显示所有内容')
+				{
+					$('button').html('隐藏所有内容');
+//					$('button').addClass('btnChanImg');
+					myLi.stop().slideDown(500);
+				}else{
+					$('button').html('显示所有内容');
+//					$('button').removeClass('btnChanImg');
+					myLi.stop().slideUp(500);
+				}
+			})
+		})
+	 </script>
+ </head>
+ <body>
+	<div>
+		<ul>
+			<li>佳能</li>
+			<li>索尼</li>
+			<li>三星</li>
+			<li>尼康</li>
+			<li>松下</li>
+			<li>卡西欧</li>
+			<li>富士</li>
+			<li>柯达</li>
+			<li>宾得</li>
+			<li>理光</li>
+			<li>奥林巴斯</li>
+			<li>明基</li>
+			<li>其它品牌相机</li>
+		</ul>
+		<button>显示所有内容</button>
+		<br />
+		<br />
+		<br />
+		<br />
+</div>
+ </body>
+</html>

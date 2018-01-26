@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<!-- 是否启动webapp功能，会删除默认的苹果工具栏和菜单栏。 -->
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+	    <!-- 这个主要是根据实际的页面设计的主体色为搭配来进行设置。 -->
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	    <!-- 忽略页面中的数字识别为电话号码,email识别 -->
+	    <meta name="format-detection"content="telephone=no, email=no" />
+	    <!-- 启用360浏览器的极速模式(webkit) -->
+	    <meta name="renderer" content="webkit">
+	    <!-- 避免IE使用兼容模式 -->
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	    <meta name="HandheldFriendly" content="true">
+	    <!-- 微软的老式浏览器 -->
+	    <meta name="MobileOptimized" content="320">
+	    <!-- uc强制竖屏 -->
+	    <meta name="screen-orientation" content="portrait">
+	    <!-- QQ强制竖屏 -->
+	    <meta name="x5-orientation" content="portrait">
+	    <!-- UC强制全屏 -->
+	    <meta name="full-screen" content="yes">
+	    <!-- QQ强制全屏 -->
+	    <meta name="x5-fullscreen" content="true">
+	    <!-- UC应用模式 -->
+	    <meta name="browsermode" content="application">
+	    <!-- QQ应用模式 -->
+	    <meta name="x5-page-mode" content="app">
+	    <!-- windows phone 点击无高光 -->
+		<title>金币首页</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<script src="js/TouchSlide.1.1.js"></script>
+	</head>
+	<body>
+		<div id="header">有态度俱乐部</div>
+		<div id="wrapper">
+			<div id="scroller">
+				<!-- 头部轮播图 -->
+				<div id="slideBox" class="slideBox">
+					<div class="bd">
+						<ul>
+							<li>
+								<a class="pic" href="#"><img src="images/banner01.jpg" /></a>
+							</li>
+							<li>
+								<a class="pic" href="#"><img src="images/banner01.jpg"/></a>
+							</li>
+							<li>
+								<a class="pic" href="#"><img src="images/banner01.jpg"/></a>
+							</li>
+							<li>
+								<a class="pic" href="#"><img src="images/banner01.jpg"/></a>
+							</li>
+						</ul>
+					</div>
+			
+					<div class="hd">
+						<ul></ul>
+					</div>
+				</div>
+				<script type="text/javascript">
+					TouchSlide({ 
+						slideCell:"#slideBox",
+						titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+						mainCell:".bd ul", 
+						effect:"leftLoop", 
+						autoPage:true,//自动分页
+						autoPlay:true //自动播放
+					});
+				</script>
+			
+				<!-- 我的商城 -->
+				<div class="my_shop">
+					<div class="shop_1">
+						<h2 class="title">我的商城</h2>
+						<p class="txt">立即登录查看</p>
+					</div>
+					<div class="shop_2">
+						<h2 class="title">摇摇签到</h2>
+						<p class="txt">今天还可以签到3次</p>
+					</div>
+				</div>
+			
+				<!-- 限时抢购 -->
+				<div class="qiangou">
+					<div class="bd_1">
+						<h2 class="title">限时抢兑 <span>163金币+1元</span></h2>
+						<p class="txt">新西兰佳沛奇异果新西兰佳沛奇异果</p>
+						<div class="time">
+							<h3>距离开始</h3>
+							<span>00</span>
+							<i>:</i>
+							<span>16</span>
+							<i>:</i>
+							<span>45</span>
+						</div>
+					</div>
+					<div class="bd_2">
+						<div class="cj">
+							<h2 class="title">抽奖</h2>
+							<p class="txt">自动咖啡茶饮机</p>
+							<span>20金币</span>
+						</div>
+						<div class="tm">
+							<h2 class="title">特卖</h2>
+							<p class="txt">自动咖啡茶饮机</p>
+							<span>20金币</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- 夏日大趴体 -->
+				<div class="xiari">
+					<h2 class="title">夏日大趴体</h2>
+					<div class="img">
+						<img src="images/img_06.jpg" alt="" />
+					</div>
+					<div class="con1">
+						<p class="txt">3D立体手绘虎斑猫杯</p>
+						<span>199金币+9.9元</span>
+					</div>
+					<div class="con2">
+						<div class="con2_1">
+							<img src="images/img_07.jpg" alt="" />
+							<h2 class="title">3D立体手绘虎斑猫杯</h2>
+							<span>199金币+9.9元</span>
+						</div>
+						<div class="con2_2">
+							<img src="images/img_07.jpg" alt="" />
+							<h2 class="title">3D立体手绘虎斑猫杯</h2>
+							<span>199金币+9.9元</span>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 夏日大趴 -->
+				<div class="xiari">
+					<h2 class="title">夏日大趴体</h2>
+					<div class="img">
+						<img src="images/img_06.jpg" alt="" />
+					</div>
+					<div class="con1">
+						<p class="txt">3D立体手绘虎斑猫杯</p>
+						<span>199金币+9.9元</span>
+					</div>
+					<div class="con2">
+						<div class="con2_1">
+							<img src="images/img_07.jpg" alt="" />
+							<h2 class="title">3D立体手绘虎斑猫杯</h2>
+							<span>199金币+9.9元</span>
+						</div>
+						<div class="con2_2">
+							<img src="images/img_07.jpg" alt="" />
+							<h2 class="title">3D立体手绘虎斑猫杯</h2>
+							<span>199金币+9.9元</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+<script src="js/iscroll.js"></script>
+<script src="js/reset.js"></script>
+<script type="text/javascript">
+
+	var myScroll;
+	function loaded() {
+		myScroll = new iScroll('wrapper');
+	}
+
+	document.addEventListener('touchmove', function(e){ e.preventDefault(); }, false);
+	document.addEventListener('DOMContentLoaded', function(){ setTimeout(loaded, 200); }, false);
+
+</script>

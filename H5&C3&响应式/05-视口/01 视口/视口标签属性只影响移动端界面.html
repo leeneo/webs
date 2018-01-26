@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <!-- 这里不管width=?,web端视口都等于当前分辨率大小。width 还有initail-scale只影响手机端界面 -->
+    <title>Document</title>
+    <style>
+        div
+        {
+            background: #abf;border: 1px solid #333;width:200px;height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script type="text/javascript">
+    console.log(document.documentElement.clientWidth);
+</script>

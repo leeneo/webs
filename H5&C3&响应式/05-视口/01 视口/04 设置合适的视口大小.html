@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<!-- 如果说我们写的网页需要在手机上查看那么下面这句话必须写 -->
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=2, maximum-scale=1.0, minimum-scale=1.0" />
+		
+		<title>设置合适的视口大小</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			div{
+				width: 375px;
+				height: 200px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			
+			01 如果我们将手机的尺寸做为当前视口的大小，那么会遇到设计稿内容无法完全显示的问题
+			
+			02 动态来设置当前视口的大小：
+				
+				屏幕的物理像素： 就是该屏能够显示下的最多的像素点信息
+				屏幕的逻辑像素： 可以理解为我们当前设备的物理尺寸
+				独立像素比(dpr)：    它是一个比值，就是物理像素/逻辑像素
+				
+			以上三个值都不是我们能够利用代码改变的，我们只能读和用它。
+			
+		-->
+		<div></div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var dpr = window.devicePixelRatio;	
+	console.log( "dpr" + dpr);
+	
+	//两者一般情况下相同
+	var docwidth = document.documentElement.clientWidth;
+	var bodywidth= document.body.clientWidth;
+	console.log("documentwidth-" + docwidth + " : " + "bodywidth-" +  bodywidth);
+	
+</script>

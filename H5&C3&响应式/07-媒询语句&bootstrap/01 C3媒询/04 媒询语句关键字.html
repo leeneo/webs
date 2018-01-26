@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>媒询语句关键字</title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: orange;
+			}
+			
+			/*
+			 * ---当屏幕尺寸大于等于1000px 的时候让div 显示黄色
+			 * 屏幕尺寸在800-1000px 之间的时候显示蓝色
+			 * ---小于800px 的时候显示红色
+			 * 
+			 * 媒体的设备不仅可以查询它的宽度 还可以查询媒体的类型。
+			 * 
+			 * screen: 用来表示彩屏设备类型
+			 * all 
+			 * only
+			 * 
+			 * 
+			 */
+			
+			/*@media (min-width:800px) and (max-width:1000px){
+				div{
+					background: lightblue;
+				}
+			}*/
+			
+			/*@media only screen and (min-width: ) {
+				
+			}*/
+			/* 一般工作中用all指代所有设备 */
+			/*@media all and (max-width:1000px){
+				div{
+					background: seagreen;
+				}
+			}*/
+			/* 浏览器模拟打印设备：chrome 调试器 导航栏右侧竖3点，点开--more tools-rendering--Emulate(模拟) CSS Media --下拉菜单--print*/
+			@media not screen{
+				div{
+					background: seagreen;
+				}
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div></div>
+		
+	</body>
+</html>

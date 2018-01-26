@@ -1,0 +1,59 @@
+/* ‘*’通配符选择器，很少用 
+*{
+	text-align:left;
+}*/
+div{
+	width:800px;
+	/*height:500px;*/
+	text-align:left;
+	background:#f0f0f0;
+	/*margin-left:28.5%;*/
+	margin:0 auto;
+	line-height:50px;
+}
+
+P{
+	font-weight:bold; color:#505050;text-align:center;
+}
+
+span{
+	width:550px;
+	background:#f0a0e0;
+	margin:0 auto;
+	display:block;
+
+
+}
+h1{
+	font-family:'楷体';
+	font-weight:bolder;
+	font-size:18pt;
+	text-align:center;
+	color:#505050;
+}
+h3{
+	font-family:sans-serif;
+	font-weight:bold;
+	font-style:italic;
+	font-size:14pt;
+	text-align:center;
+	color:#f05050
+
+}
+
+body {
+	background-image: url("images/back40.gif");
+}
+
+/*
+调用外部链接CSS，外部CSS文件不能包含任何的html标签。样式表应该以.css 扩展名进行保存。下面是一个HTML页面调用样式表文件的格式：
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+
+或者在<style>里加入import语句，作用同<link>标记,不常用
+<style>
+	@import url("style.css");
+</style>
+*/

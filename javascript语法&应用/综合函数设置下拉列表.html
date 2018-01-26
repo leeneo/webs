@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:#eee;text-decoration:none;
+	}
+
+	.divWrap{
+		width:400px;
+		margin:100px auto;
+	}
+	.boxPos{
+		background:#aaa;
+		color:#eee;
+		cursor:pointer;
+		width:100px;
+		float:left;
+	}
+	.ulN{
+		width:100px;
+		display:none;
+		background:#aaa;
+	}
+	.ulN li{
+		width:100px;
+		color:#eee;
+		cursor:pointer;
+	}
+
+ </style>
+ </head>
+ <body>
+	<div class="divWrap">
+		<div id="boxVip" class="boxPos">
+			<a href="#">UI设计</a>
+			<ul id="ulN" class="ulN">
+				<li>li内容</li>
+				<li>li内容</li>
+				<li>li内容</li>
+				<li>li内容</li>
+			</ul>
+		</div>
+		<div id="boxVip2" class="boxPos">
+			<a href="#">UI设计</a>
+			<ul id="ulN2" class="ulN">
+				<li>li内容</li>
+				<li>li内容</li>
+				<li>li内容</li>
+				<li>li内容</li>
+			</ul>
+		</div>
+		<div id="boxVip3" class="boxPos">
+			<a href="#">UI设计</a>
+			<ul id="ulN3" class="ulN">
+				<li>li内容</li>
+				<li>li内容</li>
+				<li>li内容</li>
+				<li>li内容</li>
+			</ul>
+		</div>
+		<div id="boxVip4" class="boxPos">
+			<a href="#">UI设计</a>
+			<ul id="ulN4" class="ulN">
+				<li>li内容</li>
+				<li>li内容</li>
+				<li>li内容</li>
+				<li>li内容</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			function showBox(box,ulbox){
+				var box=document.getElementById(box);
+				var ulBox=document.getElementById(ulbox);
+				box.onmouseenter=function(){
+					box.style.background='pink';
+					ulBox.style.display='block';
+
+				}
+				box.onmouseleave=function(){
+					box.style.background='#aaa';
+					ulBox.style.display='none';
+
+				}
+			}
+			showBox('boxVip','ulN');
+			showBox('boxVip2','ulN2');
+			showBox('boxVip3','ulN3');
+			showBox('boxVip4','ulN4');
+		</script>
+	</div>
+ </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script>
+		$(function(){
+			var hard=$('<li>222222222222</li>')
+			$('button').eq(0).click(function(){
+//				alert($(this).html());
+				$('ul').append(hard);//在标记内部末端添加子节点
+//				$('ul').prepend(hard)//在标记内部前端添加子节点
+			})
+			$('button').eq(1).click(function(){
+				$('ul').before(hard);//添加同级节点
+//				$('ul').after(hard);
+			})
+			$('button').eq(2).click(function(){
+				$('ul').remove();//删除'ul'节点
+			})
+			$('button').eq(3).click(function(){
+				$('ul').empty();//清空ul内部子节点
+			})
+		})
+	</script>
+	<body>
+		<button>内部添加</button>
+		<button>同级添加</button>
+		<button>删除节点</button>
+		<button>清空节点</button>
+		<ul>
+			<li>1111111111111</li>
+		</ul>
+	</body>
+</html>

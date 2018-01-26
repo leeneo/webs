@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0;padding:0;list-style:none;text-align:center;	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;font:14px '微软雅黑';background-color:#fdfcf8;line-height:1.5;}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	.con {
+		margin:100px auto;width:1220px;font-family:'微软雅黑';
+	}
+	.con ul{
+		overflow:hidden;
+	}
+	.con ul li{
+		float:left;width:232px;height:217px;margin-right:10px;border:1px solid #ccc;padding:56px 0 0 0;position:relative;text-align:center;background:#fff;
+	}
+	.con ul li:hover{
+		border:1px solid dodgerblue;
+	}
+	.con ul li p{
+		height:45px;background:rgba(0,0,0,.5);position:absolute;bottom:-46px;font-size:14px;line-height:22px;width:232px;
+	}
+	.con ul li p a {
+		color:#fff;
+	}
+ </style>
+ </head>
+ <body>
+	<div class="con">
+		<ul>
+			<li>
+				<img src="images/picture/20160930105900608.jpg" alt="" />
+				<p><a href="##">揭秘网红身后的团队<br />魔性营销第一课</a></p>
+			</li>
+			<li>
+				<img src="images/picture/20160308130335283.jpg" alt="" />
+				<p><a href="##">揭秘网红身后的团队<br />魔性营销第一课</a></p>
+			</li>
+			<li>
+				<img src="images/picture/20160624101308951.jpg" alt="" />
+				<p><a href="##">揭秘网红身后的团队<br />魔性营销第一课</a></p>
+			</li>
+			<li>
+				<img src="images/picture/20160308130953935.jpg" alt="" />
+				<p><a href="##">揭秘网红身后的团队<br />魔性营销第一课</a></p>
+			</li>
+			<li>
+				<img src="images/picture/20160401103048600.jpg" alt="" />
+				<p><a href="##">揭秘网红身后的团队<br />魔性营销第一课</a></p>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript">
+		$('.con ul li').hover(function(){
+			$(this).children('p').stop().animate({'bottom':'0px'},500);
+		},function(){
+			$(this).children('p').stop().animate({'bottom':'-46px'},500);			
+		})
+	</script>
+
+ </body>
+</html>

@@ -1,0 +1,18 @@
+.yun_nav .navbar-brand{
+	padding:0 15px;
+	margin-right: 10px;
+}
+.yun_nav .nav_btn span{
+	color: #fff;
+	background: #FF6600;
+	border-radius: 0!important;
+}
+.yun_nav .nav_btn span:nth-child(1){
+	border:1px solid #FF6600;
+	background: none;
+}
+
+.yun_banner{
+	padding:0px;
+	margin-top: 50px;
+}

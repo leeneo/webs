@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{margin: 0;padding: 0;list-style: none;}
+            .wrap{
+                width: 540px;
+                margin:100px auto;
+                text-align: center;
+                font-family: Microsoft Yahei;
+            }
+            .wrap button{
+                padding:0 30px;
+                height: 60px;
+                background:#01AD7D;
+                color:#fff;
+                font-size:18px;
+                margin-bottom: 50px;
+                border: none;
+                cursor: pointer;
+                font-family: Microsoft Yahei;
+            }
+            .wrap li{
+                width: 60px;
+                height: 60px;
+                border: 3px solid #f54646;
+                color:#f54646;
+                line-height: 60px;
+                float: left;
+                margin:0 5px;
+                border-radius: 50%;
+                font-size: 30px;
+            }
+            .wrap #blue{
+                color:#39f;
+                border-color: #39f;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <button id="btn">随机选一注双色球号码</button>
+            <ul>
+                <li>5</li>
+                <li>5</li>
+                <li>5</li>
+                <li>5</li>
+                <li>5</li>
+                <li>5</li>
+                <li id="blue">0</li>
+            </ul>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    
+    //红色球号码从1--33中选择；蓝色球号码从1--16中选择。
+    var oBtn = document.getElementById('btn');
+    var aLis = document.getElementsByTagName('li');
+     getNum();
+    oBtn.onclick=function(){
+        getNum();//自定义函数调用
+    }
+    function getNum(){
+        //方法1
+        // for(var i=0;i<aLis.length-1;i++){
+        //     aLis[i].innerHTML = Math.ceil(Math.random()*34);
+        // }
+        // aLis[aLis.length-1].innerHTML = Math.ceil(Math.random()*17);
+        // 
+        // 
+        // 方法2
+        // for(var i=0;i<aLis.length-1;i++){
+        //     aLis[i].innerHTML = Math.ceil(Math.random()*34);
+        // }
+        // document.getElementById('blue').innerHTML = Math.ceil(Math.random()*17);
+        // 
+        // 
+        // 
+        // 方法3
+         for(var i=0;i<aLis.length;i++){
+            if(i==aLis.length-1){
+                aLis[i].innerHTML.innerHTML = Math.ceil(Math.random()*17);
+            }
+            aLis[i].innerHTML = Math.ceil(Math.random()*34);
+        }
+    }
+
+
+    /*
+    Math.ceil()   向上取整
+    Math.floor()   向下取整
+
+
+     */
+</script>

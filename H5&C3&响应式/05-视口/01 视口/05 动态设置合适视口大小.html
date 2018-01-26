@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">	
+			//动态设置初始缩放比率；比率系数会因为设备dpr不同而做作相应变化，从而达到适配不同设备的目的;
+			// 视口主要是针对iOS设备；安卓屏幕规格过于碎片化，因而不做适配，即同web端一样采用1倍尺寸。
+			var iScale = 1/window.devicePixelRatio;
+			console.log("缩放系数:" + iScale);
+			
+			// 利用JS来重写 meta 标签
+			document.write( '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale='+ iScale +', maximum-scale='+ iScale +', minimum-scale='+ iScale +'" />' );
+	
+		</script>
+		<title>动态设置合适视口大小</title>
+	</head>
+	<body>
+		
+		<!--
+			
+			01: 多大的视口称之为合适？
+			
+				目前来说如果我们想要做到绝对的适配，那么我们在设计PSD的时候就需要给所有尺寸的设备
+				都设计一个PSD，但是这样的工作量就非常的大也没有特别的必要。因此我们真正在做设计的
+				时候，对于移动端页面不管是什么手机操作系统我们都走一版设计稿，然后让这个设计稿去适
+				配所有的设备。
+			
+			02 ：这版设计稿的版心是多少？
+				
+				目前来说使用的非常多的一个标准就是 750*1334，首页这个尺寸是iphone6的屏幕物理分辨率
+				然后如果我们用的是比6小的手机那么相当于将大图缩小，展示不会失真。如果比6要大，相当于
+				将小图放大。可是比6 大的就是 6plus 7 8 9 .....这个缩放的比例是在用户能接受的范围内
+
+
+				物理像素/逻辑像素(dpr) = deveicePixelRatio;
+			
+		-->
+		
+		<div></div>
+		
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		/* list-style:none; */
+		/* text-align:center; */	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;
+		font:14px '微软雅黑';
+		background-color:#fdfcf8;
+		line-height:1.5;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+ </style>
+ </head>
+ <body>
+	<script type="text/javascript">
+		var aStr=['abcd','3',5,"你好",false,true];
+//		alert(aStr);
+//		alert(typeof(aStr));//数组的数据类型：object,可以存放不同的数据类型
+		var aNames=[':张飞','关羽','刘备',"曹操",'小乔'];
+		aNames.push('大乔');//array.push();在数组最后插入对象
+//		alert(typeof aNames+aNames);
+		var rolNum=parseInt(Math.random()*aNames.length);
+//		alert(rolNum);
+		alert(aNames[rolNum]);
+	</script>
+ </body>
+</html>

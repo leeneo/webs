@@ -1,0 +1,181 @@
+/* 顶部样式 */
+.yyshi_navbar{
+	overflow: hidden;
+}
+.yyshi_navbar .navbar-brand{
+	padding:0;
+}
+.yyshi_navbar .navbar-nav a{
+	padding:0 15px;
+	font:normal 16px/60px '微软雅黑';
+}
+.yyshi_navbar span.btn{
+	color: #fff;
+	margin-top:14px;
+	background:#FF6400;
+	border:none;
+	border-radius: 0;
+	
+}
+.yyshi_navbar span.btn:nth-child(1){
+	border:1px solid #FF6400;
+	background: none;
+}
+
+/* 轮播图样式 */
+.yyshi_banner{
+	padding:0;
+	margin-top: 50px;
+}
+
+
+/* 免费专区 */
+.yyshi-free{
+	margin-top: 60px;
+	text-align: center;
+}
+.yyshi-free h3{
+	font:normal 30px/1.5em '微软雅黑';
+}
+.yyshi-free .txt{
+	font:normal 16px/2em '微软雅黑';
+}
+.yyshi-free .row>div{
+	padding:30px 0 40px;
+	border-right: 20px solid #fff;
+}
+.yyshi-free .row>div p{
+	color: #fff;
+	margin-top: 10px;
+	font:normal 20px/2em '微软雅黑';
+}
+.yyshi-free .row>div:nth-child(1){
+	background-color: #ED79A5!important;
+}
+.yyshi-free .row>div:nth-child(2){
+	background-color: #4DD275!important;
+}
+.yyshi-free .row>div:nth-child(3){
+	background-color: #6589D1!important;
+}
+
+/* VIP课程 */
+.yyshi-vip{
+	padding:0;
+	margin-top: 40px;
+	padding-top: 40px;
+	background: #F2F2F2;
+}
+.yyshi-vip h2{
+	font:bold 30px/2em '微软雅黑';
+}
+.yyshi-vip .btn-list{
+	padding-left: 30px;
+	margin-bottom: 30px;
+}
+.yyshi-vip .btn-list a{
+	color: #526DA0;
+	margin-right: 8px;
+	font-family: '微软雅黑';
+	font-size: 14px!important;
+	border:1px solid #526DA0;
+}
+.yyshi-vip .row:nth-of-type(2)>div{
+	margin-bottom: 20px;
+}
+.yyshi-vip .vip-hd{
+	text-align: center;
+}
+.yyshi-vip .vip-hd img{
+	display: inline-block;
+}
+.yyshi-vip .vip-bd{
+	padding:20px 10px;
+	border:1px solid #ccc;
+	border-top: none;
+}
+.yyshi-vip .title{
+	color: #333;
+	font:normal 18px/1em '微软雅黑';
+}
+.yyshi-vip .title span{
+	float: right;
+	color: #FF6400;
+	margin-right: 100px;
+	font:bold 18px/1em '微软雅黑';
+}
+.yyshi-vip .vip-bd p{
+	color: #999;
+	font:normal 12px/2em '微软雅黑';
+}
+.yyshi-vip .vip-bd div{
+	text-align: right;
+}
+
+.footer_box {
+  padding-top: 33px;
+  background: #314363;
+  padding-bottom: 11px;
+}
+.footer .footer_list {
+  margin-right: 120px;
+  float: left;
+}
+.footer dt {
+  color: #fff;
+  margin-bottom: 18px;
+  font: normal 18px/1em '寰蒋闆呴粦';
+}
+.footer dd {
+  color: #b0bcd0;
+  margin-bottom: 14px;
+  padding-left: 13px;
+  font: normal 12px/1em '瀹嬩綋';
+}
+.copy_box {
+  height: 40px;
+  background: #1b2435;
+}
+.copy {
+  color: #7c889e;
+  font: normal 12px/40px '寰蒋闆呴粦';
+}
+
+/* 媒询样式 */
+@media (max-width:960px){
+	
+	.yyshi-free .row>div{
+		padding:30px 0 40px;
+		margin-bottom: 10px;
+		border-right: 0px solid #fff;
+	}
+
+}
+
+@media (max-width:750px){
+	.yyshi-vip .vip-bd{
+		border:none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

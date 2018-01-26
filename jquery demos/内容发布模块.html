@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width:500px;
+				margin:100px auto;
+				text-align:center;
+			}
+			button{
+				margin-top:40px;
+			}
+		</style>
+		<script src="jquery-1.11.1.min.js"></script>
+		<script>
+			$(function(){
+				$('button').click(function(){
+					var my=$('input').val();
+	//				alert(my);
+					var myLi =$('<li>'+my+'</li>');
+					$('ul').prepend(myLi);
+					$('input').val('');
+				})
+	//			$(document).on('click','.con ul li a',function(){
+	//				$(this).parent().slideUp(1000,function(){
+	//					$(this).remove();
+	//				})
+	//			})			
+			})		
+		</script>	
+	</head>
+	<body>
+		<div class="con">
+			新闻发布:&nbsp;<input type="text" value="请输入发布内容" onclick="this.value=''"/><br />
+			<button>发布</button>  
+			<ul></ul>
+		</div>
+	</body>
+</html>

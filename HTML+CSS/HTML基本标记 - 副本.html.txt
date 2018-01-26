@@ -1,0 +1,179 @@
+<!DOCTYPE Doctype goes here>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--Html页面仅能识别一个空格-->
+	<head>
+		  <meta charset="UTF-8">
+		  <meta name="Generator" content="EditPlus®">
+		  <meta name="Author" content="LeeNeo">
+		  <meta name="Keywords" content="HTML基本标记">
+		  <meta name="Description" content="2015.2.20">
+		  <title>HTML基本标记，XHTML1.0</title>
+
+		  <!--base标记用于统一设置链接属性;若设置了href:url,则所有a标记都将跳转到此url目录;<a href="../xx.html"></a>;
+			  <base target='_blank' />
+		  -->
+
+		  <style type="text/css">
+			<!--
+				p,div,blockquote{text-align:center;}
+				a:link {background-color:#B2FF99;}
+				a:visited {background-color:#FFFF85;}
+				a:hover {background-color:#FF704D;}
+				a:active {background-color:#FF704D;}	
+			-->
+		  </style>
+	</head>
+
+	<body bgcolor="#aaffee" text="black" link="silver" alink="blue" vlink="gray">
+
+		<!--设置内部锚点，可以用id,也可以用name;实用时一般<a></a>标记之间不输入内容-->
+		<a id="mark" name="mark">顶部锚点</a>
+		<a href="#bottom">链接底部</a>
+
+		<table border=1 align="center" cellspacing=5 bgcolor="#aa6fee">	
+		<tr>
+			<th colspan=3 align="center">图书</th><!--横向通栏-->
+		</tr>
+		<tr>
+			<td>文学</td>
+			<td>历史</td>
+			<td>舞蹈</td>
+		</tr>
+		<tr>
+			<td>美术</td>
+			<td>音乐</td>
+			<td>编剧</td>
+		</tr>
+		</table>
+		<br/>
+
+		<!--水平分割线-->
+		<div align="center">水平分割线</div><hr />
+		<hr size="30" width="500" align="center" />
+
+		<table border=1 align="center" cellpadding=5 >	
+			<tr bgcolor="olive">
+				<th rowspan=3 valign="middle">图书</th><!--纵向通栏-->
+				<td>文学</td>
+				<td>历史</td>
+
+			</tr>
+			<tr bgcolor="teal">
+				<td>美术</td>
+				<td>音乐</td>
+			</tr>
+			<tr bgcolor="aqua">
+				<td>舞蹈</td>
+				<td>编剧</td>
+			</tr>
+		</table>
+
+
+		<!--无序清单-->
+		<ul>
+			<li type="disc">条目一	
+			<li type="circle">条目二
+			<li type="square">条目三
+		</ul>
+		<!--有序清单-->
+		<ol start="1">
+			<li type="1">条目一	
+			<li type="I">条目二
+			<li type="A">条目三
+		</ol>
+		<!--定义清单-->		
+		<!--1、图文混排效果都用dl制作最简单
+			2、dl中只允许出现dt和dd，dt和dd中可以存放任何内容、任何标签-->
+		<dl>
+			<dt>第一节	
+			<dd>条目一
+			<dt>第二节	
+			<dd>条目一
+			<dt>第三节	
+			<dd>条目一
+			<dd>条目二
+		</dl>
+
+		<!--滚动标记,marquee标签已过时，建议不使用-->
+		<marquee bgcolor="olive" height="35"  direction="right" behavior="alternate" hspace="300" scrolldelay="85" scrollamount="5" loop="0" onmouseover="this.stop()" onmouseout="this.start()">滚动标记</marquee>
+
+		<h1 align="center">一级标题</h1>
+		<h2 align="center">二级标题</h1>
+		<h3 align="center">三级标题</h1>
+		<h6 align="center">六级标题</h1>
+
+		<DIV align="center" style="color:blue">
+			这是一个DIV标记块。
+		</DIV>
+
+		<center>
+			<P>本段包含了<SPAN STYLE="color: blue">SPAN</SPAN>标记。</p>
+
+			<pre style="font-size:15pt" dir="ltr">
+				&lt;pre&gt;&lt;/pre&gt;:预排版标记	保留原代码中的文字排列格式
+				编号	名称	价格
+				0001	天机	18.00
+			</pre>
+		</center>
+
+		<p align="center">
+			<!--特殊字符-->
+			'&'amp='&amp;','&'lt;='&lt','&'gt;='&gt',双引号:&quot;&quot; 空格:&nbsp;'&'nbsp; &copy;版权号&#8482;	
+			2<sup>3</sup> 3<sub>2</sub>
+		</p>
+		<p>
+			<b>'	<'b'>'把文本加粗。</b></br>
+			<strong>'<'strong'>'把文本定义为语气更强的强调的内容。</strong></br></br>
+			<i>'	<'i'>'把文本倾斜。</i></br>
+			<em>'	<'em'>'把文本定义为强调的内容。</em></br></br>
+			<u>'	<'u'>'给文本加下划线。</u></br>
+			<ins>'	<'ins'>'给文本加下划线，具有强调意义。</ins></br><br />
+			<s>'	<'s'>'给文本加删除线。</s></br>
+			<del>'	<'del'>'给文本加删除线，具有强调意义。</del></br><br />
+			<dfn>	'<'dfn'>'定义一个定义项目。</dfn></br>
+			<code>	'<'code'>'定义计算机代码文本。</code></br>
+			<samp>	'<'samp'>'定义样本文本。</samp></br></br>
+			<kbd>	'<'kbd'>'定义键盘文本。它表示文本是从键盘上键入的。它经常用在与计算机相关的文档或手册中。</kbd></br>
+			<var>	'<'var'>'定义变量。您可以将此标签与 '<'pre'>' 及 '<'code'>' 标签配合使用。</var></br>
+			<cite>	'<'cite'>'定义引用。可使用该标签对参考文献的引用进行定义，比如书籍或杂志的标题。</cite><br />
+			<q>		'<'q'>'定义引用文本</q><br /><br />
+					'<'sup'>'是<sup>上标</sup> &nbsp;&nbsp;&nbsp; 
+					'<'sub'>'是<sub>下标</sub>
+		</p>
+
+		<blockquote>	
+			'<'blockquote'>'定义一段长文本引用，自带换行。
+		</blockquote>
+
+		<p align="center">
+			<!--图像热点的定义 img,map,area,需要配套使用-->
+			<!-- 相对路径：‘../’--上级路径；‘./’ --当前路径-->		
+			<img src="./211134-101.jpg" vspace=20 alt="this is a picture" border=0 height=400 usemap="#mapA"/>	
+			<map name="mapA">
+				<area shape="rect" coords="0,0,300,400" href="http://www.baidu.com"  alt="链接到其他文档">
+			</map>
+		</p>
+		
+		<div align="center">
+		<!--支持wmv,avi格式视频文件和mp3格式音频文件-->
+			<embed src="./郁可唯-青衣谣.mp4" width=500 height=450 type="video/mp4" autostart="false" loop="false"/>
+		</div>
+		<!--<bgsound src="D:\影音\音乐\周杰伦\安静.mp3" loop=0 />-->
+
+
+		<div align="center">
+			<br/>
+			<a href="http://www.baidu.com">外网</a><br />
+
+			<!--href="#"--假链接，默认置顶；链接中间的地址也可以换成<img/>标签-->
+			<a href="#top">返回顶部</a>
+
+			<!--先用<a name='mark'> 定义一个锚点，锚点可以是外部的-->
+			<a href="#mark">链接锚点</a>
+			<a href="./test.html#mark">链接外部锚点</a><br />
+
+			<a href="mail to:302698648@qq.com">@E-mail to:302698648@qq.com</a><br />
+			<a id="bottom">底部锚点</a><br />
+		</div>
+	</body>
+</html>

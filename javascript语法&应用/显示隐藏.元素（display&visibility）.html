@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		list-style:none;
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:;font:;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:#333;text-decoration:none;
+	}
+	.divWrap{
+		overflow:hidden;
+		background:#fab;
+		width:400px;
+		height:200px;
+		margin:0 auto;
+	}
+	.divWrap span{
+		text-align:center;
+		display:block;
+	}
+	#showItem{
+		width:200px;
+		height:80px;
+		background:#abf;
+		margin:20px auto;
+		border:1px solid red;
+		//border-left-style:none;
+		//visibility:visible;
+	}
+
+	#btnShow{
+		float:left;
+		margin-left:166px;
+	}
+ </style>
+ </head>
+  <body>
+	<div class="divWrap">
+		<div id="showItem"></div>
+ 		<span>鼠标移入显示隐藏紫色盒子，或者单击按钮</span>
+ 		<button id="btnShow">单击隐藏</button>
+ 	</div> 
+ </body>
+</html>
+<script type="text/javascript">
+
+	var btnShow=document.getElementById('btnShow');
+	var showItem=document.getElementById('showItem');
+	showItem.onmouseenter=function(){
+		showItem.style.visibility='hidden';
+	}
+	showItem.onmouseleave=function(){
+		showItem.style.visibility='visible';
+	}
+
+	btnShow.onclick=function(){
+		//alert(showItem.style.visibilit);		//alert();的值全是未定义的，why?
+		console.log(showItem.style.visibility);	//页面加载后，第一次点击获取不到visibility的值
+		//showItem.style.display='none';		//不占位显示，隐藏后其他元素占用其位置，即位置不保留
+		//showItem.style.visibility='visible';		//visibility:hidden|visible;占位显示，隐藏后位置保留		
+		if(showItem.style.visibility == 'visible'){
+			showItem.style.visibility='hidden';
+			btnShow.innerText='单击显示';
+		}else{
+			showItem.style.visibility='visible';
+			btnShow.innerText='单击隐藏';
+		}
+	}
+
+</script>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/*初始化CSS！*/
+	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
+		margin:0; 
+		padding:0; 
+		/* list-style:none; */
+		/* text-align:center; */	
+	}
+
+	/*初写正文样式！*/
+	body{
+		color:#333;
+		font:14px '微软雅黑';
+		background-color:#fdfcf8;
+		line-height:1.5;
+	}
+
+	/*初写超链接样式！*/
+	a{
+		color:#338de6;text-decoration:none;
+	}
+	dl{
+		width:500px;
+		margin:100px auto;
+	}
+	dl dt,dl dd{
+		margin-top:50px;text-align:center;
+	}
+	button{
+		background:orange;border:0;width:100px;height:40px;color:#efe;
+		font:16px '宋体';
+	}
+	span{
+		color:#fff;width:58px;height:58px;background:#f25;border-radius:100%;font: normal 38px '华文新魏';display:inline-block;
+	}
+	.blue{
+		background:#25f;
+	}
+ </style>
+ </head>
+ <body>
+	<dl>
+		<dt>
+			<button id="btnCk">双色球投注</button>
+		</dt>
+		<dd>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span class="blue"></span>
+		</dd>
+	</dl>
+	<script type="text/javascript">
+		var btnCk=document.getElementById('btnCk');
+		var spns=document.getElementsByTagName('span');
+		//		alert(spns.length);
+
+		function getRanum(){
+			for (var j=0;j<spns.length;j++)
+			{
+				if (j<spns.length-1)
+				{
+					spns[j].innerText=parseInt(Math.random()*33)+1;	//ran值是从0开始，为保证最小值是1，num值要+1;	
+					//spns[j].innerText=Math.ceil(Math.random()*34);  //Math.ceil();向上取整；Math.floor();向下//取整；
+				}else{
+					//spns[j].innerText=parseInt(Math.random()*16)+1;
+					spns[j].innerText=Math.ceil(Math.random()*17);	
+				}
+			}
+			//方法1
+			// for(var i=0;i<aLis.length-1;i++){
+			//     aLis[i].innerHTML = Math.ceil(Math.random()*34);
+			// }
+			// aLis[aLis.length-1].innerHTML = Math.ceil(Math.random()*17);
+			// 
+			// 
+			// 方法2
+			// for(var i=0;i<aLis.length-1;i++){
+			//     aLis[i].innerHTML = Math.ceil(Math.random()*34);
+			// }
+			// document.getElementById('blue').innerHTML = Math.ceil(Math.random()*17);
+			// 
+			// 
+			// 
+			// 方法3
+			//	for(var i=0;i<aLis.length;i++){
+			//		if(i==aLis.length-1){
+			//			aLis[i].innerHTML.innerHTML = Math.ceil(Math.random()*17);
+			//		}
+			//		aLis[i].innerHTML = Math.ceil(Math.random()*34);
+			//	}
+		}
+		btnCk.onclick=function(){
+			getRanum();
+		}
+		getRanum();
+	</script>
+ </body>
+</html>
