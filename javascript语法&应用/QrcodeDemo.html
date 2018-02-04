@@ -47,10 +47,15 @@
         // $('#imgcode').qrcode(utf16to8(text));
         new QRCode(document.getElementById('imgcode'), text);
 
-        text = "20166567815949499";
+        text = "http://mp.ccspa168.com/Utils/test.html";
         // $('#propcode').qrcode({//渲染方式有两种：canvas|table;默认canvas;
         //     render:'table',width:'200',height:'200',correctLevel:0,text:text
         // });
+        // $propcode=$('#propcode');    //jq 的选择器亦适用
+        // $propcode.qrcode(text);      
+        // $qrcodes=$('.qrcodeWrap');   //匹配多个类，可以生成多个二维码
+        // $qrcodes.qrcode(text);
+
         var qrcode = new QRCode('propcode', {
             text: text,
             width: '200',
