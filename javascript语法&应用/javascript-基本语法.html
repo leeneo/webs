@@ -1,109 +1,122 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="">
 
-  <title>Document</title>
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<title>Document</title>
 	<!--行内script: <button onclick="alert('text');"></button>-->
 	<!--外链script：<script type="text/javascript" src="js.js" >这之间的脚本不执行</script>-->
-  <script type="text/javascript">
-	/*入口函数*/
-//	window.onload=function (){}
-//	window.onload=function fnc(){}
+	<script type="text/javascript">
+		/*入口函数*/
+		//	window.onload=function (){}
+		//	window.onload=function fnc(){}
 
-    /*JavaScript是解释型的脚本语言*/
-	document.write("输出结果(语法部分请查看源代码):<br/>");
+		/*JavaScript是解释型的脚本语言*/
+		document.write("输出结果(语法部分请查看源代码):<br/>");
 
-	//用于声明变量
-	var count=0;
-	//document.write();输出的内容为html代码形式，不同alert();可以直接输出html标记到后端代码;
-	document.write("hello javascript!");
-	document.write("<h2>hello javascript!</h2>");
+		//用于声明变量
+		var count = 0;
+		//document.write();输出的内容为html代码形式，不同alert();可以直接输出html标记到后端代码;
+		document.write("hello javascript!");
+		document.write("<h2>hello javascript!</h2>");
 
-	//new Array();用于声明数组，javascript数组中可以混合存放不同数据类型
-	var names=new Array();
-	var classes=new Array(10);
-	var videos=new Array("汉字","中文","字符串");
-	var nums=[2,4,6,7,9];nums[1]=5;
-	var elements=Array(true,false,0,1,"乱码");
-	document.write("names:"+names+"<br/>");
-	document.write("classes:"+classes+"<br/>");
-	document.write("videos:"+videos+"<br/>");
-	document.write("nums:"+nums+"<br/>");
-	document.write("elements:"+elements+"<br/>");
+		//new Array();用于声明数组，javascript数组中可以混合存放不同数据类型
+		var names = new Array();
+		var classes = new Array(10);
+		var videos = new Array("汉字", "中文", "字符串");
+		var nums = [2, 4, 6, 7, 9];
+		nums[1] = 5;
+		var elements = Array(true, false, 0, 1, "乱码");
+		document.write("names:" + names + "<br/>");
+		document.write("classes:" + classes + "<br/>");
+		document.write("videos:" + videos + "<br/>");
+		document.write("nums:" + nums + "<br/>");
+		document.write("elements:" + elements + "<br/>");
 
-	/*运算符*/
-	//算术运算符：+，-，*，/，%，++，--，-（求反）
-	//比较运算符：==，!=，>，<，>=，<=
-	//逻辑运算符：&&,||,!
-	
-	function changeLink(){
-		if(document.getElementById('aTest').innerHTML=="百度")
-		{
-			document.getElementById('aTest').innerHTML="搜狐";
-			document.getElementById('aTest').href="http://www.sohu.com";
-		}
-		else{
-			document.getElementById('aTest').innerHTML="百度";
-			document.getElementById('aTest').href="http://www.baidu.com";
-		}
-		
-		
-		//window.alert("1");
-	}
+		/*运算符*/
+		//算术运算符：+，-，*，/，%，++，--，-（求反）
+		//比较运算符：==，!=，>，<，>=，<=
+		//逻辑运算符：&&,||,!
 
-	/*for（1;2;3)语句的执行顺序是 先执行1，然后判断2，为真就执行内嵌语句，语句完成后执行3，然后开始下次循环。*/　 
-	function fcClick(){
-		for(var i=0;i<3;i++){
-			alert("i:"+i+"\n");/*空格:"\n"*/
+		function changeLink() {
+			if (document.getElementById('aTest').innerHTML == "百度") {
+				document.getElementById('aTest').innerHTML = "搜狐";
+				document.getElementById('aTest').href = "http://www.sohu.com";
+			} else {
+				document.getElementById('aTest').innerHTML = "百度";
+				document.getElementById('aTest').href = "http://www.baidu.com";
+			}
+
+
+			//window.alert("1");
 		}
 
-	}
+		/*for（1;2;3)语句的执行顺序是 先执行1，然后判断2，为真就执行内嵌语句，语句完成后执行3，然后开始下次循环。*/
+		　
+		function fcClick() {
+			for (var i = 0; i < 3; i++) {
+				alert("i:" + i + "\n"); /*空格:"\n"*/
+			}
 
-	// 事件声明：
-	//方式1：
-	// obj.onclick=function(){}
-	// 方式2：
-	// function aFn(){}
-	// obj.onclick=aFn
-
-	/*DOM对象分层结构*/
-	//window.history|document|location;
-	//document.body|link|form|anchor;
-	//form.button|text|radio|select;
-
-	/*DOM中常用的几个方法*/
-	/*
-		document.getElementById('id');通过id属性获取元素;
-		document.getElementsByName('name');通过name属性获取元素;
-		object.getElementsByTagName('tagName');通过标签名获取元素;
-		object.setAttribute('key',value);为对象设置指定属性;
-		object.getAttribute('key');获取对象指定属性;
-		
-		对属性的访问也可以使用如下格式：
-		object['attributeName']=value;
-
-		如果需要控制CSS内容，可以参考以下形式：
-		obj.style.backgroundColor;	//读取css样式
-		obj.style.backgroundColor=rgb(0,255,255);//设置css样式
-		或者{
-			var obj=getElementById('id');
-			var style=obj.getAttribute("style");
-			style.setAttribute("attributeName",value);
 		}
-	*/
 
-  </script>
- </head>
- <body>
-	<hr />
-	点击按钮注意看'百度'两个字！<br /><br />
-	<a id=aTest href="http://www.baidu.com">百度</a>&nbsp;&nbsp;<input type="button" value="转到搜狐" onclick="changeLink()" />
-  <input type="button" name="btClk" value="for语句测试" onClick="fcClick()"/>
+		// 事件声明：
+		//方式1：
+		// obj.onclick=function(){}
+		// 方式2：
+		// function aFn(){}
+		// obj.onclick=aFn
 
- </body>
+		/*DOM对象分层结构*/
+		//window.history|document|location;
+		//document.body|link|form|anchor;
+		//form.button|text|radio|select;
+
+		/*DOM中常用的几个方法*/
+		/*
+			document.getElementById('id');通过id属性获取元素;
+			document.getElementsByName('name');通过name属性获取元素;
+			object.getElementsByTagName('tagName');通过标签名获取元素;
+			object.setAttribute('key',value);为对象设置指定属性;
+			object.getAttribute('key');获取对象指定属性;
+			
+			对属性的访问也可以使用如下格式：
+			object['attributeName']=value;
+
+			如果需要控制CSS内容，可以参考以下形式：
+			obj.style.backgroundColor;	//读取css样式
+			obj.style.backgroundColor=rgb(0,255,255);//设置css样式
+			或者{
+				var obj=getElementById('id');
+				var style=obj.getAttribute("style");
+				style.setAttribute("attributeName",value);
+			}
+
+			
+			*/
+	</script>
+</head>
+
+<body>
+	<hr /> 点击按钮注意看'百度'两个字！
+	<br />
+	<br />
+	<a id=aTest href="http://www.baidu.com">百度</a>&nbsp;&nbsp;
+	<input type="button" value="转到搜狐" onclick="changeLink()" />
+	<input type="button" name="btClk" value="for语句测试" onClick="fcClick()" />
+
+	<div id='app' title="test">
+		<p>123</p>
+	</div>
+	<script>
+		// 获取子元素
+		document.getElementById('app').children[0].innerHTML = 'w'
+	</script>
+</body>
+
 </html>
