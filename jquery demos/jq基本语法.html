@@ -1,76 +1,100 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="">
-  <title>Document</title>
-  <style type="text/css">
-	/*初始化CSS！*/
- 	.divWrap{
-		overflow:hidden;background:#fab;width:600px;margin:0 auto;text-align:center;
-	}
-	.anDv{
-		overflow:hidden;background:#abc;width:600px;margin:0 auto;text-align:center;
-	}
-	.divWrap span{
-		text-align:center;display:block;
-	}
-	#showItem{
-		width:200px;height:80px;background:#abf;margin:20px auto;border:1px solid red;
-	}
 
-	button{
-		margin:12px auto;
-	}
-</style>
- </head>
- <body>
-  	<div class="divWrap">
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+
+		.divWrap {
+			overflow: hidden;
+			background: #fab;
+			width: 600px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.anDv {
+			overflow: hidden;
+			background: #abc;
+			width: 600px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.divWrap span {
+			text-align: center;
+			display: block;
+		}
+
+		#showItem {
+			width: 200px;
+			height: 80px;
+			background: #abf;
+			margin: 20px auto;
+			border: 1px solid red;
+		}
+
+		button {
+			margin: 12px auto;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="divWrap">
 		<div id="showItem"></div>
- 		<span>鼠标移入显示隐藏紫色盒子，或者单击按钮</span>
- 		<button id="btnHide">单击隐藏</button>
- 		<button id="btnShow">单击显示</button>
- 		<button id="btnSetColor">单击切换</button>
- 		<button id="btnTit">单击换色</button>
- 		<button id="setAttr">设置属性</button>
- 		<button id="setText">设置内容</button>
- 	</div>
+		<span>鼠标移入显示隐藏紫色盒子，或者单击按钮</span>
+		<button id="btnHide">单击隐藏</button>
+		<button id="btnShow">单击显示</button>
+		<button id="btnSetColor">单击切换</button>
+		<button id="btnTit">单击换色</button>
+		<button id="setAttr">设置属性</button>
+		<button id="setText">设置内容</button>
+	</div>
 	<div class="anDv">
 		<button id="slideUp">slideUp</button>
 		<button id="slideDown">slideDown</button>
 		<button id="toggle">slideToggle</button>
 	</div>
 	<script src="jquery-1.11.1.min.js"></script>
-	 <script>
-	 <!--
-		$(function(){
-			$('button').eq(0).click(function(){	//eq()方法通过下标获取数组中的某个对象
+	<script>
+		$(function () {
+			$('button').eq(0).click(function () { //eq()方法通过下标获取数组中的某个对象
 				//$('#showItem').hide();	//alert none;
-				$('#showItem').hide(500);	//alert block;带延时的函数不会等待计时完成，才执行下一步。
+				$('#showItem').hide(500); //alert block;带延时的函数不会等待计时完成，才执行下一步。
 				alert($('#showItem').css('display'));
 			})
-			$('button').eq(1).click(function(){
+			$('button').eq(1).click(function () {
 				$('#showItem').show(500);
 			})
-			$('button').eq(2).click(function(){
+			$('button').eq(2).click(function () {
 				$('#showItem').toggle(500);
 			})
-			$('button').eq(3).click(function(){
+			$('button').eq(3).click(function () {
 				//alert($('#showItem').css('backgroundColor'));	//获取样式
 				//$('#showItem').css('background-color','#59f');//设置单个样式
 				//$('#showItem').css('backgroundColor','#59f');	//复合属性两种书写方式都可以
-				$('#showItem').css({'width':'240px','backgroundColor':'yellow'});//设置多个属性
+				$('#showItem').css({
+					'width': '240px',
+					'backgroundColor': 'yellow'
+				}); //设置多个属性
 			})
-			$('button').eq(4).click(function(){
+			$('button').eq(4).click(function () {
 				//alert($('#showItem').attr('id'));		//获取
 				//$('#showItem').attr('class','box01');
-				$('#showItem').attr({'title':'设置标记属性','class':'setAttr'});
+				$('#showItem').attr({
+					'title': '设置标记属性',
+					'class': 'setAttr'
+				});
 			})
-			$('button').eq(5).click(function(){
-				$('#showItem').html('<span>text</span>');	//设置innerHTML，不带参数获取
+			$('button').eq(5).click(function () {
+				$('#showItem').html('<span>text</span>'); //设置innerHTML，不带参数获取
 				//$('#showItem').text('<span>text</span>');	//设置innerText
 				//alert($('#showItem').html());
 			})
@@ -78,21 +102,20 @@
 
 
 			/*JS动画*/
-			$('#slideUp').click(function(){
+			$('#slideUp').click(function () {
 				$('.divWrap').slideUp(500);
 			})
-			$('#slideDown').click(function(){
+			$('#slideDown').click(function () {
 				$('.divWrap').slideDown(1000);
 			})
-			$('#toggle').click(function(){
+			$('#toggle').click(function () {
 				$('.divWrap').slideToggle(1000);
 			})
 
 
 		})
+	</script>
 
-	 -->
-	 </script>
+</body>
 
- </body>
 </html>
