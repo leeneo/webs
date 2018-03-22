@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用String.replace() 全局替换
+        var str='a b c'
+        str=str.replace(/ /g,'')
+        console.log(str)
+
+        var str2='a b c'
+        var arr=str2.split(' ')
+        str2=''
+        for(i=0;i<arr.length;i++){
+            str2+=arr[i]
+        }
+        console.log(str2)
+    </script>
+</body>
+</html>
