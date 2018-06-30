@@ -3,13 +3,14 @@
 <body>
 <button id="btn1">把数据添加到 div 元素</button><br />
 <button id="btn2">获取已添加到 div 元素的数据</button>
-<div data-greeting="Hello !"></div>
-<script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
+<div id='dv1' data-greeting="Hello!"></div>
+<script type="text/javascript" src="./jquery-2.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-//该函数等同于在元素上添加“data-greeting='Hello World'”属性。
+//该函数等同于在元素上添加“data-greeting='Hello World'”属性，通过Data方法修改的数据不会显示在元素上。
   $("#btn1").click(function(){
-    $("div").data("greeting", "Hello World");
+    $("#dv1").data("greeting", "World");
+    $("#dv1").attr("srt", "Hello World");
   });
 
   $("#btn2").click(function(){
