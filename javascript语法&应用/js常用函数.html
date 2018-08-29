@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+		<script type="text/javascript">
+			// JS去除空格函数
+
+			// str为要去除空格的字符串:
+			var str=""
+
+			// 去除所有空格:   
+			str = str.replace(/\s+/g, "");
+
+			// 去除两头空格:   
+			str = str.replace(/^\s+|\s+$/g, "");
+
+			// 去除左空格：
+			str = str.replace(/^\s*/, '');
+
+			// 去除右空格：
+			str = str.replace(/(\s*$)/g, "");
+
+			// JS去除重复元素
+
+			var a = new Array(1, 1, 1, 2, 3, 4, 1, 2, 5, 11);
+			alert(a.reverse().join(",").match(/([^,]+)(?!.*\1)/ig).reverse());		
+		</script>
+</body>
+
+</html>

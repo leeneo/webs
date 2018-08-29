@@ -1,75 +1,94 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="">
-  <title>Document</title>
-  <style type="text/css">
-	/*初始化CSS！*/
-	body,div,span,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,a,img,input{ 
-		margin:0; 
-		padding:0; 
-		list-style:none;
-	}
 
-	/*初写正文样式！*/
-
-	/*初写超链接样式！*/
-	a{
-		color:;text-decoration:;
-	}
-	div{
-		margin:0 auto;
-	}
-	#item{		
-		width:400px;
-		height:120px;
-		background:#fab;
-		text-align:center;
-		vertical-align:middle;
-	}
-	span{
-		margin:0 auto;
-		display:block;
-		width:100px;
-	}
- </style>
- <script type="text/javascript">
- <!--
-	window.onload=function(){
-		var add=document.getElementById('add');
-		var del=document.getElementById('del');
-		var item=document.getElementById('item');
-		var itemtx=document.createTextNode('<p id="item_child">createTextNode</p>');
-		var op=document.createElement("p");
-		var optx=document.createTextNode("<b>this is a text</b>");
-
-		item.append("<b>append()</b><br/>\n");
-		//item.appendChild("<b>appendChild()</b>");			//报错：参数不是node类型
-		item.appendChild(itemtx);
-		item.appendChild(optx);		//不执行，也不报错	
-		op.appendChild(optx);		//没有执行，也没报错
-
-		add.onclick=function(){
-			item.innerHTML="<p style='color:#59f'>this is a click text!</p>";
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
 		}
-		del.onclick=function(){
-			item.innerHTML="";
+
+		/*初写正文样式！*/
+
+		/*初写超链接样式！*/
+
+		div {
+			margin: 0 auto;
 		}
-	}
--->
-</script>
- </head>
- <body>
+
+		#item {
+			width: 400px;
+			height: 120px;
+			background: #fab;
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		span {
+			margin: 0 auto;
+			display: block;
+			width: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			var add = document.getElementById('add');
+			var del = document.getElementById('del');
+			var item = document.getElementById('item');
+			var itemtx = document.createTextNode('<p id="item_child">createTextNode</p>');
+			var op = document.createElement("p");
+			var optx = document.createTextNode("<b>this is a text</b>");
+
+			item.append("<b>append()</b><br/>\n");
+			//item.appendChild("<b>appendChild()</b>");			//报错：参数不是node类型
+			item.appendChild(itemtx);
+			item.appendChild(optx);		//不执行，也不报错	
+			op.appendChild(optx);		//没有执行，也没报错
+
+			add.onclick = function () {
+				item.innerHTML = "<p style='color:#59f'>this is a click text!</p>";
+			}
+			del.onclick = function () {
+				item.innerHTML = "";
+			}
+		}
+	</script>
+</head>
+
+<body>
 	<div>
 		<div class="dvItem" id='item'></div>
 		<span>
 			<button class="add" id='add'>添加</button>
 			<button class="del" id='del'>删除</button>
 		</span>
-    </div>
- </body>
+	</div>
+</body>
+
 </html>
