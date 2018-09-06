@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<script type="text/javascript">	
+		var HtmlUtil = {
+			/*1.用浏览器内部转换器实现html转码*/
+			htmlEncode: function (html) {
+				//1.首先动态创建一个容器标签元素，如DIV
+				var temp = document.createElement("div");
+				document.body.appendChild(temp);
+				//2.然后将要转换的字符串设置为这个元素的innerText(ie支持)或者textContent(火狐，google支持)
+				(temp.textContent != undefined) ? (temp.textContent = html) : (temp.innerText = html);
+				//3.最后返回这个元素的innerHTML，即得到经过HTML编码转换的字符串了
+				var output = temp.innerHTML;
+				temp = null;
+				return output;
+			},
+			/*2.用浏览器内部转换器实现html解码*/
+			htmlDecode: function (text) {
+				//1.首先动态创建一个容器标签元素，如DIV
+				var temp = document.createElement("div");
+				document.body.appendChild(temp);
+				//2.然后将要转换的字符串设置为这个元素的innerHTML(ie，火狐，google都支持)
+				temp.innerHTML = text;
+				//3.最后返回这个元素的innerText(ie支持)或者textContent(火狐，google支持)，即得到经过HTML解码的字符串了。
+				var output = temp.innerText || temp.textContent;
+				temp = null;
+				return output;
+			},
+			/*3.用正则表达式实现html转码*/
+			htmlEncodeByRegExp: function (str) {
+				var s = "";
+				if (str.length == 0) return "";
+				s = str.replace(/\&/g, "&");
+				s = s.replace(/\>/g, ">");
+				s = s.replace(/ /g, " ");
+				s = s.replace(/\'/g, "'");
+				s = s.replace(/\"/g, '"');
+				s = s.replace(/\+/g, '%2B');
+				s = s.replace(/\=/g, '%3D');
+				return s;
+			},
+			/*4.用正则表达式实现html解码*/
+			htmlDecodeByRegExp: function (str) {
+				var s = "";
+				if (str.length == 0) return "";
+				s = str.replace(/\&/g, "&");
+				s = s.replace(/\>/g, ">");
+				s = s.replace(/ /g, " ");
+				s = s.replace(/\'/g, "'");
+				s = s.replace(/\"/g, '"');
+				s = s.replace(/\%2B/g, '+');
+				s = s.replace(/\%3D/g, '=');
+				return s;
+			}
+		};
+		var html = "qjMlR2yN+5TCnAoXXXrwvA=="
+		var encodeHTML = '', decodeHTML = ''
+		
+		//浏览器转码尚不完整，无法正确转换，请用正则表达式转码
+		// encodeHTML = HtmlUtil.htmlEncode(html);
+		// alert("用浏览器内部转换器实现html转码，encodeHTML：" + encodeHTML);
+		// decodeHTML = HtmlUtil.htmlDecode(encodeHTML);
+		// alert("用浏览器内部转换器实现html解码：" + decodeHTML);
+
+		encodeHTML = HtmlUtil.htmlEncodeByRegExp(html);
+		alert("用正则表达式进行html转码，encodeHTML：" + encodeHTML);
+		decodeHTML = HtmlUtil.htmlDecodeByRegExp("用正则表达式进行html解码：" + encodeHTML);
+		alert(decodeHTML);
+	</script>
+</body>
+
+</html>
