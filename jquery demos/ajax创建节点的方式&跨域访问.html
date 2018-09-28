@@ -118,7 +118,7 @@
 			$subTn.click(function () {
 				var postUrl = 'http://localhost:3376/report/Billa1Report'
 				var postData = $txtInp.val()
-
+				//ajax标准写法 ajax 标准写法
 				$.ajax({
 					url: postUrl,
 					data: { tel: postData },
@@ -157,8 +157,11 @@
 						}
 						else { console.log(2) }
 					},
-					error: function () {
-						alert("获取失败")
+					error: function (e) {
+						alert("获取失败:"+JSON.stringify(e))
+					},
+					complete:function(e){
+						console.log('请求完成：' + JSON.stringify(e))
 					}
 				})
 			});
