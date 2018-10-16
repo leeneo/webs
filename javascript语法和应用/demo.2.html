@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<script type="text/javascript">
+		class CanvasBike {
+			constructor(props = {}) {
+				/**
+				 * 构造函数字段说明：
+				 * @param {Object} props 配置项
+				 * @param {Number} props.width 画布的宽度
+				 * @param {Number} props.height 画布的宽度
+				 * @param {Number} wheelRadius 车轮半径
+				 * @param {Array} wheelPos 记录两个车轮的位置
+				 * @param {Number} wheelBorder 车轮的边框，也叫外胎;
+					本文由@IT·平头哥联盟-首席填坑官∙苏南分享
+				 */
+				let {
+					width = 550, height = 420, proportion = 4
+				} = props;
+				this.ele = null;
+				this.ctx = null;
+				this.proportion = proportion,
+					this.canvasW = width,
+					this.canvasH = height,
+					this.canvasBg = "#f9f8ee";
+				this.color = "#301926",
+					this.gearColor = "#160a13"; //齿轮的颜色
+				this.wheelRadius = this.canvasH * .1814;
+				this.wheelBorder = 14;
+				this.wheelPos = [];
+				this.axisDotPos = [];
+				this.oneCent = this.canvasW * 0.245;
+				this.edge = 360; //this.canvasW - this.oneCent; //最大值
+				this.animateNum = 0; //动画计数
+			}
+			componentDodMount() {
+				//实例，初始化执行的方法
+				this.ele = document.createElement("canvas");
+				this.ele.width = this.canvasW;
+				this.ele.height = this.canvasH;
+				this.ele.style.backgroundColor = this.canvasBg;
+				document.body.appendChild(this.ele);
+				this.ctx = this.ele.getContext("2d");
+				this.run();
+				return this.ctx;
+			}
+			run() {
+				this.horizon();
+				this.ctx.restore();
+				let _requestAnimationFrame_ = window.requestAnimationFrame || window.WebkitRequestAnimationFrame;
+				this.animateNum += 3;
+				_requestAnimationFrame_(() => this.run());
+				this.animateNum = this.animateNum > this.edge ? 6 : this.animateNum;
+			}
+			horizon() {
+				/**
+				* 轮子的底部，也称地平线：
+				1.清除画布
+				2.画一条直线，且高度6px
+				3.画5个断点，用于动画滑动视差
+				4.同时也记录两个车轮的 X ，Y中心点
+				5.两车轮之间的距离大概为整个画布宽度的.49;
+				本文@IT·平头哥联盟-首席填坑官∙苏南分享，非商业转载请注明原链接及出处
+				 */
+
+				this.wheelPos = [];
+				this.ctx.save();
+				this.ctx.clearRect(0, 0, this.canvasW, this.canvasH);
+
+				let horizonX = 0,
+					horizonY = this.canvasH - 100;
+				this.ctx.beginPath();
+				this.ctx.strokeStyle = this.color;
+				this.ctx.lineWidth = 6;
+				this.ctx.moveTo(horizonX, horizonY);
+				this.ctx.lineTo(this.canvasW, horizonY);
+				this.ctx.closePath();
+				this.ctx.stroke();
+
+				Array.from({
+					length: 5
+				}).map((k, v) => {
+					let dotProportion = (this.canvasW * 0.49) * v - this.oneCent;
+					this.wheelPos.push({
+						x: dotProportion,
+						y: horizonY - this.wheelRadius
+					});
+					let startX = dotProportion - (this.animateNum * 2); //用于动画滚动移动
+					this.ctx.beginPath();
+					this.ctx.strokeStyle = "#f9f8ef";
+					this.ctx.lineWidth = 6;
+					this.ctx.moveTo(startX, horizonY);
+					this.ctx.lineTo(startX + 5, horizonY);
+					this.ctx.closePath();
+					this.ctx.stroke();
+				});
+				this.ctx.restore();
+				// this.shuttle();
+				// this.wheel();
+			}
+		}
+		let Bike = new CanvasBike();
+		Bike.componentDodMount()
+	</script>
+</body>
+
+</html>

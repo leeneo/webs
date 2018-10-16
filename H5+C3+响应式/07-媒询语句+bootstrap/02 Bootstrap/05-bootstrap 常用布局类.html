@@ -1,67 +1,60 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>bootstrap 常用布局类</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css" media="all" />
-		<style type="text/css">
-			.row>div{
-				border:1px solid #ccc;
-			}
-		</style>
-	</head>
-	<body>
-		
-		<div class="container-fluid bg-info">我是盒子</div>
-		<br /><br />
-		<div class="container bg-info">我是盒子</div>
-		<br /><br />
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-1">1</div>
-				<div class="col-xs-1">2</div>
-				<div class="col-xs-1">3</div>
-				<div class="col-xs-1">4</div>
-				<div class="col-xs-1">5</div>
-				<div class="col-xs-1">6</div>
-				<div class="col-xs-1">7</div>
-				<div class="col-xs-1">8</div>
-				<div class="col-xs-1">9</div>
-				<div class="col-xs-1">10</div>
-				<div class="col-xs-1">11</div>
-				<div class="col-xs-1">12</div>
-			</div>
+
+<head>
+	<meta charset="UTF-8">
+	<title>bootstrap 常用布局类</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="all" />
+	<style type="text/css">
+		.row>div {
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 实际使用中只放一个container类即可，所有row都放在这个container里 -->
+	<div class="container-fluid bg-info">我是盒子</div>
+	<br /><br />
+	<div class="container bg-info">我是盒子</div>
+	<br /><br />
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-1">1</div>
+			<div class="col-xs-1">2</div>
+			<div class="col-xs-1">3</div>
+			<div class="col-xs-1">4</div>
+			<div class="col-xs-1">5</div>
+			<div class="col-xs-1">6</div>
+			<div class="col-xs-1">7</div>
+			<div class="col-xs-1">8</div>
+			<div class="col-xs-1">9</div>
+			<div class="col-xs-1">10</div>
+			<div class="col-xs-1">11</div>
+			<div class="col-xs-1">12</div>
 		</div>
-		
-		<div class="container">
-			<h2 class="page-header">向左拉,向右推</h2>
-			<div class="row bg-success">
-				<div class="col-lg-3 bg-danger col-lg-push-5">左边</div>
-				<div class="col-lg-5 bg-info col-lg-pull-3">右边</div>
-			</div>
+
+		<h2 class="page-header">向左拉,向右推</h2>
+		<div class="row bg-success">
+			<div class="col-lg-3 bg-danger col-lg-push-5">左边</div>
+			<div class="col-lg-5 bg-info col-lg-pull-3">右边</div>
 		</div>
-		
-		<div class="container">
-			<h2 class="page-header">跨平台使用(适配多种不同的屏幕尺寸，不同的尺寸，可以有不同的布局结构)</h2>
-			<div class="row">
-				<div class="col-lg-3 col-md-6 col-sm-2">左边</div>
-				<div class="col-lg-5 col-md-6 col-sm-10">右边</div>
-			</div>
+
+		<h2 class="page-header">跨平台使用(适配多种不同的屏幕尺寸，不同的尺寸，可以有不同的布局结构)</h2>
+		<div class="row">
+			<div class="col-lg-3 col-md-6 col-sm-2">左边</div>
+			<div class="col-lg-5 col-md-6 col-sm-10">右边</div>
 		</div>
-		
-		<div class="container">
-			<h2 class="page-header">工具类</h2>
-			<span class="btn btn-danger btn-lg">span元素模拟按钮</span>
-			
-			<p class="bg-info text-center">我是文字</p>
-			
-			<span class="btn btn-danger btn-lg visible-lg-inline">按钮</span>
-			
-		</div>
-		
-		
-		
-	</body>
+
+		<h2 class="page-header">工具类</h2>
+		<span class="btn btn-danger btn-lg">span元素模拟按钮</span>
+
+		<p class="bg-info text-center">我是文字</p>
+
+		<span class="btn btn-danger btn-lg visible-lg-inline">按钮</span>
+	</div>
+</body>
+
 </html>
 <script src="js/jquery-2.2.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
