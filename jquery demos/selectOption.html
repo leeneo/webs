@@ -56,19 +56,24 @@
 
 <body>
 	<select id="sel-policy">
-		<option value="value1" >团购1</option>
-		<option value="value2" selected>团购2</option>
+		<option value="value1" data-code='code1'>团购1</option>
+		<option value="value2" data-code='code2' selected>团购2</option>
 	</select>
 
 	<script type="text/javascript" src="jquery-2.1.min.js"></script>
 	<script type="text/javascript">
 		// 获取选中项的值
 		var $secList = $('#sel-policy')
-		console.log($secList.val())	//默认值取值方式：有selected项取selected option 的值，没有取第一个option的值
+		console.log($secList.val())				//value取值方式：有selected项取selected option 的值，没有取第一个option的值
+		console.log($secList.select().val())	//value取值等价形式
 		$secList.change(function () {
-			console.log(this.value)	//js
-			console.log($(this).val())//jq
+			// console.log(this.value)	//js
+			// console.log($(this).val())//jq
+			console.log($('#sel-policy option:selected').data('code'))		//data取值方式
+			console.log($secList.children('option:selected').data('code'))	//data取值等价形式2
+			console.log($(this).children('option:selected').data('code'))	//data取值等价形式3
 		})
+		
 	</script>
 </body>
 
