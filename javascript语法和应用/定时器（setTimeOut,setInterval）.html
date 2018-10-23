@@ -11,17 +11,35 @@
 <body>
 
     <script>
+        let i = 0
+        let j = 0
 
-        self.setTimeout(`window.alert('setTimeOut定时器只执行一次')`, 1000)
-        var intClock = self.setInterval('show()', 1000)
-        let i = 0;
+        function oneTime() {
+            console.log('oneTime() execute only one time')
+        }
 
         function show() {
-            i++;
-            if (i > 1)
-                window.clearInterval(intClock)
-            window.alert('setInterval定时器会一直执行，直至clear为止')   //会跳2次
+            i++
+            if (i > 3) {
+                clearInterval(intClock)     //清除下一次计时，但当前次已经在运行了
+                console.log('清除interval')
+            }
+            console.log('WindowTimers(i):' + i)
         }
+
+        function show2() {
+            j++
+            if (j > 3) {
+                clearInterval(interval)     //清除下一次计时，但当前次已经在运行了
+                console.log('清除interval')
+            }
+            console.log('setInterval(j):' + j)
+        }
+        window.self.setTimeout("console.log('WindowTimers:setTimeOut定时器只执行一次')", 2000)
+        setTimeout(oneTime())
+
+        var intClock = window.self.setInterval('show()', 2000)  //定时器的两种书写方式，函数名如果去掉''，setInterval仅执行一次
+        var interval = setInterval('show2()', 2000)             //jq中写setInterval时要注意，执行函数(show())需写在入口函数外
     </script>
 </body>
 
