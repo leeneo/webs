@@ -116,42 +116,42 @@
 
 		<p align="center">
 			<!--特殊字符-->
-			'&'amp='&amp;','&'lt;='&lt','&'gt;='&gt',双引号:&quot;&quot; 空格:&nbsp;'&'nbsp; &copy;版权号&#8482;	
+			'&am='&amp;','&'lt;='&lt','&'gt;='&gt',双引号:&quot;&quot; 空格:&nbsp;'&'nbsp; &copy;版权号&#8482;	
 			2<sup>3</sup> 3<sub>2</sub>
 		</p>
 		<p>
-			<b>'	<'b'>'把文本加粗。</b></br>
-			<strong>'<'strong'>'把文本定义为语气更强的强调的内容。</strong></br></br>
-			<i>'	<'i'>'把文本倾斜。</i></br>
-			<em>'	<'em'>'把文本定义为强调的内容。</em></br></br>
-			<u>'	<'u'>'给文本加下划线。</u></br>
-			<ins>'	<'ins'>'给文本加下划线，具有强调意义。</ins></br><br />
-			<s>'	<'s'>'给文本加删除线。</s></br>
-			<del>'	<'del'>'给文本加删除线，具有强调意义。</del></br><br />
-			<dfn>	'<'dfn'>'定义一个定义项目。</dfn></br>
-			<code>	'<'code'>'定义计算机代码文本。</code></br>
-			<samp>	'<'samp'>'定义样本文本。</samp></br></br>
-			<kbd>	'<'kbd'>'定义键盘文本。它表示文本是从键盘上键入的。它经常用在与计算机相关的文档或手册中。</kbd></br>
-			<var>	'<'var'>'定义变量。您可以将此标签与 '<'pre'>' 及 '<'code'>' 标签配合使用。</var></br>
-			<cite>	'<'cite'>'定义引用。可使用该标签对参考文献的引用进行定义，比如书籍或杂志的标题。</cite><br />
-			<q>		'<'q'>'定义引用文本</q><br /><br />
-					'<'sup'>'是<sup>上标</sup> &nbsp;&nbsp;&nbsp; 
-					'<'sub'>'是<sub>下标</sub>
+			<b>&lt;b&gt;把文本加粗。</b></br>
+			<strong>&lt;strong&gt;把文本定义为语气更强的强调的内容。</strong></br></br>
+			<i>&lt;i&gt;把文本倾斜。</i></br>
+			<em>&lt;em&gt;把文本定义为强调的内容。</em></br></br>
+			<u>&lt;u&gt;给文本加下划线。</u></br>
+			<ins>&lt;ins&gt;给文本加下划线，具有强调意义。</ins></br><br />
+			<s>&lt;s&gt;给文本加删除线。</s></br>
+			<del>&lt;del&gt;给文本加删除线，具有强调意义。</del></br><br />
+			<dfn>	&lt;dfn&gt;定义一个定义项目。</dfn></br>
+			<code>	&lt;code&gt;定义计算机代码文本。</code></br>
+			<samp>	&lt;samp&gt;定义样本文本。</samp></br></br>
+			<kbd>	&lt;kbd&gt;定义键盘文本。它表示文本是从键盘上键入的。它经常用在与计算机相关的文档或手册中。</kbd></br>
+			<var>	&lt;var&gt;定义变量。您可以将此标签与 &lt;pre&gt; 及 &lt;code&gt; 标签配合使用。</var></br>
+			<cite>	&lt;cite&gt;定义引用。可使用该标签对参考文献的引用进行定义，比如书籍或杂志的标题。</cite><br />
+			&lt;q&gt;<q>定义引用文本</q><br /><br />
+					&lt;sup&gt;是<sup>上标</sup> &nbsp;&nbsp;&nbsp; 
+					&lt;sub&gt;是<sub>下标</sub>
 		</p>
 
 		<blockquote>	
-			'<'blockquote'>'定义一段长文本引用，自带换行。
+			&lt;blockquote&gt;定义一段长文本引用，自带换行。
 		</blockquote>
 
 		<p align="center">
 			<!--图像热点的定义 img,map,area,需要配套使用-->
 			<!-- 相对路径：‘../’--上级路径；‘./’ --当前路径-->		
+			<img src="" alt="找不到图片资源时显示" title="鼠标划过提示">
 			<img src="./211134-101.jpg" vspace=20 alt="this is a picture" border=0 height=400 usemap="#mapA"/>	
 			<map name="mapA">
 				<area shape="rect" coords="0,0,300,400" href="http://www.baidu.com"  alt="链接到其他文档">
 			</map>
 		</p>
-		
 		<div align="center">
 		<!--支持wmv,avi格式视频文件和mp3格式音频文件-->
 			<embed src="./郁可唯-青衣谣.mp4" width=500 height=450 type="video/mp4" autostart="false" loop="false"/>
@@ -164,7 +164,7 @@
 			<a href="http://www.baidu.com">外网</a><br />
 
 			<!--href="#"--假链接，默认置顶；链接中间的地址也可以换成<img/>标签-->
-			<a href="#top">返回顶部</a>
+			<a href="#top" title="鼠标划过提示">返回顶部</a>
 
 			<!--先用<a name='mark'> 定义一个锚点，锚点可以是外部的-->
 			<a href="#mark">链接锚点</a>
