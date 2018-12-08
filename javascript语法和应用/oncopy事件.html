@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+
+		section {width: 100%;height: 400px;background: #abf;}
+		section p{
+			margin: 0 auto;
+			text-align: left;
+		}
+	</style>
+</head>
+
+<body oncopy="alert('复制事件被触发');return false;" oncontextmenu="return false" contextmenu='myMenu'>
+	<section>
+		<p>oncontextmenu 事件在用户右击鼠标时触发并打开上下文菜单，‘return false’禁用右键上下文菜单,只在设置该属性的节点区域生效</p>
+		<p>请在当前body区域即section元素区域内测试oncontextmenu事件</p>
+		<p>contextmenu 属性只有Firefox浏览器支持</p>
+		<p>oncopy 事件在用户拷贝元素上的内容时触发;常用于'input'元素</p>
+		<p>请按 ctrl+C 测试oncopy事件；return false则所选内容不会被复制</p>
+	</section>
+
+	<script type="text/javascript">
+		function controlMenu() {
+			// return true;	
+			return false; //false禁用右键上下文菜单
+		}
+	</script>
+</body>
+
+</html>
