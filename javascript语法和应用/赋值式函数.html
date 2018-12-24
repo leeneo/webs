@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<script type="text/javascript">
+		//JS的解析过程分为两个阶段：预编译期(预处理)与执行期。
+		// 预编译期JS会对本代码块中的所有声明的变量和函数进行处理（类似与C语言的编译），但需要注意的是此时处理函数的只是声明式函数，而且变量也只是进行了声明但未进行初始化以及赋值
+		function test() {
+			var a = 10;
+			var b = 20;
+			return a + b;
+		}
+		var s = test;
+		console.log("s:" + s);
+		console.log("s():" + s());
+
+		Fn()				//会输出第2个Fn,js中重名的函数，后定义的会覆盖前面定义的函数
+		function Fn() {
+			console.log('执行函数第1个Fn')
+		}
+		function Fn() {
+			console.log('执行函数第2个Fn')
+		}
+
+		Fn1()
+		function Fn1() {
+			console.log(1)
+		}
+
+		// Fn2()//放在赋值式声明前，会报错
+		var Fn2 = function () {
+			console.log(2)
+		}
+		Fn2()	//输出：2
+	</script>
+</body>
+
+</html>
