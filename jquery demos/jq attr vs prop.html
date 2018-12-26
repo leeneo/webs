@@ -66,6 +66,10 @@
 	</div>
 	<script type="text/javascript" src="jquery-2.1.min.js"></script>
 	<script type="text/javascript">
+	//两个方法最主要的源码部分是：attr是通过setAtrribute和getAttribute来设置的，使用的是DOM属性节点，而prop是通过document.getElementById(el)[name] = value来设置的，是转化为js对象的属性
+	//通常在获取或者设置checked，selected，readonly，disabled等的时候使用prop效果更好，减少了访问dom属性节点的频率
+	//设置标签自带的属性，用prop('xx',false/true)；添加/删除自定义属性，用attr()/removeAttr()
+	//refund_amount >= 0 ? $("#BtnRefund").prop("disabled",false) : $("#BtnHandPay").prop("disabled", true);
 		$(function () {
 			var $atrDt = $('h2').attr('data');
 			console.log($atrDt);
