@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p {
+            word-spacing: 1em;
+        }
+
+        p.test1 {
+            width: 11em;
+            border: 1px solid #000000;
+            word-wrap: break-word;
+            /*效果同word-break:break-word；建议舍弃word-wrap不用*/
+            hyphens: none;
+            /*不使用连字符*/
+        }
+
+        p.test2 {
+            width: 11em;
+            border: 1px solid #000000;
+            hyphens: manual;
+            /*单词内部适用连字符时，使用连字符*/
+            word-break: break-all;
+            /*长单词不会重启一行显示，在当前行直接截断，过长的部分换行*/
+            /* word-break: break-word; */
+        }
+
+        /*想要文本实现溢出效果，在元素上添加width，和 overflow:hidden即可*/
+
+        p.test3 {
+            width: 11em;
+            border: 1px solid #000000;
+            text-overflow: ellipsis;
+            /*溢出文本以省略号显示*/
+            white-space: nowrap;
+            /*单行显示：nowrap*/
+            overflow: hidden;
+        }
+
+        /*非块级元素，需要添加display:inline-block*/
+
+        span.test4 {
+            width: 11em;
+            border: 1px solid #000000;
+            text-overflow: ellipsis;
+            /*溢出文本以省略号显示*/
+            white-space: nowrap;
+            /*单行显示：nowrap*/
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        /*带有hover效果的溢出文本展示*/
+        p.test3:hover,
+        span.test4:hover {
+            width: 100%;
+            border: 1px solid #000000;
+            /* text-overflow: clip; */
+            /* white-space: nowrap; */
+            overflow: visible;
+            color: blue;
+            /* display: inline-block; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 浏览器默认会将过长的单词重启一行显示，如过长会超出容器范围，不会截断；word-wrap;决定单词是否截断换行；word-break 决定单词截断的方式;word-spacing:px;字符间距-->
+    <p class="test1">This is a veryveryveryveryveryveryveryveryveryvery long paragraph. An extreme­ly long English word</p>
+    <p class="test2">This is a veryveryveryveryveryveryveryveryveryvery long paragraph. An extreme­ly long English word</p>
+
+    <p class="test3">This is a veryveryveryveryveryveryveryveryveryvery long paragraph. An extreme­ly long English word</p>
+    <span class="test4">This is a veryveryveryveryveryveryveryveryveryvery long paragraph. An extreme­ly long English word</span>
+
+    <p>
+        <b>注释：</b>目前 Opera 不支持 word-break 属性。
+    </p>
+
+</body>
+
+</html>
