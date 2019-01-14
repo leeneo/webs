@@ -60,20 +60,40 @@
 		<option value="value2" data-code='code2' selected>团购2</option>
 	</select>
 
+	<button id='btn1'>选中团购1</button>
+	<button id='btn2'>选中团购2</button>
+
 	<script type="text/javascript" src="jquery-2.1.min.js"></script>
 	<script type="text/javascript">
-		// 获取选中项的值
-		var $secList = $('#sel-policy')
-		console.log($secList.val())				//value取值方式：有selected项取selected option 的值，没有取第一个option的值
-		console.log($secList.select().val())	//value取值等价形式
-		$secList.change(function () {
-			// console.log(this.value)	//js
-			// console.log($(this).val())//jq
-			console.log($('#sel-policy option:selected').data('code'))		//data取值方式
-			console.log($secList.children('option:selected').data('code'))	//data取值等价形式2
-			console.log($(this).children('option:selected').data('code'))	//data取值等价形式3
+		$(function () {
+			
+			$('#btn1').click(function () {
+				$('#sel-policy').children().eq(0).prop('selected', true)
+				console.log($('#sel-policy option:selected').text())
+			})
+
+			$('#btn2').click(function () {
+				$('#sel-policy').children().eq(1).prop('selected', true)
+				console.log($('#sel-policy :selected').text()) //option:selected ==>:selected
+				// console.log($('#sel-policy option:selected').text())					//option:selected 等价形式1
+				// console.log($('#sel-policy').children(':selected').text())			//option:selected 等价形式2
+				// console.log($('#sel-policy').children('option:selected').text())		//option:selected 等价形式2
+				// console.log($('#sel-policy').find(':selected').text())				//option:selected 等价形式3
+				// console.log($('#sel-policy').find('option:selected').text())			//option:selected 等价形式3
+			})
+
+			// 获取选中项的值
+			var $secList = $('#sel-policy')
+			console.log($secList.val()) //value取值方式：有selected项取selected option 的值，没有取第一个option的值
+			console.log($secList.select().val()) //value取值等价形式
+			$secList.change(function () {
+				// console.log(this.value)	//js
+				// console.log($(this).val())//jq
+				console.log($('#sel-policy option:selected').data('code')) //data取值方式
+				console.log($secList.children('option:selected').data('code')) //data取值等价形式2
+				console.log($(this).children('option:selected').data('code')) //data取值等价形式3
+			})
 		})
-		
 	</script>
 </body>
 

@@ -80,6 +80,7 @@
 	<script type="text/javascript" src="jquery-2.1.min.js"></script>
 	<script type="text/javascript">
 		$(function () {
+			//参考：http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp
 			//jq伪类(type)选择器
 			//:radio==>input:radio
 			//:button==>input:button&button
@@ -105,6 +106,9 @@
 			$(':checkbox').click(function(){
 				console.log($(this).val())
 			})
+
+			//other
+			//:enabled,:disabled,:selected,:checked
 		})
 	</script>
 </body>
