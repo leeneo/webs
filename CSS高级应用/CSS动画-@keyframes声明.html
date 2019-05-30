@@ -43,10 +43,10 @@
 			width: 100px;
 			height: 100px;
 			background: red;
-			animation: myfirst 9s;
-			-moz-animation: myfirst 9s;
+			animation: myfirst linear 9s infinite;
+			-moz-animation: myfirst linear 9s ;
 			/* Firefox */
-			-webkit-animation: myfirst 9s;
+			-webkit-animation: myfirst linear 9s infinite;
 			/* Safari and Chrome */
 		}
 
@@ -132,7 +132,7 @@
 				transform: rotate(360deg);
 				margin-left: 90%
 			}
-			750% {
+			75% {
 				background: purple;
 				background: rgba(255, 0, 255, 0.6);
 				transform: rotate(180deg);
