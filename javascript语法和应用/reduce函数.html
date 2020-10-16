@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>reduce函数</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<h2>reduce 函数：初始值的意义<br>
+			<span class='normal'>总价格1：{{totalPrice}}</span> |
+			<span class='normal'>总价格2：{{totalPrice2}}</span>
+		</h2>
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'this is a vue demo!',
+				books: [{
+						id: 100,
+						name: 'C语言程序设计',
+						price: 15.5
+					},
+					{
+						id: 101,
+						name: '计算机原理',
+						price: 23.4
+					},
+					{
+						id: 102,
+						name: '高等数学',
+						price: 5.2
+					},
+					{
+						id: 103,
+						name: 'Linux系统',
+						price: 34.8
+					},
+				]
+
+			},
+			computed: {
+				totalPrice: function () {
+					// reduce()==>array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+					// 从这个例子中可以看出reduce()，如果不给初始值，函数中的total默认是以数组第一个元素为起始的。
+					// 不设初始值，total的值为books数组第一个元素,curObj从books第二个元素算起
+					return this.books.reduce(function (total, curObj) {
+						console.log('tot-1: ' + JSON.stringify(total));
+						console.log('cur-1: ' + curObj.price + '\n\n');
+						let first = 0;
+						if (total.price) {
+							total = total.price;
+						}
+						return total + curObj.price;
+					});
+				},
+				// 将初始值设为0，初始值代入total,total=0;curObj为books第一个元素算起
+				totalPrice2: function () {
+					return this.books.reduce(function (total, curObj) {
+						console.log('tot-2: ' + JSON.stringify(total));
+						console.log('cur-2: ' + curObj.price + '\n\n');
+						return total + curObj.price;
+					}, 0);
+				}
+			},
+			methods: {}
+		});
+	</script>
+</body>
+
+</html>
