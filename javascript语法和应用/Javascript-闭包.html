@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-闭包</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>text here：请观察console窗口<br>
+            <button>按钮1</button>
+            <button>按钮2</button>
+            <button>按钮3</button>
+            <button>按钮4</button>
+        </h2>
+    </div>
+
+    <script>
+        var btns = document.getElementsByTagName('button');
+
+        //始终输出第4个按钮被点击，在定时函数执行前，for已执行完所有的循环，i传到事件函数的值始终是4
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                console.log('var: 第 ' + i + ' 个按钮被点击');
+            });
+        }
+
+        //let 的值会被限定在局部范围内，相当于下面的闭包for
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                console.log('let: 第 ' + i + ' 个按钮被点击');
+            });
+        }
+
+        //闭包方式和let的效果相同
+        for (var i = 0; i < btns.length; i++) {
+            (function (i) {
+                btns[i].addEventListener('click', function () {
+                    console.log('闭包: 第 ' + i + ' 个按钮被点击');
+                });
+            })(i)
+        }
+    </script>
+</body>
+
+</html>

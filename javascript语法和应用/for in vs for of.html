@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>for in vs for of</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<h2>for(let i in arr): i--索引 | 总价：
+			<span>{{totalPrice}}</span>
+		</h2>
+		<h2>for(let b of arr): b--元素 | 总价：
+			<span>{{totalPrice2}}</span>
+		</h2>
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'this is a vue demo!',
+				books: [{
+						id: '101',
+						price: 8.8
+					},
+					{
+						id: '102',
+						price: 1.2
+					},
+					{
+						id: '103',
+						price: 4.6
+					},
+					{
+						id: '104',
+						price: 5.4
+					},
+				]
+			},
+			computed: {
+				//for( i in arr): i--索引
+				totalPrice: function () {
+					let sum = 0;
+					for (let i in this.books) {
+						console.log(JSON.stringify(i));
+						sum += this.books[i].price;
+					}
+					return sum;
+				},
+				//for( b of arr): b--元素
+				totalPrice2: function () {
+					let sum = 0;
+					for (let b of this.books) {
+						console.log(JSON.stringify(b));
+						sum += b.price;
+					}
+					return sum;
+				}
+			},
+			methods: {}
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>常用伪元素</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			width: 80%;
+			position: relative;
+			margin: 100px auto 0;
+			font: normal 20px/40px "微软雅黑";
+			background: rgb(160, 228, 160);
+		}
+
+		p:first-letter {
+			color: #ff0000;
+			font-size: xx-large;
+		}
+
+		p:first-line {
+			color: #0000ff;
+			font-variant: small-caps;
+		}
+
+		p span.sp1:before {
+			content: url('https://www.w3school.com.cn/i/w3school_logo_white.gif');
+		}
+		p span.sp2:after {
+			content: url('https://www.w3school.com.cn/i/w3school_logo_white.gif');
+		}
+	</style>
+</head>
+
+<body>
+
+	<div></div>
+	<div>
+		<p>
+			伪元素一般用于文本的修饰<br>
+			:first-line 伪元素修饰第一行文本<br>
+			:first-letter 伪元素修饰首字符<br>
+			<span class="sp1">:before 伪元素可以在文本前面插入图文</span><br>
+			<span class="sp2">:after 伪元素可以在文本后面插入图文</span>
+		</p>
+	</div>
+
+</body>
+
+</html>
