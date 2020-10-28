@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>javascript-对象字面量的增强写法</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+
+		<h2>text here：
+			<span>{{message}}</span> 
+			<pre>
+				对象字面量 ："{}"
+				const obj=new Obj();
+				const obj={};
+			</pre>
+		</h2>
+
+	</div>
+
+	<script src="../js/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'this is a vue demo!'
+			},
+			computed: {
+
+			},
+			methods: {
+
+			}
+		});
+
+		const obj={
+			name:'kobe',
+			age:30,
+			height:1.88,
+			run:function(){
+				console.log('run');
+			}
+		}
+	</script>
+</body>
+
+</html>

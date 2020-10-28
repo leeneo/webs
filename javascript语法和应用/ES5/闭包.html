@@ -19,7 +19,7 @@
 
     <script>
         var btns = document.getElementsByTagName('button');
-
+        //因为Javascript ES5之前没有块级作用域，为了实现var 变量的块级限定，出现了闭包（借助于函数限定作用域）
         //始终输出第4个按钮被点击，在定时函数执行前，for已执行完所有的循环，i传到事件函数的值始终是4
         for (var i = 0; i < btns.length; i++) {
             btns[i].addEventListener('click', function () {

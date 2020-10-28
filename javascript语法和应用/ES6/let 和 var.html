@@ -14,7 +14,7 @@
         </h2>
     </div>
 
-    <script src="js/vue.js"></script>
+    <script src="../js/vue.js"></script>
     <script>
         const app = new Vue({
             el: '#app',
@@ -31,7 +31,7 @@
 
         //var let 的区别,var是javascript语言的缺陷，let是为了弥补这种缺陷而生的
 
-        //Javascript没有块级作用域（{}限定不了var定义的变量可访问范围）
+        //Javascript没有块级作用域（{}限定不了var定义的变量可访问范围），javascript只有函数有作用域
         // {
         //     var i = 99;
         // }
@@ -58,9 +58,9 @@
         }
 
         for (var c = 0; c < 10; c++) {
-            (function (c) {
+            (function (num) {
                 setTimeout(() => {
-                console.log('闭包: ' + c);
+                console.log('闭包: ' + num);
             }, 0);
             })(c)
         }
