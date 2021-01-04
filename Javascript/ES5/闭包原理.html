@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>闭包原理</title>
+	<style type="text/css">
+		/*初始化CSS！*/
+		body,
+		div,
+		span,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		ul,
+		li,
+		ol,
+		dl,
+		dt,
+		dd,
+		a,
+		img,
+		input {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+		}
+
+		/*初写正文样式！*/
+		body {
+			color: #333;
+			font: 14px '微软雅黑';
+			background-color: #fdfcf8;
+			line-height: 1.5;
+		}
+
+		/*初写超链接样式！*/
+		a {
+			color: #338de6;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<h2>text here：
+			<span>{{message}}</span>
+		</h2>
+	</div>
+
+	<script src="js/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: 'this is a vue demo!'
+			},
+			computed: {
+
+			},
+			methods: {
+
+			}
+		});
+
+		// f2 可以访问 f1 内部的所有局部变量，但是反过来就不行，f2内部的局部变量，对f1是不可见的。
+		// 子对象会一级一级地向上寻找所有父对象的变量。父对象的所有变量，对子对象都是可见的，反之则不成立。
+		// 所以为了在父级 f1 中能够获取子级 f2 内部的变量，可以将f2内部的变量作为一个返回值，返回给f1
+		// 这里 f2,f4 函数就是一个闭包
+		// 闭包的概念：可以简单的理解为定义在一个函数内部的执行特定运算的自调用函数
+		// 闭包的用途：一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
+		// 使用闭包的注意点
+		/* 1，由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，
+		 		在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。*/
+		/* 2，闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，
+				把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，
+				不要随便改变父函数内部变量的值。*/
+
+		// (function (i) {
+		// 	btns[i].addEventListener('click', function () {
+		// 		console.log('闭包: 第 ' + i + ' 个按钮被点击');
+		// 	});
+		// })(i)
+
+		// 用法1：在子函数内部运算，并将运算后的结果返回给父函数
+		function f1() {
+			var n = 999;
+
+			// function f2() {
+			// 	console.log('f2:', n);
+			// 	var x = n + 1;
+			// 	return x;
+			// };
+			// var n2 = f2();
+
+			// 闭包方式
+			var n2 = (function (i) {
+				console.log('f2:', i);
+				var x = i + 1;
+				return x;
+			})(n);
+
+			console.log('f1:', n, n2);
+		};
+		f1();
+
+		// 用法2：将执行特定运算的整个子函数返回
+		function f3() {
+			var n = 999;
+
+			// function f4() {
+			// 	var n2 = n + 2;
+			// 	console.log('f4:', n2);
+			// };
+			// return f4();
+
+			// 闭包方式
+			// return (function (i) {
+			// 	var n2 = i + 2;
+			// 	console.log('f4:', n2);
+			// })(n);
+
+			// 不加 return 也行
+			(function (i) {
+				var n2 = i + 2;
+				console.log('f4:', n2);
+			})(n);
+
+		};
+		f3();
+	</script>
+</body>
+
+</html>
