@@ -2,7 +2,7 @@
   "name": "tsapp",
   "version": "1.0.0",
   "description": "",
-  "main": "greeter.js",
+  "main": "demo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
