@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 布局</title>
+    <link rel="stylesheet" href="./css/global.min.css">
+
+    <style>
+        /* flex-flow 是 flex-direction & flex-wrap 的结合简写，默认值为row nowrap */
+        #app {
+            display: flex;
+            flex-direction: column;     
+            flex-wrap: nowrap;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #app div {
+            width: 200px;
+        }
+
+        #app p {
+            border: 1px solid purple;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>Flex 布局使用</div>
+        <div>Flex item</div>
+        <p>flex content</p>
+    </div>
+</body>
+
+</html>
