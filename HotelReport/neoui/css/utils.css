@@ -1,0 +1,53 @@
+/*
+* Author:Neo 
+* Contact:leeneo@xingzhihen.com
+* Site:xingzhihen.com
+*/
+
+
+/* 渐隐效果 */
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linea
+}
+
+
+/* 模态遮罩 */
+
+.modal-backdrop {
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+
+.border div {
+    border: 1px solid #999;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+/* 颜色样式 */
+
+.bgColor-gray {
+    background-color: #495960;
+    color: aliceblue;
+}
+
+.bgColor-lightblack {
+    color: wheat;
+    background-color: #3c3636;
+}

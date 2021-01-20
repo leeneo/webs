@@ -1,0 +1,27 @@
+/*
+* Author:Neo 
+* Contact:leeneo@xingzhihen.com
+* Site:xingzhihen.com
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+i{
+    font-style: normal;
+}
+b{
+    font-weight: 400
+}
+q{
+    quotes: none;
+}
+
+.ne-hAlign {
+    margin: 0 auto;
+    text-align: center;
+}
