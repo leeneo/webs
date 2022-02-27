@@ -36,7 +36,7 @@
 
 				 /*单个background标记设置单个或多个背景属性*/
 				 background:#aaffee url('248914-101.jpg')  fixed repeat top center;
-				 //background:url('248914-101.jpg')  fixed;				 
+				 /* background:url('248914-101.jpg')  fixed;				  */
 			}
 
 			/*！Important提权功能，能够把针对性提高到大于行内式；*/
@@ -57,10 +57,10 @@
             }
 
 			.divA{
-				//margin-top:5%x;
-				//margin-right:10%;
-				//margin-left:28.5%;
-				//margin-bottom:5%;
+				/* margin-top:5%x; */
+				/* margin-right:10%; */
+				/* margin-left:28.5%; */
+				/* margin-bottom:5%; */
 				margin:0 auto;
 
 				/*margin/padding:
@@ -71,15 +71,15 @@
 				
 				/*综合设置，border:width style color*/
 				/* border-style:dotted; */
-				//border-width:1pt;
-				//border-color:#f00faf;
+				/* border-width:1pt; */
+				/* border-color:#f00faf; */
 				border:1pt dotted #f00faf;
 
-				//padding-top:12px;
-				//padding-left:1px;
-				//padding-right:1px;
-				//padding-bottom:12px;
-				//padding:50px;/*设置4边的间距*/
+				/* padding-top:12px; */
+				/* padding-left:1px; */
+				/* padding-right:1px; */
+				/* padding-bottom:12px; */
+				/* padding:50px;设置4边的间距 */
 				padding:1px 0px;/*设置上下和左右的间距*/
 
 				text-align:center;
@@ -190,7 +190,8 @@
 			/*修饰超链接，同时设置四种，遵循L-V-H-A书写顺序*/
 			a:link{color:blue;text-decoration:underline}/*未访问的状态*/
 			a:visited{color:blue;text-decoration:underline}/*访问过的状态*/
-			a:hover{color:purple;text-decoration:none}/*鼠标划过时的状态*/
+			/* 通过hover伪类在a元素上添加字体样式，这是简单的动画效果 */
+			a:hover{color:rgb(79, 230, 33);text-decoration:none;font-size:40px}/*鼠标划过时的状态*/
 			a:active{color:red;text-decoration:none}/*鼠标激活时的状态*/
 
 			/*经验：一般工作中，超链接的访问前和访问后样式完全相同（保证页面风格统一）;可用并集选择器，也直接书写a标签选择器，同时设置超链接的所有状态，万一哪个状态特殊，再单独设置样式；一般情况下，访问前的超链接都没有下划线，目的就是让页面干净整洁。*/
