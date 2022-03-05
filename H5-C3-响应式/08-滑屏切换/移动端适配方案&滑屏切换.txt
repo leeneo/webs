@@ -1,0 +1,62 @@
+一、	JQ中的事件操作
+1 绑定
+$( ‘div’ ).on( {
+	‘事件名1’:function(){  },
+	‘事件名2’：function(){  }
+} );
+
+2 清除
+$( ‘div’ ).off( ‘需要清除的事件名称列表，中间用空格隔开’ );
+
+二、	移动端常见适配方案
+1、将当前设备的尺寸做为视口的大小。元素定高不定宽（width:0-100%）,采用灵活布局来适配
+
+将当前设备的尺寸大小做为视口大小，这样的做的好处就是在书写CSS样式的时候可以1:1的对应屏幕像素。
+相对的缺点就是本来当设备可能可以渲染更多的像素信息，结果这个时候只能渲染有限的像素。所以在色彩上会有所丢失。
+这种适配的方案一般只用来处理文字内容居多而且布局相对简单，图片信息相对较少的移动网站。
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
+2、动态设置视口大小，rem适配
+ 
+利用当前屏幕的独立像素比动态的来设置视口大小，将设备的屏幕物理分辨率来做为视口。此种做法的有点就是可以最大限度的来按着设备的分辨率来渲染页面。
+相对的缺点就是在具体布局的时候需要选择相对单位 rem ，这样的话才可以达到适配。这种方案我们一般会用来处理综合性网站，布局复杂，图片信息相对较多。
+
+<script type="text/javascript">
+	var iScale = 1/window.devicePixelRatio;
+	document.write( '<meta name="viewport" content="width=device-width, user-scalable=no, 	initial-scale='+ iScale +', maximum-scale='+ iScale +', minimum-scale='+ iScale +'" />' );	
+	document.documentElement.style.fontSize = document.documentElement.clientWidth/10+"px";	
+</script>
+
+3、固定视口大小，适用H5
+ 
+在某些平台上实现HTML5页面的时候我们一般会选择将当前视口设置为一个固定的值，目前来说 640||750这二种情况相对较多。
+<meta name="viewport" content="width=640px, user-scalable=no" />
+
+1.3	手指事件操作
+01 touchstrat: 手指在屏幕下按下时触发
+02 touchmove: 滑屏操作
+03 touchend : 手指抬起操作
+<script type="text/javascript">
+	
+	var aLi = $('.list > li');
+	var strartY,endY;
+	aLi.on( 'touchstart',function(){
+		strartY = ev.originalEvent.changedTouches[0].clientY;
+		$(this).on( 'touchmove',function(){
+			endY = ev.originalEvent.changedTouches[0].clientY;
+			if( strartY > endY ){
+				console.log( '上' );
+			}else if( strartY < endY ){
+				console.log( '下' );
+			}
+		} );
+		
+		$(this).on( 'touchend',function(){
+			console.log( 3 );
+		} );
+		
+	} );
+	
+</script>
+
+/* ev.originalEvent.changedTouches[0].clientY;记录了手指事件中，手指距离屏幕x轴和y轴的值。*/

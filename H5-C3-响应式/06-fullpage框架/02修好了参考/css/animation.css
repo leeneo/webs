@@ -1,0 +1,92 @@
+/* 
+* @Author: Marte
+* @Date:   2016-04-21 18:00:55
+* @Last Modified by:   Marte
+* @Last Modified time: 2016-04-21 22:43:26
+*/
+
+/* 动画CSS类 */
+
+/* 第一屏动画 */
+.current .text span{
+    opacity:1;
+}
+.current .text span:nth-of-type(1){
+    left:0;
+}
+.current .text span:nth-of-type(2){
+    top:-278px;
+}
+.current .text span:nth-of-type(3){
+    right:0;
+    opacity:1;
+    transition-delay: 1s;
+}
+
+.current .step ul li{
+    margin-left: 60px;
+    opacity:1;
+}
+.current .step ul li:first-of-type{
+    margin-left: 34px;
+    transition-delay: 2.5s;
+}
+.current .step ul li:nth-of-type(2){
+    transition-delay: 2s;
+}
+.current .step ul li:nth-of-type(3){
+    transition-delay: 1.5s;
+}
+.current .step ul li:last-of-type{
+    transition-delay: 1s;
+}
+
+/* 第二屏动画 */
+.section2 .list li .pic:hover{
+    transform:rotateY(180deg);
+}
+
+/* 第三屏动画 */
+.current .service{
+    transform:rotate(360deg);
+}
+.current .service_txt li:nth-of-type(odd){
+    margin-left: 0;
+    opacity:1;
+}
+.current .service_txt li:nth-of-type(even){
+    margin-right: 0;
+    opacity:1;
+}
+
+
+/* 第五屏动画 */
+.current .phone img, .current .phone_400{
+    top:0;
+    left:0;
+    opacity:1;
+}
+.current .phone_400{
+    left:170px;
+}
+
+
+/* 第七屏动画 */
+.current .about ul li{
+    transform:translateY(0);
+}
+.current .about ul li:nth-of-type(2){
+    transition-delay: .5s;
+}
+.current .about ul li:nth-of-type(3){
+    transition-delay: 1s;
+}
+.current .about ul li:nth-of-type(4){
+    transition-delay: 1.5s;
+}
+.current .about ul li:nth-of-type(5){
+    transition-delay: 2s;
+}
+.current .about ul li:nth-of-type(6){
+    transition-delay: 2.5s;
+}

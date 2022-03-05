@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+	 div{border:1px solid #ccc;}
+	 span,a{display:block;border:1px solid #ccc;}
+	.wrap{width:500px;height:500px;padding:10px;}
+	.wrap .box1{width:400px;height:400px;padding:10px;}
+	.wrap .box2{width:300px;height:300px;padding:10px;}
+</style>
+</head>
+
+<body>
+	<div class="wrap" onclick="console.log('div');">
+		<a class="box1" onclick="console.log('a');">
+			<span class="box2" onclick="console.log('span');">
+            	<input type="button" value="按钮" id="btn">
+            </span>
+		</a>
+	</div>
+   <!--明明是点击了input，为什么其他div的点击事件也会被触发?-->
+</body>
+<script type="text/javascript">
+	document.getElementById('btn').onclick=function(event){
+		// event.stopPropagation();//高级浏览器阻止冒泡的方法
+		/*var e = event||window.event;
+		e.cancelBubble = true;   //低级浏览器组织冒泡的方法*/
+		console.log('input');
+	}
+	document.onclick=function(){
+		console.log('document');
+	}
+</script>
+</html>

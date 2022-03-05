@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>配合fullpage利用C3动画来做进出场</title>
+		<link rel="stylesheet" href="css/jquery.fullPage.min.css" media="all" />
+		<link rel="stylesheet" href="css/animate.css" media="all" />
+		<style type="text/css">
+			.box{
+				width: 1000px;
+				height: 100%;
+				margin:0 auto;
+				border:1px solid red;
+			}
+			p{
+				width: 200px;
+				height: 200px;
+				background: seagreen;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="fullpage">
+			<div class="section">
+				
+				<div class="box">
+					<p></p>
+				</div>
+				
+			</div>
+			<div class="section"></div>
+			<div class="section"></div>
+			<div class="section"></div>
+		</div>
+		
+	</body>
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script type="text/javascript">
+	$('#fullpage').fullpage({
+		
+		'sectionsColor':['orange','seagreen','lightblue','pink'],
+		afterLoad:function( link,index ){
+			if( index == 1 ){
+				$('.box p').addClass('animated bounceInRight');
+			}
+		},
+		onLeave:function(index,nextIndex,dir){
+			if( index == 1 ){
+				$('.box p').removeClass('animated bounceInRight');
+			}
+		}
+		
+	});
+</script>

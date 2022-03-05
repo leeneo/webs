@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>媒询条件</title>
-		<style type="text/css">
-	
-			div{
-					width: 200px;
-					height: 200px;
-					background: orange;
-				}
-				
-				/*
-				 * 01 max-width: 选中设备宽度小于等于某一个值
-				 * 02 min-width: 宽度大于等于某一个值
-				 * 03 
-				 */
-				
-				@media ( orientation:portrait ){
-					div{
-						background: lightsalmon;
-					}
-				}
-		</style>
-	</head>
-	<body>
-		
-		<div></div>
-		
-	</body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>媒询条件</title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			background: orange;
+		}
+
+		/*
+			01 max-width: 选中设备宽度小于等于某一个值
+			02 min-width: 宽度大于等于某一个值
+			03 orientation：视口方向，portrait：纵向，landscape：横向
+			定义输出设备中的页面可见区域高度是否大于或等于宽度。
+			本特性不接受min和max前缀。
+		*/
+		@media (orientation:portrait) {
+			div {
+				background: lightsalmon;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div></div>
+
+</body>
+
 </html>

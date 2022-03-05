@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>导航条配置项</title>
+		<link rel="stylesheet" href="css/jquery.fullPage.min.css" media="all" />
+		
+		<style type="text/css">
+			.slide{
+				text-align: center;
+			}
+			.fp-controlArrow.fp-prev,.fp-controlArrow.fp-next{
+				display: none;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div id="fullpage">
+			<div class="section">
+				
+				<div class="slide">第一张</div>
+				<div class="slide">第二张</div>
+				<div class="slide">第三张</div>
+				
+			</div>
+			<div class="section">第二屏</div>
+			<div class="section">第三屏</div>
+			<div class="section">第四屏</div>
+		</div>
+		
+	</body>
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script type="text/javascript">
+	
+	$('#fullpage').fullpage({
+		// 在{}中所出现的配置项都不是我们自定义的。
+		sectionsColor:['pink','lightblue','seagreen','orange'],
+		navigation: true,//是否显示右侧的圆点导航条
+		navigationTooltips:[ 'page1','page2','page3','page4' ],//鼠标移到右侧圆点导航条上的时候，提示文字信息
+		showActiveTooltip: true,//右侧圆点导航条的左侧，显示提示文字信息
+		slidesNavigation:true//是否显示底部轮播图的水平圆点导航条
+	});
+	
+</script>

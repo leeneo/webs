@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>X Y 旋转</title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			body{height:3000px;}
+			.box{
+				width: 200px;
+				margin:100px auto 0;
+				border:1px solid red;
+
+				/*这里为了更加直观认识旋转的形式，设置一个视角的景深,即:近大远小*/
+				perspective: 800px;	
+			}
+			.box > div{
+				width:200px;
+				height: 200px;
+				background: url(img/mm.png) 0 0 no-repeat;
+				transition: all 8s;
+				
+			}
+			.box:hover div:nth-of-type(1){
+				/*
+				 * rotateX rotateY rotateZ 这样属性只有在三维的空间中我们才能体
+				 * 现出具体的样式。
+				 * 
+				 * 如果我们想要修改旋转中心点那么我们可以利用 transform-origin属性
+				 * 
+				 *
+				 */
+				transform: rotateX(50deg);
+			}
+			.box:hover div:nth-of-type(2){
+
+				transform: rotateX(50deg);
+				transform-origin: top;
+			}
+
+
+			.box:hover div:nth-of-type(3){
+				transform: rotateY(50deg);
+			}
+			.box:hover div:nth-of-type(4){
+				transform: rotateZ(180deg);
+			}
+			.box:hover div:nth-of-type(5){
+				transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+			}
+
+
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<div>1</div>
+			<hr/>
+			<div>2</div>
+			<hr/>
+			<div>3</div>
+			<hr/>
+			<div>4</div>
+			<hr/>
+			<div>5</div>
+		</div>
+	</body>
+</html>

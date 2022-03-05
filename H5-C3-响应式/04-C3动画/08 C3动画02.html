@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>C3动画02</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			div{
+				top:100px;
+				left: 100px;
+				width: 200px;
+				height: 200px;
+				position: relative;
+				background: black;
+				
+				animation: move 4s linear 0s infinite alternate;
+			}
+			
+			/*
+			 * 多组动画产生的原因主要是因为我们当前遇到的动画需要分段，只设置
+			 * 开始和结束是不行的。
+			 * 
+			 * 为了给当前动画分段，我们可以利用百分比将动画拆分。理论上我们可以
+			 * 分成无数份。
+			 * 
+			 * 我们的C3可以做哪些动画：如果不考虑兼容性的话，它可以做所有动画，甚至于颜色变化。
+			 * 
+			 */
+			
+			@keyframes move{
+				0%{
+					top:100px;
+					left: 100px;
+					background: blue;
+					transform: rotate(0deg);
+				}
+				25%{
+					top:100px;
+					left: 800px;
+					background: green;
+				}
+				50%{
+					top:500px;
+					left: 800px;
+					background: yellow;
+					transform: rotate(360deg);
+				}
+				75%{
+					top:500px;
+					left: 100px;
+					background: red;
+				}
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div></div>
+		
+	</body>
+</html>

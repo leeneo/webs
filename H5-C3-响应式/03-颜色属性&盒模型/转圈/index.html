@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	
+    <link href="css/radialindicator.css"  rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script src="radialIndicator.js"></script>
+<style>
+	body{
+		height: 2000px;
+	}
+</style>
+</head>
+
+<body>
+<div style="height:1000px;"></div>
+<div class="prg-cont rad-prg" id="indicatorContainer">
+	<canvas width="120" height="120"></canvas>
+</div>
+<script type="text/javascript">
+
+	$('#indicatorContainer').radialIndicator({
+        barColor: 'green',//barColor 设置背景颜色
+        barWidth: 2,    //barWidth设置边框的粗细
+        initValue: 50,  //initValue 设置百分数的初始值：例如50%，或者0%
+        percentage: true  //percentage:true表示数字后面跟着%，false表示不跟%号
+    });
+	
+	
+	var radialObj = $('#indicatorContainer').data('radialIndicator');//必不可少，否则没有动画效果
+
+	//设置:页面滚动到什么地方有动画效果
+    $(window).scroll(function(){
+		
+		if($('#indicatorContainer').offset().top - $(window).scrollTop() <= 400){
+			//想要什么时候有动画效果，就什么时候调用这句话
+			radialObj.animate(90);//这个含义是让动画在90%的时候停止
+		}else{
+			radialObj.animate(50);//这个含义是让动画在90%的时候停止
+		}
+	})
+    
+</script>
+</body>
+</html>

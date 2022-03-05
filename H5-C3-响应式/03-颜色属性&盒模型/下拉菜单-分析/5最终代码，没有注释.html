@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单-布局</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style:none;
+		}
+		.box{
+			width: 200px;
+			margin: 100px auto;
+			
+			font:normal 14px/40px "微软雅黑";
+		}
+		.txt{
+			width: 200px;
+			border: 1px solid #ccc;
+			height: 38px;
+			line-height: 38px;
+			position: relative;
+
+		}
+		.txt input{
+			height: 38px;
+			line-height: 38px;
+			border:none;
+			display: block;
+			cursor: pointer;
+			color:#333;
+			padding-left: 30px;
+			font-size: 14px;
+			color:#000;
+		}
+		.txt span{
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			border: 1px solid #ccc;
+			border-left:none;
+			border-bottom:none;
+			top:0px;
+			right:10px;
+			transition:all .4s;
+			transform: translate(0,18px) rotate(-45deg);
+		}
+		.txt .rotate{
+			transform: translate(0,10px)  rotate(135deg);
+		}
+		.box ul{
+			width: 200px;
+			border: 1px solid #ccc;
+			border-top:none;
+			display: none;
+		}
+		
+		.box li a{
+			display: block;
+			padding-left: 30px;
+			color:#333;
+			text-decoration: none;
+		}
+		.box li a:hover{
+			background: #F08080;
+			color:#fff;
+		}
+		.box .sel a{
+			background: #ADD8E6;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="txt">
+			<input type="text" readonly="readonly">
+			<span></span>
+		</div>
+		<ul>
+			<li><a href="javascript:;">javascript</a></li>
+			<li><a href="javascript:;">jquery</a></li>
+			<li><a href="javascript:;">HTML5</a></li>
+			<li><a href="javascript:;">CSS3</a></li>
+		</ul>
+	</div>
+</body>
+</html>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+	
+	var aFlag = false;
+	$('.txt').click(function(e){
+		e.stopPropagation();
+		$(this).children('span').toggleClass('rotate');
+		aFlag = ! aFlag;
+		$('ul').toggle();
+	})
+
+	
+	$('.box li').click(function(){
+		var sTxt = $(this).children('a').html();
+		$('.txt input').val(sTxt);
+		$(this).addClass('sel').siblings().removeClass('sel');
+
+	})
+	
+	$(document).click(function(){
+		$('.txt span').removeClass('rotate');
+		$('ul').hide();
+		aFlag = false;
+	})
+</script>

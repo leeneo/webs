@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #555;
+		}
+		.box{
+			width: 400px;
+			margin: 100px auto 0;
+		}
+		.box a{
+			display: block;
+			width: 400px;
+			height: 250px;
+			color:#fff;
+			text-decoration: none;
+			position: relative;
+			background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+			            url(../img/img02.jpg) no-repeat ;
+			/*为什么要更改背景图片的大小：
+				因为在大盒子里面，我们只需要柯南，并不需要黑色半透明背景
+				所以用background-size将第一个背景图的大小设置为0，
+				而第二个背景图的大小设置为cover
+			*/
+			background-size:0,cover;
+		}
+		
+		.box a:before{
+			content:'HTML+CSS3';
+			width: 400px;
+			height: 50px;
+			position: absolute;
+			left:0;
+			bottom:0;
+			/*用来继承父亲也就是a标签设置的一系列背景图*/
+			background: inherit;
+			/*在before里面，黑色半透明和柯南这两个背景图都需要，所以背景图大小设置成cover*/
+			background-size:cover;
+			/*背景图的默认位置是top，我们需要看到的背景图的底部，所以修改一下背景图的位置*/
+			background-position:center bottom;
+			text-align: center;
+			font:18px/50px "微软雅黑";
+		}
+		.box a:after{
+			content:'';
+			
+		}
+		.box a:hover{
+			
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<a href="javascript:;"></a>
+	</div>
+</body>
+</html>

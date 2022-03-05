@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>京东侧导航</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			ul{
+				top:50%;
+				right: 0px;
+				width: 40px;
+				position: fixed;
+				transform: translate(0,-50%);
+			}
+			li{
+				width: 40px;
+				height: 40px;
+				position: relative;
+				background: #333;
+				margin-bottom: 10px;
+				border-radius: 5px 0 0 5px;
+				
+			}
+			i{
+				top:10px;
+				left:10px;
+				width: 20px;
+				height: 20px;
+				position: absolute;
+			}
+			li:nth-child(1) i{
+				background: url(img/i1.png) center center no-repeat;
+			}
+			li:nth-child(2) i{
+				background: url(img/i2.png) center center no-repeat;
+			}
+			li:nth-child(3) i{
+				background: url(img/i3.png) center center no-repeat;
+			}
+			span{
+				top:0;
+				left:0px;
+				color: #fff;
+				width: 80px;
+				z-index: -1;
+				position: absolute;
+				background: darkred;
+				text-align: center;
+				border-radius: 5px;
+				font:normal 14px/40px '微软雅黑';
+				
+				transition:all .3s linear 0.3s;
+			}
+			
+			li:hover span{
+				left: -70px;
+			}
+			li:hover{
+				background: darkred;
+				transition: all .3s;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<ul>
+			<li>
+				<i></i>
+				<span>购物车</span>
+			</li>
+			<li>
+				<i></i>
+				<span>我的关注</span>
+			</li>
+			<li>
+				<i></i>
+				<span>足迹</span>
+			</li>
+		</ul>
+		
+	</body>
+</html>

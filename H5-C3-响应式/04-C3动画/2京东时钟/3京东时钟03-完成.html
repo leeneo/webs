@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #ccc;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border:15px solid #fff;
+			margin:100px auto 0;
+			position: relative;
+		}
+		.box .circle{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			/*background: orange;*/
+			position: relative;
+			animation:move 2s linear infinite;
+			/*如果不需要逆向旋转，我们什么也不写即可，因为默认就是normal*/
+
+		}
+		.box .circle:before{
+			content:'';
+			position: absolute;
+			top:0;
+			left:45px;
+			width: 10px;
+			height: 10px;
+			background: #333;
+			border-radius:50%;
+			/*animation:move 1s infinite;*/
+			/*如果把animation加到before身上，哪儿是before自身在转，但是我们想要的是div转，带动before旋转
+			所以，animation我们需要加给div*/
+		}
+		@keyframes move{
+			to{
+				transform:rotate(360deg);
+			}
+		}
+		.box:before{
+			content:'';
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			box-shadow: 0 0 5px #888;
+			background: #ccc;
+			z-index:2;
+		}
+		.box .needle{
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			height: 100%;
+		}
+		.box .needle div{
+			content:'';
+			position: absolute;
+			top:50%;
+			left:50%;
+			margin-left:-4px;
+			width: 8px;
+			height: 80px;
+			background: #20B2AA;
+			border-radius: 5px;
+			transform-origin: bottom;
+			box-shadow:0 0 3px #888;
+		}
+		.box .needle .seconds{
+			margin-top: -80px;
+		}
+		.box .needle .hours{
+			background:#FF6ED9;
+			height: 60px;
+			margin-top: -60px;
+			transform: rotate(10deg);
+			
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="circle"></div>
+		<div class="needle">
+			<div class="hours"></div>
+			<div class="seconds"></div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="jquery-2.1.3.min.js"></script>
+<script>
+	
+
+	function setTime(){
+		/*
+		首先先获取时间对象，然后获取系统的小时和秒钟
+		*/
+		var iTime = new Date();
+		var iH = iTime.getHours();
+		var iS = iTime.getSeconds();
+		/*
+			分析：
+				时针：12个小时走一圈360deg    ------    1个小时走30 deg   那么   n个小时走(n*30) deg
+
+				分针：60分钟走一圈360deg    ------ 1个分钟走6 deg   那么   n个分钟走(n*6) deg
+
+				秒针：60秒钟走一圈360deg    ------ 1个秒钟走6 deg   那么   n个秒钟走(n*30) deg
+
+
+
+			时针位置：  当前小时数*30  
+			秒针位置：  当前秒钟数*6 
+		*/
+		$('.hours').css('transform','rotate('+iH*30+'deg)');
+		$('.seconds').css('transform','rotate('+iS*6+'deg)');
+	}
+	// 将代码封装成函数，便于在定时器里面调用
+	setTime();
+	setInterval(setTime,1000);
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>浏览器内核相关</title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			div{
+				top:100px;
+				left:100px;
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				background: lightseagreen;
+				
+				animation: move 1s;
+				
+			}
+			
+			/* 向下面这种定义动画的语法就是在单独的给 ff 浏览器定义动画 */ 
+			@-moz-keyframes move{
+				from{
+					left:100px;
+				}
+				to{
+					left: 800px;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div></div>
+		
+	</body>
+</html>

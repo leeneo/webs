@@ -1,0 +1,47 @@
+一、	Fullpage基本介绍
+fullpage就是一款基于JQ的JS框架，通过这个框我们可以很容易的就得到一种单屏滚动的页面结构。
+在这个框架中定义了HTML+CSS+JS的标准，所以在使用的时候我们只需要调用相应的结构和样式及可。
+01 使用Fullpage 中设计好的单屏滚动结构。其中最外层的大盒子 id 名称可以自定义，但是每一屏的类名必须是  section 
+02 引入我们需要的 fullpage.min.css 文件，在这套 css 中定义了我们需要的基础样式。
+03 先引入 JQ 文件，然后再写一对 script 选中需要滚动的结构，去调用 fullpage()方法。
+
+二、	常见基本配置项
+01 sectionsColor: 接收一个数组做为参数用来给每一屏设置背景颜色，切记它不能用来修改背景图片。
+02 anchors: 给每一屏设置锚点名，可以用来制作锚点导航
+03 verticalCentered: 设置每一屏内容在垂直方向是否居中显示，false 表示不居中
+04 scrollingSpeed : 设置单屏幕滚动需要的时长，单位是毫秒。默认值是 700
+05 resize: 默认值为 false ,设置为true 表示允许页面中的文字内容随着页面缩放而缩放。
+06 css3 ： 默认值为 true 表示单屏滚动的动画形式采用 C3动画，设置为 false 表示采用 JQ 动画。
+
+三、	常用的滚动相关配置
+01 continuousVertical: 设置为 true 表示开启循环滚动。
+02 loopBottop loopTop 这二个也是循环滚动，只不过可以看到中间扯动过程和第一个不能同时使用。
+03 scrollOverflow: 该配置项设置为true 配合我们的 scroll.min.js文件可以在某一屏内容超高的时候产生一个自定义的滚动条
+04 scrollBar : 默认值为 false有示不显示浏览器自带的滚动条。
+05 autoScrolling: 默认值为 true 表示采用插件自带的滚动动画，如果设置为 false 表示优先使用用户自已的滚动操作。
+
+四、	导航条配置项
+01 navigation: 设置 true 表示显示右侧圆点导航
+02 navigationTooltips: 设置一个数组，表示给每一屏都添加一个提示文字
+03 showActiveTooltip: 设置为 true 表示默认当前显示屏提示文字是显示的。
+04 slidesNavigation:  设置为 true 表示显示轮播放图下方的圆点导航
+05 fullpage中提供了轮播图的写法，我们只需要在用到轮播图的时候 设置 slide 类即可。
+
+五、	常用回调函数
+回调函数我们不需要关系它什么时候会执行，只需要负责它的定义就可以了。
+ afterLoad:function( link,index ){}
+
+注意：
+01 该函数会在某一屏加载完成之后自动调用。
+02 link 表示的是当前加载屏的锚点名
+03 index 表示当前加载屏的编号，编号是从1开始的。
+onLeave:function( index,nextIndex,dir ){}
+注意：
+01 该函数会在离开某一屏的时候自动触发
+02 index 表示从哪一屏离开
+03nextIndex 表示滚向哪一屏
+04 dir 表示当前滚动的方向
+
+
+
+ 

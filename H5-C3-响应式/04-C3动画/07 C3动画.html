@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>C3动画</title>
+		<style type="text/css">
+		
+			/* 
+			 * 01 定义单组动画
+			 * 
+			 * 在 JS中我们定义函数的语法是 function Fn(){
+			 * 	
+			 * };
+			 * 
+			 * 对于单组动画来说，我们需要写的就是当前动画的开始和结束状态
+			 * C3给我们准备了二个关键字 from  to
+			 * 
+			 *  */
+			@keyframes move{
+				from{
+					left: 100px;
+				}
+				to{
+					left: 800px;
+				}
+			}
+		
+			div{
+				top:100px;
+				left: 100px;
+				width:200px;
+				height: 200px;
+				position: absolute;
+				background: orange;
+				
+				/* 如果我们需要让某个元素做动画的时候我们可以直接利用 animation 调用动画 */
+				animation: move 1s linear 0s infinite alternate;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--
+			在CSS3中提供一些可以直接完成动画的语法。
+			首先我们可以将C3中的动画分为二类： 单组+多组
+			
+			无论是单组还是多组都需要先定义动画，然后再使作动画，和我们JS中定义函数调用函数类似
+		-->
+		
+		<div></div>
+		
+		
+	</body>
+</html>

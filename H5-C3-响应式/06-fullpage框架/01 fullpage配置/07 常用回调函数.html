@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>常用回调函数</title>
+		<link rel="stylesheet" href="css/jquery.fullPage.min.css" media="all" />
+	</head>
+	<body>
+		
+		<div id="fullpage">
+			<div class="section">1</div>
+			<div class="section">2</div>
+			<div class="section">3</div>
+			<div class="section">4</div>
+		</div>
+		
+	</body>
+</html>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script type="text/javascript">
+	$('#fullpage').fullpage({
+		
+		'sectionsColor':['orange','seagreen','lightblue','pink'],
+		anchors:['page1','page2','page3','page4'],
+		afterLoad:function( link,index ){
+			//当某一屏加载完成后，会执行当前函数
+			//link表示当前所加载屏的锚点名称
+			//page4表示当前屏的索引值
+		},
+		onLeave:function( index,nextIndex,dir ){
+			//当从某一屏离开的时候，调用当前函数
+			//index表示从哪一屏离开的索引
+			//nextindex表示要加载哪一屏的索引
+			//dir表示当前的滚动方向,down/up
+			console.log( index+'---'+nextIndex+'--'+dir );
+		}
+		
+	});
+</script>

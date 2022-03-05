@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单-布局</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style:none;
+		}
+		.box{
+			width: 200px;
+			margin: 100px auto;
+			
+			font:normal 14px/40px "微软雅黑";
+		}
+		.txt{
+			width: 200px;
+			border: 1px solid #ccc;
+			height: 38px;
+			line-height: 38px;
+			position: relative;
+
+		}
+		.txt input{
+			height: 38px;
+			line-height: 38px;
+			border:none;
+			display: block;
+			cursor: pointer;
+			color:#333;
+			padding-left: 30px;
+			font-size: 14px;
+			color:#000;
+			/*当我给.txt行高的时候，input会顶部留白，这个问题和img的底部留白问题类似
+			表单元素和img都是行内块，都会出现此类问题
+			解决方法：给input设置成display:block;*/
+		}
+		.txt span{
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			border: 1px solid #ccc;
+			border-left:none;
+			border-bottom:none;
+			top:0px;
+			right:10px;
+			transition:all .4s;
+			transform: translate(0,18px) rotate(-45deg);
+		}
+		.txt .rotate{
+			transform: translate(0,10px)  rotate(135deg);
+		}
+		.box ul{
+			width: 200px;
+			border: 1px solid #ccc;
+			border-top:none;
+			display: none;
+		}
+		
+		.box li a{
+			display: block;
+			padding-left: 30px;
+			color:#333;
+			text-decoration: none;
+		}
+		.box li a:hover{
+			background: #F08080;
+			color:#fff;
+		}
+		.box .sel a{
+			background: #ADD8E6;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="txt">
+			<input type="text" readonly="readonly">
+			<span></span>
+		</div>
+		<ul>
+			<li><a href="javascript:;">javascript</a></li>
+			<li><a href="javascript:;">jquery</a></li>
+			<li><a href="javascript:;">HTML5</a></li>
+			<li><a href="javascript:;">CSS3</a></li>
+		</ul>
+	</div>
+</body>
+</html>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+	/*
+		1、点击菜单按钮：
+			a、如果ul处于隐藏状态：
+				让ul显示
+				让箭头向下，有个动画的旋转效果
+			b、如果ul处于显示状态：
+				让ul隐藏
+				让箭头向上，有个动画的旋转效果
+
+			我们用一个变量aFlag来表示ul的显示与隐藏
+			 	由于页面刷新之后，下拉菜单默认处于隐藏状态，所以我们设置aFlag的值为false
+			 	aFlag  ：  false表示处于隐藏状态     true表示处于显示状态
+
+			每次点击菜单按钮，我们都要切换aFlag的状态
+
+			简化代码：
+				$('ul').hide();和$('ul').show();可以用$('ul').toggle()替换
+	*/
+	var aFlag = false;
+	$('.txt').click(function(e){
+		e.stopPropagation();//阻止冒泡
+		if(aFlag){
+			//aFlag为true，表示ul处于显示状态，需要变为隐藏
+			$(this).children('span').removeClass('rotate');
+		}else{
+			//aFlag为false，表示ul处于隐藏状态，需要变为显示
+			$(this).children('span').addClass('rotate');
+		}
+		aFlag = ! aFlag;//点击之后需要切换开关状态
+		$('ul').toggle();
+	})
+
+	/*
+		2、点击下拉选项：
+			a、取出选项的内容，赋值给input输入框
+			b、选中的选项处于高亮状态,兄弟们处于正常状态
+			c、选择之后ul要隐藏
+			d、将开关aFlag的状态设置为false
+			e、让箭头向上，有个动画的旋转效果
+	*/
+	$('.box li').click(function(){
+		var sTxt = $(this).children('a').html();
+		$('.txt input').val(sTxt);
+		$(this).addClass('sel').siblings().removeClass('sel');
+
+		/*下面这三句代码已经不需要了，因为点击li的时候，同样会冒泡，会触发document的点击事件，
+		   而document点击事件里面，做的就是这三件事情
+		*/
+		// $('.txt span').removeClass('rotate');
+		// $('ul').hide();
+		// aFlag = false;
+	})
+	/*
+		如果我们只点击打开下拉菜单，但是没有选择选项，而且也没有点击菜单按钮关闭，
+		只想要实现点击空白处关闭下拉菜单，那么就需要给document绑定事件
+	
+		3、点击页面其他地方：
+					a、ul要隐藏
+					b、将开关aFlag的状态设置为false
+					c、让箭头向上，有个动画的旋转效果
+
+		但是，一旦我们给document绑定了点击事件之后，就会出现事件冒泡导致的bug。
+
+		bug如下：
+			我们想要点击菜单按钮，让ul显示，但是点击事件会网上冒，同样触发document的点击事件，
+			然后又让ul隐藏了，所以，需要阻止冒泡，借助alert来看清过程
+
+		如何解决冒泡导致的bug：
+			点击菜单按钮的时候，阻止冒泡即可event.stopPropagation();
+
+	*/
+	$(document).click(function(){
+		console.log('document的点击事件')
+		// alert('我是document的点击事件，我要让ul隐藏');
+		$('.txt span').removeClass('rotate');
+		$('ul').hide();
+		aFlag = false;
+	})
+</script>

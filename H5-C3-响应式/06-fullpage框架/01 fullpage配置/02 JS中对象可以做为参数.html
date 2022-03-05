@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS中对象可以做为参数</title>
+	</head>
+	<body>
+		
+		
+		
+	</body>
+</html>
+<script>
+	
+	/*
+	 * 
+	 * 下面的语法定义了一个函数，可以设置一个参数a 
+	 * 在JS中哪些元素可以做为一个参数来使用：只要是在JS中出现的数据类型都可以做为参数使用。
+	 * 字符串，布尔型，数值，对象型，未定义 .....
+	 *
+	 * 
+	 */
+	
+	function fn1(){
+		alert( '我是在函数 fn1 中实现的' );
+	}
+	
+	// 下面的格式我们更容易理解为就是一个键值对的集合。
+	// 其实我们还可以把它们称之为 单体 json 对象......
+	
+	// *** 下面的代码我们只需要记住 类似于 {} 中放置键值对语法的 对象可以做为函数参数使用就可以了。
+	
+	var Person = {
+		'name':'abc',
+		'age' :18
+	}
+	
+	function fn( a ){
+		alert( a.age );
+	}
+	
+	fn(Person);
+	
+</script>

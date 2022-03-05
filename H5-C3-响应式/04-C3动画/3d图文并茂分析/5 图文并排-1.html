@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #555;
+		}
+		.box{
+			width: 400px;
+			margin: 50px auto 0;
+			height: 420px;
+			padding:20px 50px;
+			border: 5px solid orange;
+			perspective:1000px;
+			
+
+		}
+		.box a{
+			display: block;
+			width: 400px;
+			height: 290px;
+			color:#fff;
+			text-decoration: none;
+			position: relative;
+			background: url(../img/img02.jpg) no-repeat 0 0;
+			transform-style:preserve-3d;
+			transition:all 0.6s;
+			/*background-size:400px 210px;*/
+
+		}
+		
+		.box a:before{
+			content:'HTML5+CSS3';
+			width: 400px;
+			height: 40px;
+			position: absolute;
+			left:0;
+			bottom:0;
+
+			background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+			            url(../img/img02.jpg) no-repeat center bottom;
+
+
+			text-align: center;
+			font:18px/40px "微软雅黑";
+
+			
+			/*
+				视频的思路：
+					首先把before顺时针（向屏幕里面旋转）90deg：rotateX(90deg)
+					在hover状态，a是rotate(80deg):即顺时针旋转80deg
+					在两次旋转之后，before最终被旋转了170deg，
+					before是背面面对我们
+
+			*/
+			/*transform:rotateX(90deg);
+			transform-origin:bottom;*/
+
+
+			/*我自己的思路：
+				首先把before逆时针（向屏幕外面旋转）90deg : rotateX(-90deg);
+				在hover状态，a是rotate(80deg):即顺时针旋转80deg
+				在两次旋转之后，before最终被旋转了10deg，
+				before依然是正面面对我们
+
+				这样我们就省的去操作span标签了
+
+				但是，我们这样完成还是有bug的，需要给a标签的高度加个40px
+				也就是a标签的高度应该=背景图的高度(250)+before的高度(40) = 290px
+			*/
+			transform-origin:top;
+			transform:rotateX(-90deg);
+
+			transition:all 0.6s;
+		}
+		.box a:after{
+			content:'';
+			position:absolute;
+			top:0px;
+			left:0;
+			width: 400px;
+			height: 250px;
+			background: rgba(0,0,0,0.3);
+			box-shadow:0 0 80px 2px rgba(0,0,0,0.7);
+			/*
+			1、阴影最初和before保持一致，所以也是顺时针旋转90deg：rotateX(90deg)
+			2、因为阴影有点靠上，所以需要往下去：方向为z轴   translateZ(-160px)
+				阴影水平方向为x和y，现在是要垂直阴影的水平方向向下走，所以是z轴
+				translateZ(值)：正值为上走   负值为下走
+			3、
+			*/
+			transform:  rotateX(90deg) translateZ(-160px) scale(0.8);
+			transition: all .6s;
+
+
+			
+			
+		}
+		.box:hover a{
+			transform: rotateX(80deg);
+		}
+		.box:hover a:after{
+			/*
+				阴影最初已经顺时针旋转了90deg，当hover的时候a会再次顺时针旋转80deg，
+				但是我们hover状态，是想要阴影处于整体的0度的状态
+			*/
+			transform:  rotateX(0deg)  translateZ(-80px) scale(1);
+
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<a href="javascript:;"></a>
+	</div>
+</body>
+</html>
