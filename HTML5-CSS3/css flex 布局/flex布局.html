@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../neoui/css/neoui.css">
+    <link rel="stylesheet" href="../../../neoui/css/utils.css">
+    <style>
+        .box,
+        .rowbox,
+        .colbox {
+            display: flex;
+            background: #fab;
+            margin-bottom: 10%;
+        }
+
+        .box {
+            height: 60px;
+        }
+
+        .span {
+            margin-bottom: 10%;
+        }
+
+        /* flex container 属性的使用 */
+        .rowbox {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .colbox {
+            flex-direction: column;
+            /* flex-direction 为 column 时，justify-content 无效 */
+            /* justify-content: space-between; */
+            /* flex-wrap: wrap; */
+            align-items: center;
+        }
+
+        .span {
+            display: inline-flex;
+            background: #abf;
+            height: 40px
+        }
+
+        .listSpan {
+            display: inline-flex;
+            background: #afb;
+            text-align: center;
+            width: 80px;
+            border: 1px solid gray;
+            order: 1;
+            justify-content: center;
+        }
+
+        /* flex item 属性的使用 */
+        .first {
+            order: 0;
+            flex-grow: 1;
+            align-self: flex-end;
+        }
+   
+    </style>
+</head>
+
+<body>
+    <div class="box">flex box</div>
+    <span class="span">flex span</span>
+    <ul class="rowbox">
+        <li class="listSpan">a</li>
+        <li class="listSpan">b</li>
+        <li class="listSpan">c</li>
+        <li class="listSpan first">d</li>
+        <li class="listSpan">e</li>
+        <li class="listSpan">f</li>
+        <li class="listSpan">g</li>
+        <li class="listSpan">h</li>
+        <li class="listSpan">i</li>
+        <li class="listSpan">j</li>
+        <li class="listSpan">k</li>
+        <li class="listSpan">l</li>
+        <li class="listSpan">m</li>
+        <li class="listSpan">n</li>
+    </ul>
+    <ul class="colbox">
+        <li class="listSpan">a</li>
+        <li class="listSpan">b</li>
+        <li class="listSpan">c</li>
+        <li class="listSpan first">d</li>
+        <li class="listSpan">e</li>
+        <li class="listSpan">f</li>
+        <li class="listSpan">g</li>
+        <li class="listSpan">h</li>
+        <li class="listSpan">i</li>
+        <li class="listSpan">j</li>
+        <li class="listSpan">k</li>
+        <li class="listSpan">l</li>
+        <li class="listSpan">m</li>
+        <li class="listSpan">n</li>
+    </ul>
+</body>
+
+</html>
