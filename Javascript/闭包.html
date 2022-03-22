@@ -22,6 +22,8 @@
         //因为Javascript ES5之前没有块级作用域，为了实现var 变量的块级限定，出现了闭包（借助于函数限定作用域）
         //始终输出第4个按钮被点击，在定时函数执行前，for已执行完所有的循环，i传到事件函数的值始终是4
         for (var i = 0; i < btns.length; i++) {
+            console.log('var i: ', i);
+
             btns[i].addEventListener('click', function () {
                 console.log('var: 第 ' + i + ' 个按钮被点击');
             });
@@ -29,16 +31,20 @@
 
         //let 的值会被限定在局部范围内，相当于下面的闭包for
         for (let i = 0; i < btns.length; i++) {
+            console.log('let i: ', i);
+
             btns[i].addEventListener('click', function () {
-                console.log('let: 第 ' + i + ' 个按钮被点击');
+                console.log('let: 第 ' + (i + 1) + ' 个按钮被点击');
             });
         }
 
         //闭包方式和let的效果相同
         for (var i = 0; i < btns.length; i++) {
+            console.log('闭包 i: ', i);
+
             (function (i) {
                 btns[i].addEventListener('click', function () {
-                    console.log('闭包: 第 ' + i + ' 个按钮被点击');
+                    console.log('闭包: 第 ' + (i + 1) + ' 个按钮被点击');
                 });
             })(i)
         }
