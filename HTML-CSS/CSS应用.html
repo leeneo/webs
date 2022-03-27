@@ -1,11 +1,12 @@
 <html>
-	<head>
-	  <meta charset="UTF-8">
-	  <meta name="Generator" content="EditPlus®">
-	  <meta name="Author" content="">
-	  <meta name="Keywords" content="">
-	  <meta name="Description" content="">
-		<title>CSS的各种书写格式</title>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>CSS的各种书写格式</title>
 
 	<!--如果CSS定义冲突，行内CSS覆盖内定义CSS覆盖外部CSS;后写的CSS覆盖先写的CSS。
 	标签选择器范围最大，类选择器限定某些具体的元素，ID选择器指定某一特定元素。
@@ -14,19 +15,17 @@
 
 	<!--块级标签的宽度默认是父级的宽度-->
 
-		<!--调用外部链接CSS-->
-		<link href="style.css" rel="stylesheet" type="text/css" />
+	<!--调用外部链接CSS-->
+	<link href="style.css" rel="stylesheet" type="text/css" />
 
-		<!--内定义CSS-->
-		<style type="text/css">
-			<!-- 
-			
-			/*调用外部链接CSS，作用同<link>标记,多用link外链
+	<!--内定义CSS-->
+	<style type="text/css">
+		/*调用外部链接CSS，作用同<link>标记,多用link外链
 			@import url("style.css");*/
 
-			/*标签选择器，直接对指定标签起作用；‘*’通配符选择器适用于所有标签，包括过时标签，不常用*/
-			body{
-				 /*background-color:'#aaffee';
+		/*标签选择器，直接对指定标签起作用；‘*’通配符选择器适用于所有标签，包括过时标签，不常用*/
+		body {
+			/*background-color:'#aaffee';
 				 background-image:url('211134-101.jpg');
 				 background-attachment:scroll;	//与url配合使用，指示背景图片是否跟着窗口滚动条一起滚动，scroll-滚动；fixed-固定;
 				 background-repeat:repeat;
@@ -34,267 +33,323 @@
 				 background-position:center;	//background-postion:x y;指定背景图像的开始位置;x-水平位置；Y-垂直位置，默认值:0% 0%。
 				 */
 
-				 /*单个background标记设置单个或多个背景属性*/
-				 background:#aaffee url('248914-101.jpg')  fixed repeat top center;
-				 /* background:url('248914-101.jpg')  fixed;				  */
-			}
+			/*单个background标记设置单个或多个背景属性*/
+			background: #aaffee url('248914-101.jpg') fixed repeat top center;
+			/* background:url('248914-101.jpg')  fixed;				  */
+			text-align: center;
+		}
 
-			/*！Important提权功能，能够把针对性提高到大于行内式；*/
-			/*首行缩进,em相对大小，1em=一个字符（汉字占两个字节）;pt=point,磅，字号，绝对大小；px像素。*/
-			.PIndent{			
-				
-				text-indent:4em;	
-				color:#f030b0!important;
-			}
+		/*！Important提权功能，能够把针对性提高到大于行内式；*/
+		/*首行缩进,em相对大小，1em=一个字符（汉字占两个字节）;pt=point,磅，字号，绝对大小；px像素。*/
+		.PIndent {
 
-			/*类选择器，通过class调用的CSS，可以被多个元素调用。;一个标签，也可以调用多个类选择器，形式如下：class='divA divB'*/
-			/*给元素添加width属性且赋值后，text-align属性失效*/
+			text-indent: 4em;
+			color: #f030b0 !important;
+		}
 
-			 .blue{		 
-                color:blue; 
-				font-family:"Times"; 
-				font-size:24px;
-            }
+		/*类选择器，通过class调用的CSS，可以被多个元素调用。;一个标签，也可以调用多个类选择器，形式如下：class='divA divB'*/
+		/*给元素添加width属性且赋值后，text-align属性失效*/
 
-			.divA{
-				/* margin-top:5%x; */
-				/* margin-right:10%; */
-				/* margin-left:28.5%; */
-				/* margin-bottom:5%; */
-				margin:0 auto;
+		.blue {
+			color: blue;
+			font-family: "Times";
+			font-size: 24px;
+		}
 
-				/*margin/padding:
+		.divA {
+			/* margin-top:5%x; */
+			/* margin-right:10%; */
+			/* margin-left:28.5%; */
+			/* margin-bottom:5%; */
+			margin: 0 auto;
+
+			/*margin/padding:
 				四值写法：上、右、下、左（从上开始顺时针转一圈）
 				三值写法：上、左右、下
 				两值写法：上下、左右
 				单值写法：4个方向的设置*/
-				
-				/*综合设置，border:width style color*/
-				/* border-style:dotted; */
-				/* border-width:1pt; */
-				/* border-color:#f00faf; */
-				border:1pt dotted #f00faf;
 
-				/* padding-top:12px; */
-				/* padding-left:1px; */
-				/* padding-right:1px; */
-				/* padding-bottom:12px; */
-				/* padding:50px;设置4边的间距 */
-				padding:1px 0px;/*设置上下和左右的间距*/
+			/*综合设置，border:width style color*/
+			/* border-style:dotted; */
+			/* border-width:1pt; */
+			/* border-color:#f00faf; */
+			border: 1pt dotted #f00faf;
 
-				text-align:center;
+			/* padding-top:12px; */
+			/* padding-left:1px; */
+			/* padding-right:1px; */
+			/* padding-bottom:12px; */
+			/* padding:50px;设置4边的间距 */
+			padding: 1px 0px;
+			/*设置上下和左右的间距*/
 
-			}
+			text-align: center;
 
-			.divA2{
-				width:800px;
-				height:50px;
-				background:#a0b0f0;
-				text-align:left;
-				margin:0 auto;
-			}
+		}
 
-	/*--实体化三属性：width,height,background;实体后的元素被称为‘盒子’——块状化元素 */
-	/*--div大盒子，可以设置宽高，块级标签；span小盒子,设置宽高无效，行内标签;
+		.divA2 {
+			width: 800px;
+			height: 50px;
+			background: #a0b0f0;
+			text-align: left;
+			margin: 0 auto;
+		}
+
+		/*--实体化三属性：width,height,background;实体后的元素被称为‘盒子’——块状化元素 */
+		/*--div大盒子，可以设置宽高，块级标签；span小盒子,设置宽高无效，行内标签;
 	使用display属性转换标签块级和行级显示模式，inline-行级显示；block-块级显示（可以设置宽高）
 	设置过宽高之后，text-align属性失效*/
-	/*dispaly:none 不占位隐藏;visibility:hidden 占位隐藏*/
-	/*line-height设置容器内行与行之间的距离，在只有一行文字的前提下，设为行高等于容器高度，可使文字上下居中于容器*/
-			.spanA{
-				width:800px;
-				height:30px;
-				line-height:30px;
-				background:#f0a0b0;/*颜色值可以简写为：#fab*/
-				text-align:left;
-				margin:0 auto;
-			}
-			.spanB{
-				width:800px;
-				height:50px;
-				line-height:50px;
-				background:#f0a0b0;
-				text-align:left;
-				margin:0 auto;
-				display:block;
-			}
-			
-			.divB{
-				width:800px;
-				height:50px;
-				background:#a0b0f0;/*颜色值可以简写为：#abf*/
-				text-align:left;;
-				margin:0 auto;
+		/*dispaly:none 不占位隐藏;visibility:hidden 占位隐藏*/
+		/*line-height设置容器内行与行之间的距离，在只有一行文字的前提下，设为行高等于容器高度，可使文字上下居中于容器*/
+		.spanA {
+			width: 800px;
+			height: 30px;
+			line-height: 30px;
+			background: #f0a0b0;
+			/*颜色值可以简写为：#fab*/
+			text-align: left;
+			margin: 0 auto;
+		}
 
-			}
-			.divC{
-				width:800px;
-				height:25px;
-				line-height:25px;
-				background:#a0f0b0;
-				text-align:left;
+		.spanB {
+			width: 800px;
+			height: 50px;
+			line-height: 50px;
+			background: #f0a0b0;
+			text-align: left;
+			margin: 0 auto;
+			display: block;
+		}
 
-				/*magin:0 auto 在此自动左对齐，去掉display则可以居中*/
-				margin:0 17.5%;
-				display:inline-block;
-			}
+		.divB {
+			width: 800px;
+			height: 50px;
+			background: #a0b0f0;
+			/*颜色值可以简写为：#abf*/
+			text-align: left;
+			;
+			margin: 0 auto;
 
-			/*子孙选择器，定义class=special的大元素内子元素p的样式，有层次的CSS定义*/
-			/*空格前后可以是任意一种基础选择器，空格前指定父级元素，空格后指定生效子元素*/
-			.special p{		
-				color:#E0FF0F;
+		}
 
-				/*可以用font，综合设置font下各分项属性*/
-				/*font-family:'楷体';
+		.divC {
+			width: 800px;
+			background: #a0f0b0;
+			/*变为行内元素后，居中由父级决定*/
+			display: inline-block;
+		}
+
+		/*子孙选择器，定义class=special的大元素内子元素p的样式，有层次的CSS定义*/
+		/*空格前后可以是任意一种基础选择器，空格前指定父级元素，空格后指定生效子元素*/
+		.special p {
+			color: #E0FF0F;
+
+			/*可以用font，综合设置font下各分项属性*/
+			/*font-family:'楷体';
 				font-size:18pt;
 				font-weight:bolder;
 				line-height:50px;
 				font-variant:normal/small-caps  //small-caps：英文字母全大写显示，但字体相对较小
 				font-style:italic;*/
-				
-				/*必须要有字号和字体，否则整个属性不生效;
+
+			/*必须要有字号和字体，否则整个属性不生效;
 				格式如下， p {font:style weight variant size/line-height family }
 				依次是是否斜体、粗细、是否大写化、字号/行高、字体，顺序不能乱；
 				可以简去大写化、行高，weight:默认normal;必需保留字号和字体；		
 				*/
-				font:oblique /*small-caps*/ bolder 16pt/50px '宋体' ;
+			font: oblique
+				/*small-caps*/
+				bolder 16pt/50px '宋体';
 
-				/*设置英文字母大小写用text-transform:capitalize(首字母大写)|uppercase（全大写）|lowercase（小写）更为灵活*/
-				text-transform:capitalize;
+			/*设置英文字母大小写用text-transform:capitalize(首字母大写)|uppercase（全大写）|lowercase（小写）更为灵活*/
+			text-transform: capitalize;
 
-				/*文本修饰*/
-				text-decoration:underline;
+			/*文本修饰*/
+			text-decoration: underline;
 
-				text-align:left;
-			}
+			text-align: left;
+		}
 
-			/*id选择器，通过ID调用的CSS，元素id有唯一性，因此最好只使用一次，多处调用用class*/
-			#span1{	
- 				color:#1F4EF0;
-				font-family:'隶书';
-				font-weight:bold;
-				font-size:12pt;				
- 			}
-			#span2{	
- 				color:#5FaEa0;
-				font-family:'宋体';
-				font-weight:bold;
-				font-size:14pt;				
- 			}
-			#span3{	
- 				color:#0FaEF0;
-				font-family:'华文新魏';
-				font-weight:bold;
-				font-size:16pt;				
- 			}
+		/*id选择器，通过ID调用的CSS，元素id有唯一性，因此最好只使用一次，多处调用用class*/
+		#span1 {
+			color: #1F4EF0;
+			font-family: '隶书';
+			font-weight: bold;
+			font-size: 12pt;
+		}
 
-			/*修饰超链接，同时设置四种，遵循L-V-H-A书写顺序*/
-			a:link{color:blue;text-decoration:underline}/*未访问的状态*/
-			a:visited{color:blue;text-decoration:underline}/*访问过的状态*/
-			/* 通过hover伪类在a元素上添加字体样式，这是简单的动画效果 */
-			a:hover{color:rgb(79, 230, 33);text-decoration:none;font-size:40px}/*鼠标划过时的状态*/
-			a:active{color:red;text-decoration:none}/*鼠标激活时的状态*/
+		#span2 {
+			color: #5FaEa0;
+			font-family: '宋体';
+			font-weight: bold;
+			font-size: 14pt;
+		}
 
-			/*经验：一般工作中，超链接的访问前和访问后样式完全相同（保证页面风格统一）;可用并集选择器，也直接书写a标签选择器，同时设置超链接的所有状态，万一哪个状态特殊，再单独设置样式；一般情况下，访问前的超链接都没有下划线，目的就是让页面干净整洁。*/
-			/*a:link,a:visited{ color:#000; font-size:30px; text-decoration:none;}
+		#span3 {
+			color: #0FaEF0;
+			font-family: '华文新魏';
+			font-weight: bold;
+			font-size: 16pt;
+		}
+
+		/*修饰超链接，同时设置四种，遵循L-V-H-A书写顺序*/
+		a:link {
+			color: blue;
+			text-decoration: underline
+		}
+
+		/*未访问的状态*/
+		a:visited {
+			color: blue;
+			text-decoration: underline
+		}
+
+		/*访问过的状态*/
+		/* 通过hover伪类在a元素上添加字体样式，这是简单的动画效果 */
+		a:hover {
+			color: rgb(79, 230, 33);
+			text-decoration: none;
+			font-size: 40px
+		}
+
+		/*鼠标划过时的状态*/
+		a:active {
+			color: red;
+			text-decoration: none
+		}
+
+		/*鼠标激活时的状态*/
+
+		/*经验：一般工作中，超链接的访问前和访问后样式完全相同（保证页面风格统一）;可用并集选择器，也直接书写a标签选择器，同时设置超链接的所有状态，万一哪个状态特殊，再单独设置样式；一般情况下，访问前的超链接都没有下划线，目的就是让页面干净整洁。*/
+		/*a:link,a:visited{ color:#000; font-size:30px; text-decoration:none;}
 
 			a{ color:#000; font-size:30px; text-decoration:none; display:block;}
 			a:hover{ color:green; text-decoration:underline;}*/
 
-			.divD{
-				width:800px;
-				height:50px;
-				background:red;
-				text-align:left;
-				margin:0 auto;
+		.divD {
+			width: 800px;
+			height: 50px;
+			background: red;
+			text-align: left;
+			margin: 0 auto;
 
-			}
+		}
 
-			.divE{
-				width:550px;
-				margin:0 auto;
-			}
+		.divE {
+			width: 550px;
+			margin: 0 auto;
+		}
 
-			#divD{
-				width:800px;
-				height:50px;
-				background:purple;
-				text-align:left;
-				margin:0 auto;
+		#divD {
+			width: 800px;
+			height: 50px;
+			background: purple;
+			text-align: left;
+			margin: 0 auto;
 
-			}
-			/*空格隔开子孙选择器，','隔开并集选择器*/
-			ul .li,.lc,#ld{
-				color:red;
-				background:#a0b0f0;
-				width:750px;
-				margin:0 auto;
-			}
-			-->
-		</style>
-	</head>
-	<body>
-		<h1>卜算子·咏梅</h1>
-		<!--文本间CSS--行内CSS;CSS属性可以继承和叠加-->
-		<!--此处p元素继承了外链CSS文件中p的属性-->
-		<p style="color:#f0b0a0">驿外断桥边，寂寞开无主。已是黄昏独自愁，更著风和雨。</p>
-		<p style="font:15pt;font-weight:bold">
-			无意苦争春，一任群芳妒。<span class="blue">零落成泥碾作尘，只有香如故。</span>
-		</p><br/>
-		<h1>声声慢</h1>
-		<h3>李清照</h3>
+		}
 
-		<div>
-			<div class="divE">
-				<span id="span1">寻寻觅觅，冷冷清清，凄凄惨惨戚戚。<br/>乍暖还寒时候，最难将息。<br/>三杯两盏淡酒，怎敌他，晚来风急？<br /></span>
-				<span id="span2">雁过也，正伤心，却是旧时相识。<br />满地黄花堆积。憔悴损，如今有谁堪摘？<br /></span>
-				<span id="span3">守著窗儿，独自怎生得黑？<br/>梧桐更兼细雨，到黄昏、点点滴滴。<br/>这次第，怎一个、愁字了得！</span>
-			</div>
+		/*空格隔开子孙选择器，','隔开并集选择器*/
+		ul {
+			overflow: hidden;
+			list-style: none;
+		}
+
+		ul,
+		ol {
+			width: 800px;
+			background: #a0b0f0;
+			margin: 0 auto;
+			padding: 0;
+		}
+
+		ul li {
+			color: red;
+		}
+
+		/* list-style: 可同时按顺序设置 [list-style-type | list-style-position | list-style-image] */
+		/* 在设置 padding 0,未设置 list-style:inside 的情况下，设置 overflow:hidden 未隐藏 liststyle */
+		/* 如果在 ol li 上设置 display:block 也会隐藏 liststyle */
+		ol {
+			overflow: hidden;
+			list-style: disc inside;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>卜算子·咏梅</h1>
+	<!--文本间CSS--行内CSS;CSS属性可以继承和叠加-->
+	<!--此处p元素继承了外链CSS文件中p的属性-->
+	<p style="color:#f0b0a0">驿外断桥边，寂寞开无主。已是黄昏独自愁，更著风和雨。</p>
+	<p style="font:15pt;font-weight:bold">
+		无意苦争春，一任群芳妒。<span class="blue">零落成泥碾作尘，只有香如故。</span>
+	</p><br />
+	<h1>声声慢</h1>
+	<h3>李清照</h3>
+
+	<div>
+		<div class="divE">
+			<span id="span1">寻寻觅觅，冷冷清清，凄凄惨惨戚戚。<br />乍暖还寒时候，最难将息。<br />三杯两盏淡酒，怎敌他，晚来风急？<br /></span>
+			<span id="span2">雁过也，正伤心，却是旧时相识。<br />满地黄花堆积。憔悴损，如今有谁堪摘？<br /></span>
+			<span id="span3">守著窗儿，独自怎生得黑？<br />梧桐更兼细雨，到黄昏、点点滴滴。<br />这次第，怎一个、愁字了得！</span>
 		</div>
-		
-		<h1>虞美人</h1>
-		<h3>李煜</h3>
-		<span class="special">
-			<p>
-				春花秋月何时了，往事知多少。<br/>小楼昨夜又东风，故国不堪回首月明中。<br/>雕栏玉砌应犹在，只是朱颜改。<br/>问君能有几多愁，恰似一江春水向东流。<br />
-				this is a English test text!
-			</p>
-		</span><br/><br/>
-		<span style="font-size:16pt;text-align:center">
-			<a href="http://www.baidu.com">百度</a>
-			<a href="index.html">首页</a>
-			<a href="index.html">首页</a>
-		</span>
+	</div>
 
-		<h1>七绝·莫干山</h1>
-		<h5 style="text-align:center">朝代:现代　作者:毛泽东　体裁:七绝</h5>
-		<pre>
+	<h1>虞美人</h1>
+	<h3>李煜</h3>
+	<span class="special">
+		<p>
+			春花秋月何时了，往事知多少。<br />小楼昨夜又东风，故国不堪回首月明中。<br />雕栏玉砌应犹在，只是朱颜改。<br />问君能有几多愁，恰似一江春水向东流。<br />
+			this is a English test text!
+		</p>
+	</span><br /><br />
+	<span style="font-size:16pt;text-align:center">
+		<a href="http://www.baidu.com">百度</a>
+		<a href="index.html">首页</a>
+		<a href="index.html">首页</a>
+	</span>
+
+	<h1>七绝·莫干山</h1>
+	<h5 style="text-align:center">朝代:现代　作者:毛泽东　体裁:七绝</h5>
+	<pre>
 									翻身跃入七人房，
 									回首峰峦入莽苍。
 									四十八盘才走过，
 									风驰又已到钱塘。
 		</pre>
 
-		<div>
-			<h1>七绝·五云山</h1>
-			<h5 style="text-align:center">朝代:现代　作者:毛泽东　体裁:七绝</h5>　
-			<p class="PIndent">五云山上五云飞，远接群峰近拂堤。<br />
+	<div>
+		<h1>七绝·五云山</h1>
+		<h5 style="text-align:center">朝代:现代　作者:毛泽东　体裁:七绝</h5>　
+		<p class="PIndent">五云山上五云飞，远接群峰近拂堤。<br />
 			若问杭州何处好，此中听得野莺啼。</p>
-			<p class="PIndent" style="color:blue">五云山上五云飞，远接群峰近拂堤。<br />
+		<p class="PIndent" style="color:blue">五云山上五云飞，远接群峰近拂堤。<br />
 			若问杭州何处好，此中听得野莺啼。</p>
-		</div>
+	</div>
 
-		<div class="divA divA2">这是一个带边框的div块</div>		
-		<span class="spanA">这是一个span-内嵌元素</span>
-	    <div class="divB">这是一个div-块状元素</div>
-		<span class="spanB">这是一个block化的span块</span>
-		<!--div inline 化后，宽高属性失效-->
-		<div class="divC">这是一个inline化的div内嵌</div><br />
-		<div class="divD" id="divD">这是一个DIV权重测试</div><br />
-		  <ul>
-			<li class=li>list1</li>
-			<li class=lc>list2</li>
-			<li id=ld>list3</li>
-		  </ul>
+	<div class="divA divA2">这是一个带边框的div块</div>
+	<span class="spanA">这是一个span-内嵌元素</span>
+	<div class="divB">这是一个div-块状元素</div>
+	<span class="spanB">这是一个block化的span块</span>
+	<!--div inline 化后，宽高属性失效-->
+	<div class="divC">这是一个inline化的div内嵌</div><br />
+	<div class="divD" id="divD">这是一个DIV权重测试</div><br />
 
-	</body>
+	<h1>无序列表</h1>
+	<ul>
+		<li>list1</li>
+		<li>list2</li>
+		<li>list3</li>
+	</ul>
+
+	<h1>有序列表</h1>
+	<ol>
+		<li>list1</li>
+		<li>list2</li>
+		<li>list3</li>
+	</ol>
+
+</body>
+
 </html>
